@@ -1,0 +1,25 @@
+
+<% console.log(estimatePartMiscs.query); %>
+<div class="container">
+ <h2>All entries</h2>
+
+<p>There are  <%= estimatePartMiscs.query.length %> entries. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Subtotal</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < estimatePartMiscs.query.length; i++) { %>
+         <tr>
+            <td><%=  estimatePartMiscs.query[i].subtotal %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

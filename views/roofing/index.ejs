@@ -1,0 +1,36 @@
+<div class="container">
+   <h2>Recent roofing estimates</h2>
+   <% console.log(roofingEstimates.query); %>
+
+<p>There are  <%= roofingEstimates.query.length %> roofing estimates. <br/>
+<a href="/roofingEstimate/create">Add a new one.</a></p>
+   <table class="table" border="1">
+      <thead>
+         <tr>
+            <th>Client</th>
+            <th>City</th>
+            <th>Year</th>
+            <th>Month</th>
+            <th>SqFt</th>
+            <th>Cost ($/sqft)</th>
+            <th>Bid ($/sqft)</th>
+            <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+     
+<% for (var i = 0; i < roofingEstimates.query.length; i++) { %>      
+   <tr>
+            <td><%=  roofingEstimates.query[i].estimatePartAbout.client %></td>
+            <td><%=  roofingEstimates.query[i].estimatePartAbout.city %></td>
+            <td><%= roofingEstimates.query[i].estimatePartAbout.year %></td>
+            <td><%= roofingEstimates.query[i].estimatePartAbout.month %></td>
+            <td><%= roofingEstimates.query[i].estimateSquareFootage.sqft %></td>
+            <td><%= roofingEstimates.query[i].costPerSquareFoot %></td>
+            <td><%= roofingEstimates.query[i].bidPerSquareFoot %></td>
+            <td>Delete Details Edit</td>
+         </tr>
+         <% } %>
+      </tbody>
+   </table>
+</div>

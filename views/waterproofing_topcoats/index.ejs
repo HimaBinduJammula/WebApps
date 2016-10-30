@@ -1,0 +1,31 @@
+
+<% console.log(waterproofingTopcoats.query); %>
+<div class="container">
+ <h2>Material waterproofing topcoat costs</h2>
+
+<p>There are  <%= waterproofingTopcoats.query.length %> waterproofing topcoat products. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < waterproofingTopcoats.query.length; i++) { %>
+         <tr>
+            <td><%=  waterproofingTopcoats.query[i].name %></td>
+            <td><%=  waterproofingTopcoats.query[i].displayorder %></td>
+            <td><%=  waterproofingTopcoats.query[i].price %></td>
+            <td><%=  waterproofingTopcoats.query[i].unit %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

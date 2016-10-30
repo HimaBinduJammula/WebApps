@@ -1,0 +1,12 @@
+
+<h1>
+   Flooring Estimates
+   <a href="/flooringEstimate/create" class="btn btn-success pull-right">
+   Create new flooring estimate
+   </a>
+</h1>
+<% if (Object.keys(flooringEstimates).length) { %>
+<% include index.ejs %>
+<% } else { %>
+No estimates! <a href="/flooringEstimate/create">Add one!</a>
+<% } %>

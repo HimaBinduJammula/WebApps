@@ -1,0 +1,34 @@
+{
+  "name": "JobCostEstimator5",
+  "version": "0.0.1",
+  "description": "Job costing application 5",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "db-to-express-rest": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "express-ejs-layouts": "latest",
+    "express-validator": "latest",
+    "lodash": "latest",
+    "lodash.find": "latest",
+    "lodash.findindex": "latest",
+    "lodash.remove": "latest",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "nedb": "latest",
+    "require-yaml": "latest"
+  },
+  "author": "Web Apps Fall 2016 Section 05",
+  "homepage": "https://bitbucket.org/56316f5/jce5",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/56316f5/jce5"
+  },
+  "license": "Apache-2.0",
+  "publisher": "vscode",
+  "engines": {
+    "node": "latest"
+  }
+}

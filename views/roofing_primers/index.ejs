@@ -1,0 +1,31 @@
+
+<% console.log(roofingPrimers.query); %>
+<div class="container">
+ <h2>Material roofing primer costs</h2>
+
+<p>There are  <%= roofingPrimers.query.length %> roofing primers. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < roofingPrimers.query.length; i++) { %>
+         <tr>
+            <td><%=  roofingPrimers.query[i].name %></td>
+            <td><%=  roofingPrimers.query[i].displayorder %></td>
+            <td><%=  roofingPrimers.query[i].price %></td>
+            <td><%=  roofingPrimers.query[i].unit %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

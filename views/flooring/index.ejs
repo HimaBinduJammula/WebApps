@@ -1,0 +1,22 @@
+<h2>Recent flooring estimates</h2>
+<p>There are  <%= flooringEstimates.query.length %> flooring estimates. <br/>
+<a href="/flooringEstimate/create">Add a new one.</a></p>
+<% for(var item in flooringEstimates.query) { %>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div class="text-muted pull-right">
+<%= flooringEstimates.published %></div>
+<%= flooringEstimates.title %></div>
+<% include ..\..\views\estimateparts\est-about %>
+<% include ..\..\views\estimateparts\est-footage %>
+<% include ..\..\views\estimateparts\est-flooring %>
+<% include ..\..\views\estimateparts\est-aggregate %>
+<% include ..\..\views\estimateparts\est-labor %>
+<% include ..\..\views\estimateparts\est-mileage %>
+<% include ..\..\views\estimateparts\est-misc %>
+<% include ..\..\views\estimateparts\est-result %>
+<div class="panel-body">
+<%= flooringEstimates.comment %>
+</div>
+</div>
+<% } %>

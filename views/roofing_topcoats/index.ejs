@@ -1,0 +1,31 @@
+
+<% console.log(roofingTopcoats.query); %>
+<div class="container">
+ <h2>Material roofing topcoat costs</h2>
+
+<p>There are  <%= roofingTopcoats.query.length %> roofing topcoat products. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < roofingTopcoats.query.length; i++) { %>
+         <tr>
+            <td><%=  roofingTopcoats.query[i].name %></td>
+            <td><%=  roofingTopcoats.query[i].displayorder %></td>
+            <td><%=  roofingTopcoats.query[i].price %></td>
+            <td><%=  roofingTopcoats.query[i].unit %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

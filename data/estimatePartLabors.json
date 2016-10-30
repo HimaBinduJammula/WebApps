@@ -1,0 +1,24 @@
+[
+  {
+    "entries": [{
+        "entry": {
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }},
+    {
+        "entry": {
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":24,
+          "dollarsPerHour":10,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }}
+    ],
+    "subtotal": 1880
+  }
+]

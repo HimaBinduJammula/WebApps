@@ -1,0 +1,27 @@
+<% include ..\..\views\header.ejs %>
+<% console.log(estimatePartAggregates.query); %>
+<div class="container">
+ <h2>All entries</h2>
+
+<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>isUsed?</th>
+        <th>Type</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { %>
+         <tr>
+            <td><%=  estimatePartAggregates.query[i].isUsed %></td>
+            <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

@@ -1,0 +1,12 @@
+
+<h1>
+   Roofing Estimates
+   <a href="/roofingEstimate/create" class="btn btn-danger pull-right">
+   Create new roofing estimate
+   </a>
+</h1>
+<% if (Object.keys(roofingEstimates).length) { %>
+<% include index.ejs %>
+<% } else { %>
+No estimates! <a href="/roofingEstimate/create">Add one!</a>
+<% } %>

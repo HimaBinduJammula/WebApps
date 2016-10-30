@@ -1,0 +1,17 @@
+[
+  {
+    "entries": [
+      {
+        "entry": {
+          "description": "misc cost 1",
+          "cost": 100
+        },
+        "entry": {
+          "description": "misc cost 2",
+          "cost": 200
+        }
+      }
+    ],
+    "subtotal": 300
+  }
+]

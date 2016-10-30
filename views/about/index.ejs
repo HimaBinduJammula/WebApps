@@ -1,0 +1,26 @@
+<% console.log(estimatePartAbouts.query); %>
+<div class="container">
+ <h2>All entries</h2>
+
+<p>There are  <%= estimatePartAbouts.query.length %> entries. <br/>
+<a href="create.ejs">Add a new one.</a></p>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>City</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+<% for (var i = 0; i < estimatePartAbouts.query.length; i++) { %>
+         <tr>
+            <td><%=  estimatePartAbouts.query[i].client %></td>
+            <td><%=  estimatePartAbouts.query[i].city %></td>
+            <td>Delete  Details  Edit</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>
