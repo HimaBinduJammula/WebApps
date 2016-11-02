@@ -11,3 +11,6 @@ var EstimatePartLaborSchema = new Schema({
 
 var estimatePartLabor = mongoose.model('EstimatePartLabor', EstimatePartLaborSchema)
 module.exports = estimatePartLabor
+// This model is responsibility of
+// Hima Bindu Jammula
+// Shravani Alampalli
