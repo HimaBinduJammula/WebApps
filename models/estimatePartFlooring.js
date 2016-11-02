@@ -15,3 +15,7 @@ var EstimatePartFlooringSchema = new Schema({
 
 var estimatePartFlooring = mongoose.model('EstimatePartFlooring', EstimatePartFlooringSchema)
 module.exports = estimatePartFlooring
+
+// This data is managed by Team 5-05
+// Lakshmi Supriya Nakerikanti
+// Saravana Kumar Palaniyappan
