@@ -9,3 +9,8 @@ var EntryFootageSchema = new Schema({
 
 var entryFootage = mongoose.model('EntryFootage', EntryFootageSchema)
 module.exports = entryFootage
+
+// This model is managed by Team 5-4
+// Harish Babu Achanta
+// Hari Kiran Akunuri
+// Mounika Naidu Chanati
