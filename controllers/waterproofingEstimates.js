@@ -6,9 +6,10 @@ var findIndex = require('lodash.findindex');
 var Model = require('../models/waterproofingEstimate.js');
 const notfoundstring = 'No such waterproofing estimate';
 //Base:  api/waterproofingEstimate
+
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
-    let data = req.app.locals.waterproofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     res.send(JSON.stringify(data));
 });
 
