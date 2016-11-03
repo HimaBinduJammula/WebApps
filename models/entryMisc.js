@@ -8,3 +8,9 @@ var EntryMiscSchema = new Schema({
 
 var entryMisc = mongoose.model('EntryMisc', EntryMiscSchema)
 module.exports = entryMisc
+
+
+// This model is managed by Team 5-11
+// Ravva, Shanmukha Manikantha Surya Vamsi
+// Avasarala, Venkata Bhardwaj
+// Vallapurapu, Shankar
