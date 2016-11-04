@@ -12,3 +12,9 @@ var EstimatePartMileageSchema = new Schema({
 
 var estimatePartMileage = mongoose.model('EstimatePartMileage', EstimatePartMileageSchema)
 module.exports = estimatePartMileage
+
+
+// This model is managed by Team 5-11
+// Ravva, Shanmukha Manikantha Surya Vamsi
+// Avasarala, Venkata Bhardwaj
+// Vallapurapu, Shankar
