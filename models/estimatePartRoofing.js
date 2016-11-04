@@ -1,3 +1,7 @@
+// This model is managed by Team 5-6
+// Naganjali Mutyala
+// Akhila Patlola
+
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
     , RoofingBasecoat = require('./roofingBasecoat.js')
