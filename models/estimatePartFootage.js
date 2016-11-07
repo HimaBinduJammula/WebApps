@@ -11,3 +11,8 @@ var EstimatePartFootageSchema = new Schema({
 
 var estimatePartFootage = mongoose.model('EstimatePartFootage', EstimatePartFootageSchema)
 module.exports = estimatePartFootage
+
+// This model is managed by Team 5-4
+// Harish Babu Achanta
+// Hari Kiran Akunuri
+// Mounika Naidu Chanati

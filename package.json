@@ -36,5 +36,11 @@
     "mocha": "^3.1.2",
     "should": "^11.1.1",
     "supertest": "^2.0.1"
+<<<<<<< HEAD
+=======
+  },
+  "scripts": {
+    "test": "mocha --reporter spec ./test/controllers/*.js ./test/models/*.js"
+>>>>>>> d8c94698ebb1872afe5b5e6c4859b8746cfff6a2
   }
 }
