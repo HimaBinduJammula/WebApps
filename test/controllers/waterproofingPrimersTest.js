@@ -5,14 +5,14 @@ var expect = require("chai").expect;
 const appport = 8081;
 const appname = "jce";
 const testId = 1;
-const resourceName = "waterproofingPrimers";  
+const defaultPath = "waterproofingPrimer";  
 var app = express();
 
 describe("Materials - Waterproofing primers unit test",function(){
 
   it("should return index page",function(done){
     request(app)
-    .get(resourceName+"/")
+    .get(defaultPath+"/")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -20,7 +20,7 @@ describe("Materials - Waterproofing primers unit test",function(){
   });
   it("should return create page",function(done){
     request(app)
-    .get(resourceName+"/create")
+    .get(defaultPath+"/create")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -28,7 +28,7 @@ describe("Materials - Waterproofing primers unit test",function(){
   });
   it("should return delete page for id",function(done){
     request(app)
-    .get(resourceName+"/delete/"+testId)
+    .get(defaultPath+"/delete/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -36,7 +36,7 @@ describe("Materials - Waterproofing primers unit test",function(){
   });
   it("should return details page for id",function(done){
     request(app)
-    .get(resourceName+"/details/"+testId)
+    .get(defaultPath+"/details/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -44,7 +44,7 @@ describe("Materials - Waterproofing primers unit test",function(){
   });
   it("should return edit page for id",function(done){
     request(app)
-    .get(resourceName+"/edit/"+testId)
+    .get(defaultPath+"/edit/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
