@@ -52,3 +52,7 @@ describe("Materials - Waterproofing estimates unit test",function(){
   });
 
 });
+
+/*Managed by Team 5-3
+Cher-Xa Thao
+Brandyn Kopp*/
