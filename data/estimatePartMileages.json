@@ -10,7 +10,9 @@
           "endLocation": "Maryville, MO",
           "milesPerDrive": 100
           }
+        }
         ,
+        {
         "entry": {
           "description": "personal vehicle",
           "numberOfVehicles": 2,
