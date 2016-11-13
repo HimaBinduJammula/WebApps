@@ -12,7 +12,7 @@
   displayorder: 20
   price: 50.38
 - name: 70734/70735 - floor brite epoxy
-  coatingType: Quartz
+  coatingType: Expoxy
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 30

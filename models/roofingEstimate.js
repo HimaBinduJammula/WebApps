@@ -27,3 +27,6 @@ RoofingEstimateSchema.virtual('created').get(function () {
 })
 var roofingEstimate = mongoose.model('RoofingEstimate', RoofingEstimateSchema)
 module.exports = roofingEstimate
+// This model is managed by Team 5-02 
+// Mekonda, Sai Prakash 
+// Kovuri, Revanth 
