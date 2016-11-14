@@ -5,46 +5,42 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
-
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 //const notfoundstring = 'No such waterproofing primer';
-
+=======
+>>>>>>> b5ba5109b9f3b2def0f66652e0d52416af452ce6
 
 const notfoundstring = 'No such waterproofing primer';
+>>>>>>> 1069bf96a2f105b133f5bc8d0802888e7fc895f7
 
 
 
-// See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
-// Specify the handler for each required combination of URI and HTTP verb 
-// HTML5 forms can only have GET and POST methods (use POST for DELETE)
 
 
-// HANDLE JSON REQUESTS --------------------------------------------
-
+<<<<<<< HEAD
+=======
 
 module.exports = api;  // at the very end
-
+<<<<<<< HEAD
 //notfoundstring = 'No such estimatePartFlooring';
+=======
+>>>>>>> b5ba5109b9f3b2def0f66652e0d52416af452ce6
 
 
 
+
+>>>>>>> 1069bf96a2f105b133f5bc8d0802888e7fc895f7
 
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
 // Specify the handler for each required combination of URI and HTTP verb 
 // HTML5 forms can only have GET and POST methods (use POST for DELETE)
 
+
 // HANDLE JSON REQUESTS --------------------------------------------
 
-api.get('/findall', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.estimatePartFloorings.query;
-    res.send(JSON.stringify(data));
-});
-
-
-module.exports = api;  // at the very end
-// see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
