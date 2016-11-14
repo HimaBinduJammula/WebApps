@@ -4,7 +4,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartMileages.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="estimatePartMileage/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -17,7 +17,7 @@
 <% for (var i = 0; i < estimatePartMileages.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartMileages.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td><a href="estimatePartMileage/delete/<%= i+1 %>"> Delete</a> | <a href="estimatePartMileage/details/<%= i+1 %>"> Details</a> | <a href="estimatePartMileage/edit/<%= i+1 %>"> Edit</a></td>
          </tr>
          <% } %>
 </tbody>
