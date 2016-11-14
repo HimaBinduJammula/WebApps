@@ -2,3 +2,26 @@
 <!--  Ravva, Shanmukha Manikantha Surya Vamsi -->
 <!-- Avasarala, Venkata Bhardwaj -->
 <!--  Vallapurapu, Shankar -->
+<br/>
+<br/>
+<h2>Confirm deletion of <%= title %></h2>
+<br/>
+<br/>
+<p>Item
+	<%=  estimatePartMisc._id %>
+</p>
+<p>
+	<%=  estimatePartMisc.entry.description %>
+</p>
+<p>
+	<%=  estimatePartMisc.entry.cost %> 
+</p>
+
+<br/>
+<form method="get" action="/estimatePartMisc">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/estimatePartMisc/delete/<%= estimatePartMisc._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>
