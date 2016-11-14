@@ -1,6 +1,23 @@
-
-
 <!-- This model is managed by Team 5-11 --> 
 <!--  Ravva, Shanmukha Manikantha Surya Vamsi -->
 <!-- Avasarala, Venkata Bhardwaj -->
 <!--  Vallapurapu, Shankar -->
+<br/>
+<br/>
+<h2>Edit <%= title %></h2>
+<br/>
+<br/>
+<p>Item
+	<%=  estimatePartMileage._id %>
+</p>
+<p>
+	<%=  estimatePartMileage.entry.description %>
+</p>
+<p>
+	<%=  estimatePartMileage.entry.cost %> 
+</p>
+
+<br/>
+<form method="get" action="/estimatePartMileage">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

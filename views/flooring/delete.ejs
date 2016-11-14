@@ -1,0 +1,33 @@
+<br/>
+<br/>
+<h2>Confirm deletion of Flooring Estimate</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  flooringEstimate._id %><br>
+	<%=  flooringEstimate._type %>
+</p>
+<p>Client : <%=flooringEstimate.estimatePartAbout.client%></P>
+<p>Created : <%=flooringEstimate.estimatePartAbout.created%></P>
+<p>Address : <%=flooringEstimate.estimatePartAbout.address%></P>
+<p>City : <%=flooringEstimate.estimatePartAbout.city%></P>
+<p>Ztate : <%=flooringEstimate.estimatePartAbout.state%></P>
+<p>zipcode : <%=flooringEstimate.estimatePartAbout.zipcode%></P>
+<br>
+<p>Squre Footage : <%=flooringEstimate.estimateSquareFootage.sqft%></P>
+<br>
+<p>CostPerSquareFoot : $<%=flooringEstimate.costPerSquareFoot%></P>
+<p>BidPerSquareFoot : $<%=flooringEstimate.bidPerSquareFoot%></P>
+
+<form method="get" action="/flooringEstimate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+
+<br/>
+<form method="POST" action="/flooringEstimate/delete/<%= flooringEstimate._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>
+
+<!--This model is managed by team 5-R01
+Dambadeni Kalu Achchillage, Nilantha
+Muralidhar Gouda Buddanagoudagari -->

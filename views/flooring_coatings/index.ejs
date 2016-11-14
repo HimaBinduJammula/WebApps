@@ -23,7 +23,12 @@
             <td><%=  flooringCoatings.query[i].displayorder %></td>
             <td><%=  flooringCoatings.query[i].price %></td>
             <td><%=  flooringCoatings.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a target="blank" href="/flooring_coatings/delete"<%= flooringCoatings.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
+            <a  target="blank" href="/flooring_coatings/details"  <%= flooringCoatings.query[i].id %>"> Details</a> |
+            <a target="blank" href="/flooring_coatings/edit" <%= flooringCoatings.query[i].id %>">  Edit </a> 
+            
+            </td>
          </tr>
          <% } %>
 </tbody>

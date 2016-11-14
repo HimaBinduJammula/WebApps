@@ -4,7 +4,8 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+				<a href="estimatePartAggregate/create">Add a new one.</a></p>
+
 
 <table class="table" border="1">
     <thead>
@@ -19,9 +20,16 @@
          <tr>
             <td><%=  estimatePartAggregates.query[i].isUsed %></td>
             <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i].isUsed %>"> Delete </a> |
+							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i].isUsed %>"> Details </a> |
+							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i].isUsed%>"> Edit </a>
+            </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This view is managed by Team 5-09 -->
+<!-- Sri Sai Ravali Chinthareddy -->
+<!-- Avyakta Pallerla -->
