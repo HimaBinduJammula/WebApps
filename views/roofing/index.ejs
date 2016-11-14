@@ -28,7 +28,11 @@
             <td><%= roofingEstimates.query[i].estimateSquareFootage.sqft %></td>
             <td><%= roofingEstimates.query[i].costPerSquareFoot %></td>
             <td><%= roofingEstimates.query[i].bidPerSquareFoot %></td>
-            <td>Delete Details Edit</td>
+            <td>
+                  <a href="roofingEstimate/delete/<%= roofingEstimates.query[i]._id %>"> Delete </a> |
+                  <a href="roofingEstimate/details/<%= roofingEstimates.query[i]._id %>"> Details </a> |
+			<a href="roofingEstimate/edit/<%=roofingEstimates.query[i]._id %>"> Edit </a>
+         </td>
          </tr>
          <% } %>
       </tbody>
