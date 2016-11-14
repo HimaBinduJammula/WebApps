@@ -4,7 +4,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartWaterproofings.query.length %> entries. <br/>
-<a href="edit.html">Add a new one.</a></p>
+<a href="create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -17,7 +17,10 @@
 <% for (var i = 0; i < estimatePartWaterproofings.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartWaterproofings.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td><a href="estimatePartWaterproofing/delete/<%= i+1 %>">Delete</a>
+            <a href="estimatePartWaterproofing/details/<%= i+1 %>">Details</a>
+            <a href="estimatePartWaterproofing/edit/<%= i+1 %>">Edit</a>
+            </td>
          </tr>
          <% } %>
 </tbody>

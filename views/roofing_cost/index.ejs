@@ -7,7 +7,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartRoofings.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="estimatePartRoofing/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -20,7 +20,7 @@
 <% for (var i = 0; i < estimatePartRoofings.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartRoofings.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td><a href="estimatePartRoofing/delete/<%= i+1 %>">Delete</a>  <a href="estimatePartRoofing/details/<%= i+1 %>">Details</a>  <a href="estimatePartRoofing/edit/<%= i+1 %>">Edit</a></td>
          </tr>
          <% } %>
 </tbody>
