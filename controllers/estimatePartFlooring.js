@@ -34,7 +34,6 @@ module.exports = api;  // at the very end
 // Specify the handler for each required combination of URI and HTTP verb 
 // HTML5 forms can only have GET and POST methods (use POST for DELETE)
 
-
 // HANDLE JSON REQUESTS --------------------------------------------
 
 api.get('/findall', function(req, res){
