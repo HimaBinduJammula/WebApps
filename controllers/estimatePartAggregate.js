@@ -6,7 +6,6 @@ var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartAggregate.js');
 const notfoundstring = 'No such estimatePartAggregate';
 
-
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
@@ -34,7 +33,7 @@ module.exports = api;  // at the very end
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("aggregate_cost/create.ejs",
-        { title: " Aggregate", layout: "layout.ejs" });
+        { title: " PartAggregate", layout: "layout.ejs" });
 });
 
 
@@ -48,7 +47,7 @@ api.get('/delete/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate_cost/delete.ejs',
         {
-            title: "Footage",
+            title: "PartAggregate",
             layout: "layout.ejs",
             estimatePartAggregate: item
         });
@@ -64,7 +63,7 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate_cost/details.ejs',
         {
-            title: "WP Primers",
+            title: "PartAggregate",
             layout: "layout.ejs",
             estimatePartAggregate: item
         });
@@ -80,10 +79,8 @@ api.get('/edit/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate_cost/edit.ejs',
         {
-            title: "WP Primers",
+            title: "PartAggregate",
             layout: "layout.ejs",
             estimatePartAggregate: item
         });
 });
-
-
