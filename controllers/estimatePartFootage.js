@@ -28,3 +28,73 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFootages.query;
     res.send(JSON.stringify(data));
 });
+
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartFootages.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
+api.get('/', function(req, res) {
+    console.log("Handling GET " + req);
+    return res.render('footage/index.ejs',
+        { title: "WP Primers", layout: "layout.ejs" });
+});
+
+// GET create
+api.get("/create", function(req, res) {
+    console.log('Handling GET /create' + req);
+    res.render("footage/create.ejs",
+        { title: "WP Primers", layout: "layout.ejs" });
+});
+
+
+// DELETE
+api.get('/delete/:id', function(req, res) {
+    console.log("Handling GET /delete/:id " + req);
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartFootages.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    return res.render('footage/delete.ejs',
+        {
+            title: "Footage",
+            layout: "layout.ejs",
+            estimatePartFootage: item
+        });
+});
+
+// GET /details/:id
+api.get('/details/:id', function(req, res) {
+    console.log("Handling GET /details/:id " + req);
+    var id = parseInt(req.params.sqft);
+    var data = req.app.locals.estimatePartFootages.query;
+    var item = find(data, { 'sqft': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    return res.render('footage/details.ejs',
+        {
+            title: "WP Primers",
+            layout: "layout.ejs",
+            estimatePartFootage: item
+        });
+});
+
+// GET one
+api.get('/edit/:id', function(req, res) {
+    console.log("Handling GET /edit/:id " + req);
+    var id = parseInt(req.params.sqft);
+    var data = req.app.locals.estimatePartFootages.query;
+    var item = find(data, { 'sqft': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    return res.render('footage/edit.ejs',
+        {
+            title: "WP Primers",
+            layout: "layout.ejs",
+            estimatePartFootage: item
+        });
+});
