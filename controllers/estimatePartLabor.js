@@ -94,3 +94,6 @@ api.get('/edit/:id', function(req, res) {
             estimatePartLabor: item
         });
 });
+// This model is managed by Team 5-10
+// Hima Bindu Jammula
+// Shravani Alampalli
