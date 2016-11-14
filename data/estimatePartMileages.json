@@ -3,6 +3,7 @@
     "dollarsPerMile": 0.50,
     "entries": [
         {
+          "_id":1,
         "entry": {
           "description": "Commercial truck",
           "numberOfVehicles": 3,
@@ -13,6 +14,7 @@
         }
         ,
         {
+          "_id":2,
         "entry": {
           "description": "personal vehicle",
           "numberOfVehicles": 2,
