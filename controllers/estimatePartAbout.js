@@ -27,7 +27,4 @@ api.get("/", function (request, response) {
 });
 
 
-
-
-
 module.exports = api;

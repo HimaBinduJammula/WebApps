@@ -1,6 +1,7 @@
 [
   {
     "_type": "flooringEstimate",
+    "_id": 1,
     "estimatePartAbout": {
       "client": "Acme Hall",
       "created": "2016-10-04",
@@ -17,6 +18,7 @@
   },
   {
     "_type": "flooringEstimate",
+    "_id": 2,
     "estimatePartAbout": {
       "client": "Barks Puppy Palace",
       "created": "2016-10-04",
