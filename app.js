@@ -125,6 +125,7 @@ console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats")
 
 // Request to this URI will be handled by this CONTROLLER..........
 app.use('/', require('./controllers/index.js'));
+app.use('/about', require('./controllers/about.js'));
 app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
 app.use('/estimatePartAbout', require('./controllers/estimatePartAbout.js'));
 app.use('/estimatePartAggregate', require('./controllers/estimatePartAggregate.js'));
