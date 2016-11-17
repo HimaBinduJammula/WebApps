@@ -172,8 +172,19 @@ api.post('/delete/:id', function(req, res, next) {
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
-  response.render("mileage_cost/index.ejs");
+  response.render("mileage_cost/index.ejs",{
+    mileageRateNow : getLatestMileageRate(request.app.locals.mileageRates.query)
+  });
 });
+
+function getLatestMileageRate(rates){
+    var curMilRate = rates[0];
+    for(var i=0; i<rates.length;i++){
+        if(rates[i].startDate>curMilRate.startDate)
+            curMilRate = rates[i]; 
+    }
+    return curMilRate;
+}
 
 
 
