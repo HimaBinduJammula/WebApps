@@ -1,28 +1,25 @@
 [
   {
-    "dollarsPerMile": 0.50,
+    "dollarsPerMile": 0.5,
     "entries": [
         {
           "_id":1,
-        "entry": {
           "description": "Commercial truck",
           "numberOfVehicles": 3,
           "startLocation": "OPKS",
           "endLocation": "Maryville, MO",
           "milesPerDrive": 100
-          }
+          
         }
         ,
         {
           "_id":2,
-        "entry": {
           "description": "personal vehicle",
           "numberOfVehicles": 2,
           "startLocation": "OPKS",
           "endLocation": "Maryville, MO",
           "milesPerDrive": 100
         
-        }
       }
     ],
     "subtotal": 250
