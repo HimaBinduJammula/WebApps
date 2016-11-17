@@ -51,8 +51,19 @@ api.get('/delete/:id', function(req, res){
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("mileage_cost/create.ejs",
-        { title: " Entry", layout: "layout.ejs" });
+        { title: " Entry", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartMileages.query[0].entries) });
 });
+
+function genrateUID(items){
+    var ids = [];
+    var UID = items.length+1; //Unique ID
+    //check if above id is already exists, then generate new id if already exists else return this  unique id
+    for(var i=0; i<items.length; i++){
+        if(items[i]._id==UID)
+            UID++;
+    }
+    return UID;
+}
 
 // // GET /delete/:id
 // api.get('/delete/:id', function(req, res) {

@@ -10,7 +10,7 @@
 <br/>
 <form method="POST" action="/estimatePartMileage/save/">
 <table class="table table-hover table-bordered">
-    <tr><th>ID</th> <td> <input type="number" class="form-control" value="<%= estimatePartMileages.query[0].entries.length+1 %>" name="_id"  /></td></tr>
+    <tr><th>ID</th> <td> <input type="number" class="form-control" value="<%= newID %>" name="_id"  /></td></tr>
 	<tr><th>Description</th> <td><input type="text" class="form-control" name="description" >  </input></td></tr>
 	<tr><th>Number Of Vehicles</th> <td><input type="number" class="form-control" name="numberOfVehicles" > </input></td></tr>
 	<tr><th>Start Location</th> <td><input type="text" class="form-control" name="startLocation"  > </input></td></tr>
