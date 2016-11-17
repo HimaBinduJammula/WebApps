@@ -39,5 +39,8 @@
   },
   "scripts": {
     "test": "mocha --reporter spec ./test/controllers/*.js ./test/models/*.js"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec ./test/controllers/*.js ./test/models/*.js"
   }
 }
