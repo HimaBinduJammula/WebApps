@@ -3,24 +3,54 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartMileages.query.length %> entries. <br/>
-<a href="estimatePartMileage/create">Add a new one.</a></p>
+<p>There are  <%= estimatePartMileages.query[0].entries.length %> entries. <br/>
+<a href="estimatePartMileage/create" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i> Add a new one</a></p>
 
-<table class="table" border="1">
+<table class="table table-hover table-bordered">
     <thead>
       <tr>
-        <th>Subtotal</th>
-       <th>Actions</th>
+       <th>ID</th>
+       <th>Description</th>
+       <th>Number Of Vehicles</th>
+       <th>Start Location</th>
+       <th>End Location</th>
+       <th>Miles Per Drive</th>
+       <th>Dollars Per Mile</th>
+       <th>Cost</th>
+       <th>Options</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartMileages.query.length; i++) { %>
+<% for (var i = 0; i < estimatePartMileages.query.length; i++) { 
+    var totalCost = 0;
+     for(var j=0; j<estimatePartMileages.query[i].entries.length;j++){
+        var entry = estimatePartMileages.query[i].entries[j];
+      %>
+        <tr>
+            <td> <%= entry._id %></td>
+            <td> <%= entry.description %></td>
+            <td> <%= entry.numberOfVehicles %></td>
+            <td> <%= entry.startLocation %></td>
+            <td> <%= entry.endLocation %></td>
+            <td> <%= entry.milesPerDrive %> m/d</td>
+            <td> <%= estimatePartMileages.query[i].dollarsPerMile %>$</td>
+            <td> <%= entry.numberOfVehicles*entry.milesPerDrive*estimatePartMileages.query[i].dollarsPerMile %>$</td>
+            <% totalCost += entry.numberOfVehicles*entry.milesPerDrive*estimatePartMileages.query[i].dollarsPerMile %>
+            <td>
+            <a href="estimatePartMileage/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details</a> 
+            <a href="estimatePartMileage/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i>  Edit </a> 
+            <a href="estimatePartMileage/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> </td>
+        </tr>
+    <%    } %>
+    
+         </tbody>
+         <tfoot>
          <tr>
-            <td><%=  estimatePartMileages.query[i].subtotal %></td>
-            <td><a href="estimatePartMileage/delete/<%= i+1 %>"> Delete</a> | <a href="estimatePartMileage/details/<%= i+1 %>"> Details</a> | <a href="estimatePartMileage/edit/<%= i+1 %>"> Edit</a></td>
+            <td colspan="9" align="center"> <strong>Total estiamted part mileage : <span id='fnlCost' ><%=  totalCost %>$</span></strong> </td>
+            
          </tr>
+         </tfoot>
          <% } %>
-</tbody>
 </table>
 </div>
 

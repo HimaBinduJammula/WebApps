@@ -3,7 +3,7 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/estimatePartMileage.js');
+var Model = require('../models/entryMileage.js');
 const notfoundstring = 'No such estimatePartMileage';
 
 
@@ -51,7 +51,7 @@ api.get('/delete/:id', function(req, res){
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("mileage_cost/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: " Entry", layout: "layout.ejs" });
 });
 
 // // GET /delete/:id
@@ -91,6 +91,7 @@ api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.estimatePartMileages.query[0].entries;
+    console.log(data);
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -109,15 +110,20 @@ api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
     var data = req.app.locals.estimatePartMileages.query[0].entries;
     var item = new Model;
-    console.log("NEW ID " + req.body._id);
+    // var item = {};
+    console.log("NEW ID " + parseInt(req.body._id));
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.description = req.body.description;
+    item.numberOfVehicles = req.body.numberOfVehicles;
+    item.startLocation = req.body.startLocation;
+    item.endLocation = req.body.endLocation;
+    item.milesPerDrive = req.body.milesPerDrive;
+    // item.displayorder = parseInt(req.body.displayorder);
+    console.log("New Item "+item);
     data.push(item);
+    console.log("Current List"+data[3]);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMileage');
 });
 
 // POST update
@@ -130,12 +136,13 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.description = req.body.description;
+    item.numberOfVehicles = req.body.numberOfVehicles;
+    item.startLocation = req.body.startLocation;
+    item.endLocation = req.body.endLocation;
+    item.milesPerDrive = req.body.milesPerDrive;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMileage');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -147,7 +154,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMileage');
 });
 // see app.js for the root request this controller handles
 
