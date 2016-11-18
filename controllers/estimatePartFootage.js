@@ -70,14 +70,14 @@ api.get('/delete/:id', function(req, res) {
 // GET /details/:id
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
-    var id = parseInt(req.params.sqft);
+    var id = parseInt(req.params.id);
     var data = req.app.locals.estimatePartFootages.query;
-    var item = find(data, { 'sqft': id });
+    var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('footage/details.ejs',
         {
-            title: "WP Primers",
+            title: "Footage",
             layout: "layout.ejs",
             estimatePartFootage: item
         });
