@@ -9,6 +9,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -19,6 +20,7 @@
     <tbody>
 <% for (var i = 0; i < waterproofingTopcoats.query.length; i++) { %>
          <tr>
+            <td><%=  waterproofingTopcoats.query[i]._id %></td>
             <td><%=  waterproofingTopcoats.query[i].name %></td>
             <td><%=  waterproofingTopcoats.query[i].displayorder %></td>
             <td><%=  waterproofingTopcoats.query[i].price %></td>
