@@ -28,3 +28,7 @@ FlooringEstimateSchema.virtual('created').get(function () {
 
 var flooringEstimate = mongoose.model('FlooringEstimate', FlooringEstimateSchema)
 module.exports = flooringEstimate
+
+// This model is managed by team 5-R01
+//Dambadeni Kalu Achchillage, Nilantha
+//Muralidhar Gouda Buddanagoudagari

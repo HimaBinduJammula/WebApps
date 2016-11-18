@@ -30,5 +30,15 @@
   "publisher": "vscode",
   "engines": {
     "node": "latest"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1",
+    "supertest": "^2.0.1"
+
+  },
+  "scripts": {
+    "test": "mocha --reporter spec ./test/controllers/*.js ./test/models/*.js"
   }
 }

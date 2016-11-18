@@ -8,6 +8,12 @@ var Movie = require('../models/flooringEstimate');
 api.get("/", function (request, response) {
  response.render("flooring/flooring.ejs");
 });
+// Handle Json Requests
+api.get('/findall', function(req, res){
+  res.setHeader('Content-type', 'application/json');
+  var data = req.app.locals.flooringEstimates.query;
+  res.send(JSON.stringify(data));
+});
 
 // GET flooring-new
 api.get("/create", function (request, response) {
@@ -15,3 +21,7 @@ api.get("/create", function (request, response) {
 });
 
 module.exports = api;
+
+// This model is managed by team 5-R01
+//Dambadeni Kalu Achchillage, Nilantha
+//Muralidhar Gouda Buddanagoudagari

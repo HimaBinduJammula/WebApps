@@ -1,10 +1,10 @@
-
 <% console.log(estimatePartFootages.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartFootages.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+
+				<a href="estimatePartFootage/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -17,9 +17,18 @@
 <% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartFootages.query[i].sqft %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i].sqft %>"> Delete </a> |
+							<a href="estimatePartFootage/details/<%= estimatePartFootages.query[i].sqft %>"> Details </a> |
+							<a href="estimatePartFootage/edit/<%=    estimatePartFootages.query[i].sqft %>"> Edit </a>
+            </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+
+<!--This model is managed by Team 5-4
+Harish Babu Achanta
+Hari Kiran Akunuri
+Mounika Naidu Chanati-->

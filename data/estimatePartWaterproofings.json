@@ -1,8 +1,15 @@
 [
   {
+    "_id":1,
     "productType": "Urethane",
     "usesUrethane": false,
     "subtotal": 55
+  },
+  {
+    "_id":2,
+    "productType": "Urethane",
+    "usesUrethane": false,
+    "subtotal": 70
   }
 ]
 
