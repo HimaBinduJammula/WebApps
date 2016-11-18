@@ -9,6 +9,8 @@
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
+    
         <th>SqFt</th>
        <th>Actions</th>
     </tr>
@@ -16,11 +18,13 @@
     <tbody>
 <% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
          <tr>
+            <td><%=  estimatePartFootages.query[i]._id %></td>
+
             <td><%=  estimatePartFootages.query[i].sqft %></td>
             <td>
-            <a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i].sqft %>"> Delete </a> |
-							<a href="estimatePartFootage/details/<%= estimatePartFootages.query[i].sqft %>"> Details </a> |
-							<a href="estimatePartFootage/edit/<%=    estimatePartFootages.query[i].sqft %>"> Edit </a>
+            <a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i]._id %>"> Delete </a> |
+							<a href="estimatePartFootage/details/<%= estimatePartFootages.query[i]._id %>"> Details </a> |
+							<a href="estimatePartFootage/edit/<%=    estimatePartFootages.query[i]._id %>"> Edit </a>
             </td>
          </tr>
          <% } %>

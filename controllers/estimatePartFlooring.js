@@ -6,7 +6,19 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
+<<<<<<< HEAD
 const notfoundstring = 'No such Estimate Part Flooring';
+=======
+
+
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+
+
+
+
+>>>>>>> 507ba61967c1e455e8a760f6824697fbeaceaacf
 
 
 // See app.js to find default view folder (e.g.,"views")
@@ -16,6 +28,12 @@ const notfoundstring = 'No such Estimate Part Flooring';
 
 
 // HANDLE JSON REQUESTS --------------------------------------------
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 507ba61967c1e455e8a760f6824697fbeaceaacf
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");

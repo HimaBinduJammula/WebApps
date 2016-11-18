@@ -35,7 +35,7 @@
             <td> <%= entry.endLocation %></td>
             <td> <%= entry.milesPerDrive %> m/d</td>
             <td> $<%= (mileageRateNow.dollarsPerMile).toFixed(2) %></td>
-            <td> <%= entry.numberOfVehicles*entry.milesPerDrive*mileageRateNow.dollarsPerMile %>$</td>
+            <td> $<%= entry.numberOfVehicles*entry.milesPerDrive*mileageRateNow.dollarsPerMile %></td>
             <% totalCost += entry.numberOfVehicles*entry.milesPerDrive*mileageRateNow.dollarsPerMile %>
             <td>
             <a href="estimatePartMileage/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details</a> 
@@ -47,7 +47,7 @@
          </tbody>
          <tfoot>
          <tr>
-            <td colspan="9" align="center"> <strong>Total estimated part mileage : <span id='fnlCost' ><%=  totalCost %>$</span></strong> </td>
+            <td colspan="9" align="center"> <strong>Total estimated part mileage : <span id='fnlCost' > $<%=  totalCost %></span></strong> </td>
             
          </tr>
          </tfoot>

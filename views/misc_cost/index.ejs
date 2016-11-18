@@ -4,7 +4,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartMiscs.query.length %> entries. <br/>
-<a href="estimatePartMisc/create">Add a new one.</a></p>
+<a class="btn btn-info" href="estimatePartMisc/create"><i class="glyphicon glyphicon-pencil"></i> New Entry</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -24,14 +24,17 @@
         <tr>
             <td> <%= entry._id %></td>
             <td> <%= entry.description %></td>
-            <td> <%= entry.cost %></td>
+            <td> $<%= entry.cost %></td>
             <% totalCost += entry.cost %>
-            <td><a href="estimatePartMisc/delete/<%= entry._id %>"> Delete</a> | <a href="estimatePartMisc/details/<%= entry._id %>"> Details</a> | <a href="estimatePartMisc/edit/<%= entry._id %>"> Edit</a></td>
-
+            <td>
+              <a href="estimatePartMisc/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details</a> 
+              <a href="estimatePartMisc/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i>  Edit </a> 
+              <a href="estimatePartMisc/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> </td>
+            </td>
         </tr>
     <%  } %>
          <tr>
-            <td colspan="4" align="center"> <strong> Totla Estimated Miscellaneous Cost :  <span style="color:green"><%=  totalCost %> </strong></span> </tbody></td>
+            <td colspan="4" > <strong> Totla Estimated Miscellaneous Cost :  <span style="color:green"> $<%=  totalCost %> </strong></span> </tbody></td>
          </tr>
          <% } %>
 </tbody>
