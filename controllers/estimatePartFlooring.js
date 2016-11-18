@@ -6,7 +6,21 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
+<<<<<<< HEAD
 const notfoundstring = 'No such Estimate Part Flooring';
+=======
+>>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
+
+
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+
+<<<<<<< HEAD
+=======
+
+
+
 
 
 // See app.js to find default view folder (e.g.,"views")
@@ -17,6 +31,9 @@ const notfoundstring = 'No such Estimate Part Flooring';
 
 // HANDLE JSON REQUESTS --------------------------------------------
 
+
+
+>>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
@@ -27,6 +44,7 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
+<<<<<<< HEAD
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
@@ -35,6 +53,8 @@ api.get('/findone/:id', function(req, res){
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
+=======
+>>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
 
 // GET create
 api.get("/create", function(req, res) {

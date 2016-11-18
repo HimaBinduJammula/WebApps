@@ -1,5 +1,6 @@
 [
   {
+    "_id":1,
     "entries": [{
         "entry": {
           "type": "apprentice",
@@ -9,8 +10,9 @@
           "nightsPerPerson":2,
           "costPerNight":80
     }},
-    {
+    {  
         "entry": {
+
           "type": "assistant",
           "count": 2,
           "hoursPerPerson":24,
@@ -20,5 +22,54 @@
     }}
     ],
     "subtotal": 1880
+  },
+
+  {
+    "_id":2,
+    "entries1": [{
+        "entry": {
+          "type": "apprentice",
+          "count": 2,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }},
+    {  
+        "entry": {
+          "type": "assistant",
+          "count": 1,
+          "hoursPerPerson":24,
+          "dollarsPerHour":10,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }}
+    ],
+    "subtotal": 1200
+  },
+
+  {
+    "_id":3,
+    "entries1": [{
+        "entry": {
+          "type": "apprentice",
+          "count": 2,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }},
+    {  
+        "entry": {
+          "type": "assistant",
+          "count": 1,
+          "hoursPerPerson":24,
+          "dollarsPerHour":10,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    }}
+    ],
+    "subtotal": 1680
   }
+
 ]

@@ -5,14 +5,14 @@ var expect = require("chai").expect;
 const appport = 8081;
 const appname = "jce";
 const testId = 1;
-const defaultPath = "flooringEstimate";  
+const resourceName = "roofingBasecoats";  
 var app = express();
 
-describe("Flooring Estimate unit test",function(){
+describe("Materials - roofingBasecoats  unit test",function(){
 
   it("should return index page",function(done){
     request(app)
-    .get(defaultPath+"/")
+    .get(resourceName+"/")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -20,7 +20,7 @@ describe("Flooring Estimate unit test",function(){
   });
   it("should return create page",function(done){
     request(app)
-    .get(defaultPath+"/create")
+    .get(resourceName+"/create")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -28,7 +28,7 @@ describe("Flooring Estimate unit test",function(){
   });
   it("should return delete page for id",function(done){
     request(app)
-    .get(defaultPath+"/delete/"+testId)
+    .get(resourceName+"/delete/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -36,7 +36,7 @@ describe("Flooring Estimate unit test",function(){
   });
   it("should return details page for id",function(done){
     request(app)
-    .get(defaultPath+"/details/"+testId)
+    .get(resourceName+"/details/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -44,7 +44,7 @@ describe("Flooring Estimate unit test",function(){
   });
   it("should return edit page for id",function(done){
     request(app)
-    .get(defaultPath+"/edit/"+testId)
+    .get(resourceName+"/edit/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -52,7 +52,3 @@ describe("Flooring Estimate unit test",function(){
   });
 
 });
-
-// This model is managed by team 5-R01
-//Dambadeni Kalu Achchillage, Nilantha
-//Muralidhar Gouda Buddanagoudagari
