@@ -26,13 +26,6 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
-
-// GET create
-api.get("/create", function(req, res) {
-    console.log('Handling GET /create' + req);
-    res.render("flooring_cost/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
-});
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
@@ -40,6 +33,14 @@ api.get('/findone/:id', function(req, res){
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
+});
+
+// GET create
+api.get("/create", function(req, res) {
+    console.log('Handling GET /create' + req);
+    res.render("flooring_cost/create.ejs",
+        { title: "WP Primers", layout: "layout.ejs" });
+});
 
 // GET /delete/:id
 api.get('/delete/:id', function(req, res) {
