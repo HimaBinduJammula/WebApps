@@ -1,6 +1,7 @@
 [
   {
     "entries": [{
+        "_id":1,
         "entry": {
           "type": "apprentice",
           "count": 3,
@@ -9,8 +10,10 @@
           "nightsPerPerson":2,
           "costPerNight":80
     }},
-    {
+    {  
+        "_id":2,
         "entry": {
+
           "type": "assistant",
           "count": 2,
           "hoursPerPerson":24,
