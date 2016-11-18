@@ -6,9 +6,27 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
+
+
+
+//const notfoundstring = 'No such waterproofing primer';
+
+
+
 const notfoundstring = 'No such waterproofing primer';
 
 
+
+
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+
+
+
+
+
+
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
 // Specify the handler for each required combination of URI and HTTP verb 
@@ -18,29 +36,6 @@ const notfoundstring = 'No such waterproofing primer';
 // HANDLE JSON REQUESTS --------------------------------------------
 
 
-module.exports = api;  // at the very end
-
-
-
-
-
-// See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
-// Specify the handler for each required combination of URI and HTTP verb 
-// HTML5 forms can only have GET and POST methods (use POST for DELETE)
-
-
-// HANDLE JSON REQUESTS --------------------------------------------
-
-api.get('/findall', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.estimatePartFloorings.query;
-    res.send(JSON.stringify(data));
-});
-
-
-module.exports = api;  // at the very end
-// see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
@@ -52,6 +47,8 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
+
+// GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooring_cost/create.ejs",
@@ -102,7 +99,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartFloorings: item
+            estimatePartFlooring: item
         });
 });
 
@@ -153,5 +150,7 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartFlooring');
 });
+
+
 
 module.exports = api;

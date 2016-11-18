@@ -23,9 +23,20 @@
             <td><%=  waterproofingTopcoats.query[i].displayorder %></td>
             <td><%=  waterproofingTopcoats.query[i].price %></td>
             <td><%=  waterproofingTopcoats.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a target="blank" href="/waterproofingTopcoat/delete"<%= waterproofingTopcoats.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
+            <a  target="blank" href="/waterproofingTopcoat/details"  <%= waterproofingTopcoats.query[i].id %>"> Details</a> |
+            <a target="blank" href="/waterproofingTopcoat/edit" <%= waterproofingTopcoats.query[i].id %>">  Edit </a> 
+            
+            </td>
+Chat con
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+
+//This is managed by team 5-14
+//Sruthi Palpandian
+//Snidga Jataprolu
+//Ganga Samyuktha Reddy

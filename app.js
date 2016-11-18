@@ -46,6 +46,7 @@ var estimatePartRoofings = require('./data/estimatePartRoofings.json');
 var estimatePartWaterproofings = require('./data/estimatePartWaterproofings.json');
 var flooringCoatings = require('./data/flooringCoatings.yml');
 var flooringEstimates = require('./data/flooringEstimates.json');
+var mileageRates = require('./data/mileageRates.json');
 var roofingBasecoats = require('./data/roofingBasecoats.yml');
 var roofingEstimates = require('./data/roofingEstimates.json');
 var roofingPrimers = require('./data/roofingPrimers.json');
@@ -68,6 +69,7 @@ db.insert(estimatePartRoofings);
 db.insert(estimatePartWaterproofings);
 db.insert(flooringCoatings);
 db.insert(flooringEstimates);
+db.insert(mileageRates);
 db.insert(roofingBasecoats);
 db.insert(roofingEstimates);
 db.insert(roofingPrimers);
@@ -90,6 +92,7 @@ app.locals.estimatePartRoofings = db.find(estimatePartRoofings);
 app.locals.estimatePartWaterproofings = db.find(estimatePartWaterproofings);
 app.locals.flooringCoatings = db.find(flooringCoatings);
 app.locals.flooringEstimates = db.find(flooringEstimates);
+app.locals.mileageRates = db.find(mileageRates);
 app.locals.roofingBasecoats = db.find(roofingBasecoats);
 app.locals.roofingEstimates = db.find(roofingEstimates);
 app.locals.roofingPrimers = db.find(roofingPrimers);
@@ -100,7 +103,7 @@ app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
 app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
 // verify our sample data was imported correctly
-console.log( Object.keys(aggregateMaterials).length+ " aggregateMaterials");
+console.log(Object.keys(aggregateMaterials).length+ " aggregateMaterials");
 console.log(Object.keys(estimatePartAbouts).length+ " estimatePartAbouts");
 console.log(Object.keys(estimatePartAggregates).length+ " estimatePartAggregates");
 console.log(Object.keys(estimatePartFloorings).length+ " estimatePartFloorings");
@@ -112,6 +115,7 @@ console.log(Object.keys(estimatePartRoofings).length+ " estimatePartRoofings");
 console.log(Object.keys(estimatePartWaterproofings).length+ " estimatePartWaterproofings");
 console.log(Object.keys(flooringCoatings).length+ " flooringCoatings");
 console.log(Object.keys(flooringEstimates).length+ " flooringEstimates");
+console.log(Object.keys(mileageRates).length+ " mileageRates");
 console.log(Object.keys(roofingBasecoats).length+ " roofingBasecoats");
 console.log(Object.keys(roofingEstimates).length+ " roofingEstimates");
 console.log(Object.keys(roofingPrimers).length+ " roofingPrimers");
@@ -125,6 +129,7 @@ console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats")
 
 // Request to this URI will be handled by this CONTROLLER..........
 app.use('/', require('./controllers/index.js'));
+app.use('/about', require('./controllers/about.js'));
 app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
 app.use('/estimatePartAbout', require('./controllers/estimatePartAbout.js'));
 app.use('/estimatePartAggregate', require('./controllers/estimatePartAggregate.js'));
@@ -137,6 +142,7 @@ app.use('/estimatePartRoofing', require('./controllers/estimatePartRoofing.js'))
 app.use('/estimatePartWaterproofing', require('./controllers/estimatePartWaterproofing.js'));
 app.use('/flooringCoating', require('./controllers/flooringCoatings.js'));
 app.use('/flooringEstimate', require('./controllers/flooringEstimates.js'));
+app.use('/mileageRate', require('./controllers/mileageRate.js'));
 app.use('/prospect', require('./controllers/prospects.js'));
 app.use('/roofingBasecoat', require('./controllers/roofingBasecoats.js'));
 app.use('/roofingEstimate', require('./controllers/roofingEstimates.js'));

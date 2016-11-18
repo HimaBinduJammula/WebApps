@@ -4,25 +4,43 @@
 <!--  Vallapurapu, Shankar -->
 
 <br/>
+<h1>Confirm deletion of <%= title %></h1>
 <br/>
-<h2>Confirm deletion of <%= title %></h2>
+<table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+       <th>ID</th>
+       <th>Description</th>
+       <th>Number Of Vehicles</th>
+       <th>Start Location</th>
+       <th>End Location</th>
+       <th>Miles Per Drive</th>
+       <th>Dollars Per Mile</th>
+       <th>Cost</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> <%= estimatePartMileage._id %></td>
+            <td> <%= estimatePartMileage.description %></td>
+            <td> <%= estimatePartMileage.numberOfVehicles %></td>
+            <td> <%= estimatePartMileage.startLocation %></td>
+            <td> <%= estimatePartMileage.endLocation %></td>
+            <td> <%= estimatePartMileage.milesPerDrive %></td>
+            <td> <%= estimatePartMileages.query[0].dollarsPerMile %></td>
+            <td> <%= estimatePartMileage.numberOfVehicles*estimatePartMileage.milesPerDrive*estimatePartMileages.query[0].dollarsPerMile %></td>
+        </tr>
+</tbody>
+</table>
 <br/>
-<br/>
-<p>Item
-	<%=  estimatePartMileage._id %>
-</p>
-<p>
-	<%=  estimatePartMileage.entry.description %>
-</p>
-<p>
-	<%=  estimatePartMileage.entry.cost %> 
-</p>
 
-<br/>
-<form method="get" action="/estimatePartMileage">
-	<input type="submit" value="Return to list" class="btn btn-caution" />
-</form>
-<br/>
+<div class="row">
+<div class="col-md-2">
+<a href="/estimatePartMileage" class="btn btn-info" ><i class="glyphicon glyphicon-chevron-left"></i> Return to list</a>
+</div>
+<div class="col-md-10"> 
 <form method="POST" action="/estimatePartMileage/delete/<%= estimatePartMileage._id %>">
-	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+	<button type="submit"  class="btn btn-danger pull-right" ><i class="glyphicon glyphicon-trash"></i> Delete this item</button>
 </form>
+</div>
+</div>
