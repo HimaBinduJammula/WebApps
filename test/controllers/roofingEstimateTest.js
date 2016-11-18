@@ -5,10 +5,14 @@ var expect = require("chai").expect;
 const appport = 8081;
 const appname = "jce";
 const testId = 1;
+<<<<<<< HEAD:test/controllers/waterproofingPrimersTest.js
 const resourceName = "waterproofingPrimers";  
+=======
+const defaultPath = "roofingEstimate";  
+>>>>>>> 38070afa321bc1bb316f675846452eccd59eb88c:test/controllers/roofingEstimateTest.js
 var app = express();
 
-describe("Materials - Waterproofing primers unit test",function(){
+describe("Materials -roofing estimates unit test",function(){
 
   it("should return index page",function(done){
     request(app)
@@ -52,3 +56,7 @@ describe("Materials - Waterproofing primers unit test",function(){
   });
 
 });
+
+/*Managed by Team 5-02
+Mekonda Sai Prakash
+Kovuri Revanth*/

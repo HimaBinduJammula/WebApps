@@ -4,8 +4,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartFloorings.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
-
+<a href="estimatePartFlooring/create">Add a new one.</a></p>
 <table class="table" border="1">
     <thead>
       <tr>
@@ -17,19 +16,15 @@
 <% for (var i = 0; i < estimatePartFloorings.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartFloorings.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td><a href="estimatePartFlooring/delete/<%= i+1 %>">Delete</a>  
+            <a href="estimatePartFlooring/details/<%= i+1 %>">Details</a>  
+            <a href="estimatePartFlooring/edit/<%= i+1 %>">Edit</a></td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
 <!-- This part is managed by 05-05 --!>
-<<<<<<< HEAD
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>
-=======
-<!-- Saravana Palaniyappan --!>
-<!-- Lakshmi Supriya --!>
 
-
->>>>>>> d8c94698ebb1872afe5b5e6c4859b8746cfff6a2

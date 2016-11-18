@@ -9,6 +9,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -19,13 +20,25 @@
     <tbody>
 <% for (var i = 0; i < waterproofingTopcoats.query.length; i++) { %>
          <tr>
+            <td><%=  waterproofingTopcoats.query[i]._id %></td>
             <td><%=  waterproofingTopcoats.query[i].name %></td>
             <td><%=  waterproofingTopcoats.query[i].displayorder %></td>
             <td><%=  waterproofingTopcoats.query[i].price %></td>
             <td><%=  waterproofingTopcoats.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a target="blank" href="/waterproofingTopcoat/delete"<%= waterproofingTopcoats.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
+            <a  target="blank" href="/waterproofingTopcoat/details"  <%= waterproofingTopcoats.query[i].id %>"> Details</a> |
+            <a target="blank" href="/waterproofingTopcoat/edit" <%= waterproofingTopcoats.query[i].id %>">  Edit </a> 
+            
+            </td>
+Chat con
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+
+//This is managed by team 5-14
+//Sruthi Palpandian
+//Snidga Jataprolu
+//Ganga Samyuktha Reddy

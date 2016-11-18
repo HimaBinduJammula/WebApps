@@ -9,6 +9,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>Id</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -19,6 +20,7 @@
     <tbody>
 <% for (var i = 0; i < flooringCoatings.query.length; i++) { %>
          <tr>
+         <td><%=  flooringCoatings.query[i]._id %></td>
             <td><%=  flooringCoatings.query[i].name %></td>
             <td><%=  flooringCoatings.query[i].displayorder %></td>
             <td><%=  flooringCoatings.query[i].price %></td>
