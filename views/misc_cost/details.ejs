@@ -4,20 +4,23 @@
 <!--  Vallapurapu, Shankar -->
 <br/>
 <br/>
-<h2>Edit <%= title %></h2>
 <br/>
+<h1>Details of <%= title %></h1>
 <br/>
-<p>Item
-	<%=  estimatePartMisc._id %>
-</p>
-<p>
-	<%=  estimatePartMisc.entry.description %>
-</p>
-<p>
-	<%=  estimatePartMisc.entry.cost %> 
-</p>
+<table class="table table-hover" border="1">
+	<thead>
+		<th>Item ID : </th>
+		<th> Description : </th>
+		<th> Cost : </th>
+	</thead>
+	<tbody>
+		<tr>
+			<td> <%=  estimatePartMisc._id %> </td>
+			<td> <%=  estimatePartMisc.description %></td>
+			<td><%=  estimatePartMisc.cost %> </td>
+		</tr>
+	</tbody>
+</table>
+<br/>
 
-<br/>
-<form method="get" action="/waterproofingPrimer">
-	<input type="submit" value="Return to list" class="btn btn-caution" />
-</form>
+	<a href="/estimatePartMisc" class="btn btn-info" >Return to list</a>

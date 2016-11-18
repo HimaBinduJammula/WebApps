@@ -1,0 +1,28 @@
+<br/>
+<br/>
+<h2>Details for Flooring Estemate</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  flooringEstimate._id %><br>
+	<%=  flooringEstimate._type %>
+</p>
+<p>Client : <%=flooringEstimate.estimatePartAbout.client%></P>
+<p>Created : <%=flooringEstimate.estimatePartAbout.created%></P>
+<p>Address : <%=flooringEstimate.estimatePartAbout.address%></P>
+<p>City : <%=flooringEstimate.estimatePartAbout.city%></P>
+<p>Ztate : <%=flooringEstimate.estimatePartAbout.state%></P>
+<p>zipcode : <%=flooringEstimate.estimatePartAbout.zipcode%></P>
+<br>
+<p>Squre Footage : <%=flooringEstimate.estimateSquareFootage.sqft%></P>
+<br>
+<p>CostPerSquareFoot : $<%=flooringEstimate.costPerSquareFoot%></P>
+<p>BidPerSquareFoot : $<%=flooringEstimate.bidPerSquareFoot%></P>
+
+<form method="get" action="/flooringEstimate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+
+<!--This model is managed by team 5-R01
+Dambadeni Kalu Achchillage, Nilantha
+Muralidhar Gouda Buddanagoudagari -->
