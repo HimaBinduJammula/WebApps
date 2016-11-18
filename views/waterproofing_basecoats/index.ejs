@@ -23,7 +23,13 @@
             <td><%=  waterproofingBasecoats.query[i].displayorder %></td>
             <td><%=  waterproofingBasecoats.query[i].price %></td>
             <td><%=  waterproofingBasecoats.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a target="blank" href="/waterproofingBasecoat/delete"<%= waterproofingBasecoats.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
+            <a  target="blank" href="/waterproofingBasecoat/details"  <%= waterproofingBasecoats.query[i].id %>"> Details</a> |
+            <a target="blank" href="/waterproofingBasecoat/edit" <%= waterproofingBasecoats.query[i].id %>">  Edit </a> 
+            
+            </td>
+Chat con
          </tr>
          <% } %>
 </tbody>
