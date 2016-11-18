@@ -9,6 +9,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+      <th> ID </th>
         <th>Subtotal</th>
        <th>Actions</th>
     </tr>
@@ -16,11 +17,13 @@
     <tbody>
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
          <tr>
+                     <td><%=  estimatePartLabors.query[i]._id %></td>
+
             <td><%=  estimatePartLabors.query[i].subtotal %></td>
             <td>
-            <a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i].subtotal %>"> Delete </a> |
-						<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i].subtotal %>"> Details </a> |
-						<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i].subtotal %>"> Edit </a>
+            <a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
+						<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
+						<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i]._id %>"> Edit </a>
             </td>
          </tr>
          <% } %>

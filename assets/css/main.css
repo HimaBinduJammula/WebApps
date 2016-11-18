@@ -12,6 +12,28 @@
     position: relative;
 }
 
+table{
+  box-shadow: 0px 0px 2px grey;
+
+}
+thead tr{
+  background-color: #CACACA;
+}
+tfoot tr{
+ background-color: #CACACA; 
+}
+.btn a{
+  color:#ffffff;
+}
+
+#fnlCost{
+  color:#ffffff;
+  text-shadow: 2px 2px 3px #000000;
+  font-size: 1.5em;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 6px;
+}
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;

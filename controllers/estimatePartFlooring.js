@@ -6,12 +6,6 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
-//const notfoundstring = 'No such waterproofing primer';
-
-
-const notfoundstring = 'No such waterproofing primer';
-
-
 
 
 module.exports = api;  // at the very end
@@ -32,6 +26,7 @@ module.exports = api;  // at the very end
 // HANDLE JSON REQUESTS --------------------------------------------
 
 
+
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
@@ -42,6 +37,8 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
+
+// GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooring_cost/create.ejs",
@@ -92,7 +89,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartFloorings: item
+            estimatePartFlooring: item
         });
 });
 
@@ -143,5 +140,7 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartFlooring');
 });
+
+
 
 module.exports = api;

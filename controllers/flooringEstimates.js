@@ -144,3 +144,28 @@ module.exports = api;
 // This model is managed by team 5-R01
 //Dambadeni Kalu Achchillage, Nilantha
 //Muralidhar Gouda Buddanagoudagari
+
+/* 10 controller methods handled by controller:
+	
+   controllers/flooringEstimates.js  
+
+2 Respond with JSON:
+
+http://127.0.0.1:8081/flooringEstimate/findall       [WORKING]
+http://127.0.0.1:8081/flooringEstimate/findone/1  [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8081/flooringEstimate		   [WORKING]
+http://127.0.0.1:8081/flooringEstimate/create     [WORKING]
+http://127.0.0.1:8081/flooringEstimate/delete/1         [WORKING]
+http://127.0.0.1:8081/flooringEstimate/details/1	 [WORKING]
+http://127.0.0.1:8081/flooringEstimate/edit/1	        [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8081/flooringEstimate/save		[FOUND]{on create new when click 'Post Entry' it will derect to the index, but will not create a new entry}
+http://127.0.0.1:8081/flooringEstimate/save/1 	[WORKING]
+http://127.0.0.1:8081/flooringEstimate/delete/1 	[WORKING]
+
+*/
