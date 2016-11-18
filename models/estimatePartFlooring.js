@@ -20,11 +20,3 @@ module.exports = estimatePartFlooring
 // This data is managed by Team 5-05
 // Lakshmi Supriya Nakerikanti
 // Saravana Kumar Palaniyappan
-// This model is managed by Team 5-5
-// Saravana Kumar Palaniyappan
-// Lakshmi Supriya Nakerikanti// 
-
-
-// This data is managed by Team 5-05
-// Lakshmi Supriya Nakerikanti
-// Saravana Kumar Palaniyappan

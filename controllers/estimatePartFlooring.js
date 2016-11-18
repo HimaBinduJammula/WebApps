@@ -8,16 +8,6 @@ var Model = require('../models/estimatePartFlooring.js');
 
 
 
-
-//const notfoundstring = 'No such waterproofing primer';
-
-
-
-const notfoundstring = 'No such waterproofing primer';
-
-
-
-
 module.exports = api;  // at the very end
 
 //notfoundstring = 'No such estimatePartFlooring';
