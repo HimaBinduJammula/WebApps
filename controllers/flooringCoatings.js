@@ -34,14 +34,14 @@ api.get('/findone/:id', function(req, res){
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('flooring_coatings/index.ejs',
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "Flooring Coatings", layout: "layout.ejs" });
 });
 
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooring_coatings/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "Flooring Coatings", layout: "layout.ejs" });
 });
 
 // GET /delete/:id
@@ -54,7 +54,7 @@ api.get('/delete/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('flooring_coatings/delete.ejs',
         {
-            title: "DC Coatings",
+            title: "Flooring Coatings",
             layout: "layout.ejs",
             flooringCoatings: item
         });
@@ -70,7 +70,7 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('flooring_coatings/details.ejs',
         {
-            title: "WP Primers",
+            title: "Flooring Coatings",
             layout: "layout.ejs",
             flooringCoatings: item
         });
@@ -86,7 +86,7 @@ api.get('/edit/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('flooring_coatings/edit.ejs',
         {
-            title: "WP Primers",
+            title: "Flooring Coatings",
             layout: "layout.ejs",
             flooringCoatings: item
         });

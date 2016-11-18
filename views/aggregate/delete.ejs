@@ -1,24 +1,23 @@
 <br/>
 <br/>
-<h2>Confirm deletion of Aggregate Materials product</h2>
+<h2>Confirm deletion of Aggregate Materials</h2>
 <br/>
 <br/>
 <p>Item
-	<%=  aggregateMaterials._id %>
+	<%=  aggregateMaterial._id %>
 </p>
 <p>
-	<%=  aggregateMaterials.name %>
+	<%=  aggregateMaterial.name %>
 </p>
 <p>
-	<%=  aggregateMaterials.price %> per
-		<%=  aggregateMaterials.unit %>
+	<%=  aggregateMaterial.price %> per
+		<%=  aggregateMaterial.unit %>
 </p>
-
 <br/>
-<form method="get" action="/aggregateMaterials">
+<form method="get" action="/aggregateMaterial">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 <br/>
-<form method="POST" action="/aggregate/delete/<%= aggregateMaterials._id %>">
+<form method="POST" action="/aggregateMaterial/delete/<%= aggregateMaterial._id %>">
 	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
 </form>
