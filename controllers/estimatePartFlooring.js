@@ -6,27 +6,7 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
-<<<<<<< HEAD
 const notfoundstring = 'No such Estimate Part Flooring';
-=======
-//const notfoundstring = 'No such waterproofing primer';
->>>>>>> c6e52cac6bcd9de7b714a080f9332820a2e18797
-
-
-const notfoundstring = 'No such waterproofing primer';
-
-
-
-<<<<<<< HEAD
-=======
-
-module.exports = api;  // at the very end
-
-//notfoundstring = 'No such estimatePartFlooring';
-
-
-
-
 
 
 // See app.js to find default view folder (e.g.,"views")
@@ -36,9 +16,6 @@ module.exports = api;  // at the very end
 
 
 // HANDLE JSON REQUESTS --------------------------------------------
-
-
->>>>>>> c6e52cac6bcd9de7b714a080f9332820a2e18797
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
@@ -56,6 +33,13 @@ api.get("/create", function(req, res) {
     res.render("flooring_cost/create.ejs",
         { title: "WP Primers", layout: "layout.ejs" });
 });
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartFloorings.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
 
 // GET /delete/:id
 api.get('/delete/:id', function(req, res) {
