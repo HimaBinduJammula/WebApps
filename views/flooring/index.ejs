@@ -2,40 +2,26 @@
 <p>There are  <%= flooringEstimates.query.length %> flooring estimates. <br/>
 <a href="/flooringEstimate/create">Add a new one.</a></p>
 
-<table class="table" border="1">
-      <thead>
-         <tr>
-            <th>Client</th>
-            <th>City</th>
-            <th>Year</th>
-            <th>Month</th>
-            <th>SqFt</th>
-            <th>Cost ($/sqft)</th>
-            <th>Bid ($/sqft)</th>
-            <th>Actions</th>
-         </tr>
-      </thead>
-      <tbody>
-     
-<% for (var i = 0; i < flooringEstimates.query.length; i++) { %>      
-   <tr>
-            <td><%=  flooringEstimates.query[i].estimatePartAbout.client %></td>
-            <td><%=  flooringEstimates.query[i].estimatePartAbout.city %></td>
-            <td><%= flooringEstimates.query[i].estimatePartAbout.year %></td>
-            <td><%= flooringEstimates.query[i].estimatePartAbout.month %></td>
-            <td><%= flooringEstimates.query[i].estimateSquareFootage.sqft %></td>
-            <td><%= flooringEstimates.query[i].costPerSquareFoot %></td>
-            <td><%= flooringEstimates.query[i].bidPerSquareFoot %></td>
-            <!--<td>Delete Details Edit</td>-->
-            <td><a href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete </a>
-                <a href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>">| Details |</a> 
-                <a href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"> Edit</a></td>
-         </tr>
-         <% } %>
-      </tbody>
-   </table>
-</div>
 
+<% for (var i = 0; i < flooringEstimates.query.length; i++) { %>     
+    <div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="text-muted pull-left"> </div> 
+        <div class="panel-body">
+            Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
+            City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
+            Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>
+            Month :<%= flooringEstimates.query[i].estimatePartAbout.month %><br>
+            Sqft : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br>
+            CostPerSqrFoot : <%= flooringEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
+
+            <a href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete </a>
+                <a href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>">| Details |</a> 
+                <a href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"> Edit</a><br>
+        </div>
+    </div>
+ <% } %>
 <!--This model is managed by team 5-R01
 Dambadeni Kalu Achchillage, Nilantha
 Muralidhar Gouda Buddanagoudagari -->
