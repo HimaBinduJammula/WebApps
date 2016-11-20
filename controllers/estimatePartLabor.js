@@ -21,10 +21,6 @@ api.get('/findall', function(req, res){
 });
 
 
-
-module.exports = api;
-
-
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
@@ -43,41 +39,59 @@ api.get('/', function(req, res) {
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("labor_cost/create.ejs",
-        { title: "Labor", layout: "layout.ejs" });
+        { title: "Labor", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartLabors.query[0].entries) });
 });
+
+function genrateUID(items){
+    var ids = [];
+    var UID = items.length+1; //Unique ID
+    //check if above id is already exists, then generate new id if already exists else return this  unique id
+    for(var i=0; i<items.length; i++){
+        if(items[i]._id==UID)
+            UID++;
+    }
+    return UID;
+}
 
 
 // DELETE
-api.get('/delete/:id', function(req, res) {
-    console.log("Handling GET /delete/:id " + req);
-    var id = parseInt(req.params.id);
-    var data = req.app.locals.estimatePartLabors.query;
-    var item = find(data, { '_id': id });
-    if (!item) { return res.end(notfoundstring); }
-    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('labor_cost/delete.ejs',
-        {
-            title: "Labor",
-            layout: "layout.ejs",
-            estimatePartLabor: item
-        });
+api.get('/delete/:id', function(req, res){
+    // res.setHeader('Content-Type', 'application/html');
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
+    id = req.params.id;
+    var item = data.find(function(dt){
+    	return dt._id==id;
+    });
+    console.log("delete data ",item);
+    if(!item){
+    	 res.end(notfoundstring);
+    }
+    console.log("RETURNING VIEW FOR"+ JSON.stringify(item));
+     res.render('labor_cost/delete.ejs',{
+    	title: "Estimate Part Labors",
+    	layout: "layout.ejs",
+    	estimatePartLabor: item
+    });
 });
+
+
 
 // GET /details/:id
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimatePartLabors.query;
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('labor_cost/details.ejs',
         {
-            title: "WP Primers",
+            title: "Esitmate Labor",
             layout: "layout.ejs",
             estimatePartLabor: item
         });
 });
+
 
 // GET one
 api.get('/edit/:id', function(req, res) {
@@ -136,16 +150,13 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
-    var data = req.app.locals.estimatePartLabors.query;
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartLabor');
 });
-
-
-
-
+module.exports = api;
 // This model is managed by Team 5-10
 // Hima Bindu Jammula
 // Shravani Alampalli

@@ -1,43 +1,55 @@
-
 <% console.log(estimatePartLabors.query); %>
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartLabors.query.length %> entries. <br/>
+<p>There are  <%= estimatePartLabors.query[0].entries.length %> entries. <br/>
+
 				<a href="estimatePartLabor/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
-      <th> ID </th>
-        <th>type</th>
-        <th>count</th>
-        <th>hoursPerPerson</th>
-        <th>dollarsPerHour</th>
-        <th>nightsPerPerson</th>
-        <th>costPerNight</th>
+       <th>ID</th>
+       <th>type</th>
+       <th>count</th>
+       <th>hoursPerPerson</th>
+       <th>dollarsPerHour</th>
+       <th>nightsPerPerson</th>
+       <th>costPerNight</th>
+
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
-         <tr>
-                     <td><%=  estimatePartLabors.query[i]._id %></td>
-                     <td><%=  estimatePartLabors.query[i].type %></td>
-                     <td><%=  estimatePartLabors.query[i].count %></td>
-                     <td><%=  estimatePartLabors.query[i].hoursPerPerson %></td>
-                                          <td><%=  estimatePartLabors.query[i].dollarsPerHour %></td>
-
-                     <td><%=  estimatePartLabors.query[i].nightsPerPerson %></td>
-                     <td><%=  estimatePartLabors.query[i].costPerNight %></td>
-                      
+<% for (var i = 0; i < estimatePartLabors.query.length; i++) { 
+     for(var j=0; j<estimatePartLabors.query[i].entries.length;j++){
+        var entry = estimatePartLabors.query[i].entries[j];
+           
+      %>
+        <tr>
+            <td> <%= entry._id %></td>
+            <td> <%= entry.type %></td>
+            <td> <%= entry.count %></td>
+            <td> <%= entry.hoursPerPerson %>
+            <td> <%= entry.dollarsPerHour %></td>
+            <td> <%= entry.nightsPerPerson %></td>
+            <td> <%= entry.costPerNight %></td></td>
+             
+             
             <td>
-            <a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
-						<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
-						<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i]._id %>"> Edit </a>
+            <a href="estimatePartLabor/delete/<%=  entry._id %>"> Delete </a> 
+							<a href="estimatePartLabor/details/<%= entry._id %>"> Details </a> 
+							<a href="estimatePartLabor/edit/<%=    entry._id %>"> Edit </a>
             </td>
          </tr>
          <% } %>
+         <% } %>
+        
+         
+</tbody>
+</table>
+</div>
+
 </tbody>
 </table>
 </div>
