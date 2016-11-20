@@ -9,6 +9,7 @@ var mongoose = require('mongoose')
   , Miscellaneous = require('./estimatePartAbout.js')
 
 var RoofingEstimateSchema = new Schema({
+   _id: { type: Number, required: true },
   about: { type: Schema.Types.ObjectId, ref: About },
   footage: { type: Schema.Types.ObjectId, ref: Footage },
   roofing: { type: Schema.Types.ObjectId, ref: Roofing },

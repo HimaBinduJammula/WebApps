@@ -5,10 +5,54 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
+// <<<<<<< HEAD
+
+//const notfoundstring = 'No such waterproofing primer';
+
+
+const notfoundstring = 'No such waterproofing primer';
+
+
+
+
+
+// =======
+
 
 const notfoundstring = 'No such Estimate Part Flooring';
 
 
+<<<<<<< HEAD
+=======
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
+
+
+
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+
+// <<<<<<< HEAD
+// =======
+
+// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
+
+// See app.js to find default view folder (e.g.,"views")
+// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
+// Specify the handler for each required combination of URI and HTTP verb 
+// HTML5 forms can only have GET and POST methods (use POST for DELETE)
+
+
+// HANDLE JSON REQUESTS --------------------------------------------
+
+
+
+
+// GET to this controller root URI
+>>>>>>> 704f5e337251ed66fc89dfefa904777f3eda0820
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
 });
@@ -26,6 +70,10 @@ api.get('/findone/:id', function(req, res){
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 704f5e337251ed66fc89dfefa904777f3eda0820
 
 // GET create
 api.get("/create", function(req, res) {
@@ -81,6 +129,7 @@ api.get('/edit/:id', function(req, res) {
             estimatePartFlooring: item
         });
 });
+
 
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
