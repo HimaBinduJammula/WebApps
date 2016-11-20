@@ -9,6 +9,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>Subtotal</th>
        <th>Actions</th>
     </tr>
@@ -16,6 +17,7 @@
     <tbody>
 <% for (var i = 0; i < estimatePartWaterproofings.query.length; i++) { %>
          <tr>
+            <td><%=  estimatePartWaterproofings.query[i]._id %></td>
             <td><%=  estimatePartWaterproofings.query[i].subtotal %></td>
             <td><a href="estimatePartWaterproofing/delete/<%= i+1 %>">Delete</a>
             <a href="estimatePartWaterproofing/details/<%= i+1 %>">Details</a>
