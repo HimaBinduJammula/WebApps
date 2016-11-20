@@ -2,3 +2,28 @@
 <!--  Ravva, Shanmukha Manikantha Surya Vamsi -->
 <!-- Avasarala, Venkata Bhardwaj -->
 <!--  Vallapurapu, Shankar -->
+<h2>Edit <%= title %></h2>
+<br/>
+<br/>
+<a href="/estimatePartMisc" class="btn btn-info" ><i class="glyphicon glyphicon-chevron-left"></i> Return to list</a>
+<br/><br/>
+<form method="POST" action="/estimatePartMisc/save/<%= estimatePartMisc._id %>">
+<table class="table table-hover table-bordered">
+    <tr><th>ID</th> <td> <%= estimatePartMisc._id %>  </td></tr>
+	<tr><th>Description</th> <td><input type="text" class="form-control" name="description" value="<%= estimatePartMisc.description %>">  </input></td></tr>
+	<tr><th>Cost $</th> <td><input type="number" class="form-control" name="cost" value="<%= estimatePartMisc.cost %>"> </input></td></tr>
+
+	<!-- <tr><th>Dollars Per Mile</th> <td><input type="text" value="<%= estimatePartMiscs.query[0].dollarsPerMile %>"> </input></td></tr> -->
+	<tr><td colspan="2"> 
+		<div class="row">
+			<div class="col-md-2"> 
+				<!-- <a href="/estimatePartMisc" class="btn btn-info" ><i class="glyphicon glyphicon-chevron-left"></i> Return to list</a> -->
+			</div>
+			<div class="col-md-5"> 
+					<button type="submit"  class="btn btn-success pull-right" ><i class="glyphicon glyphicon-saved"></i> Save this item</button>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+</form>

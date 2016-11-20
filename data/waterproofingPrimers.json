@@ -14,5 +14,13 @@
         "unit": "gal",
         "displayorder": 20,
         "price": 38.50
+    },
+    {
+         "_type": "waterproofingPrimer",
+         "_id": 3,
+        "name": "7780/7781 - solute based epoxy",
+        "unit": "gal",
+        "displayorder": 20,
+        "price": 38.50
     }
 ]

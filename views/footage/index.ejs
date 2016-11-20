@@ -2,28 +2,52 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartFootages.query.length %> entries. <br/>
+<p>There are  <%= estimatePartFootages.query[0].entries.length %> entries. <br/>
 
 				<a href="estimatePartFootage/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
-        <th>SqFt</th>
+       <th>ID</th>
+       <th>Description</th>
+       <th>Length</th>
+       <th>Width</th>
+       <th>SqFt</th>
+
+
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartFootages.query[i].sqft %></td>
+<% for (var i = 0; i < estimatePartFootages.query.length; i++) { 
+    var totsqft=0;
+     for(var j=0; j<estimatePartFootages.query[i].entries.length;j++){
+        var entry = estimatePartFootages.query[i].entries[j];
+        var sqft= entry.length*entry.width;
+  
+      %>
+        <tr>
+            <td> <%= entry._id %></td>
+            <td> <%= entry.description %></td>
+            <td> <%= entry.length %></td>
+            <td> <%= entry.width %></td>
+            <td> <%= sqft %></td>
+             <%totsqft+= sqft %>
+
+
             <td>
-            <a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i].sqft %>"> Delete </a> |
-							<a href="estimatePartFootage/details/<%= estimatePartFootages.query[i].sqft %>"> Details </a> |
-							<a href="estimatePartFootage/edit/<%=    estimatePartFootages.query[i].sqft %>"> Edit </a>
+            <a href="estimatePartFootage/delete/<%=  entry._id %>"> Delete </a> 
+							<a href="estimatePartFootage/details/<%= entry._id %>"> Details </a> 
+							<a href="estimatePartFootage/edit/<%=    entry._id %>"> Edit </a>
             </td>
          </tr>
          <% } %>
+         <% } %>
+        
+         <tr> 
+            <td colspan="4" > <strong> TOTAL SQUARE FOOTAGE :  <%=  totsqft %> </strong></span> </td>
+         </tr>
 </tbody>
 </table>
 </div>

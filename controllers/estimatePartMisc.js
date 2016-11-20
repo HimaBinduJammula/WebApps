@@ -3,12 +3,12 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/estimatePartMisc.js');
+var Model = require('../models/entryMisc.js');
 const notfoundstring = 'No such estimatePartMisc';
 
 // see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
+// see app.js to find  default URI for this controller (e.g., "estimatePartMisc")
 // Specify the handler for each required combination of URI and HTTP verb 
 // HTML5 forms can only have GET and POST methods (use POST for DELETE)
 
@@ -42,8 +42,19 @@ api.get('/delete/:id', function(req, res){
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("misc_cost/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "WP Primers", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartMiscs.query[0].entries) });
 });
+
+function genrateUID(items){
+    var ids = [];
+    var UID = items.length+1; //Unique ID
+    //check if above id is already exists, then generate new id if already exists else return this  unique id
+    for(var i=0; i<items.length; i++){
+        if(items[i]._id==UID)
+            UID++;
+    }
+    return UID;
+}
 
 // // GET /delete/:id
 // api.get('/delete/:id', function(req, res) {
@@ -102,13 +113,12 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.description = req.body.description;
+    item.cost = req.body.cost;
+    
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMisc');
 });
 
 // POST update
@@ -121,12 +131,11 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
+    item.description = req.body.description;
+    item.cost = req.body.cost;
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMisc');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -138,7 +147,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartMisc');
 });
 // see app.js for the root request this controller handles
 
