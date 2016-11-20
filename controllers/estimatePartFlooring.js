@@ -18,10 +18,7 @@ const notfoundstring = 'No such waterproofing primer';
 
 // =======
 
-<<<<<<< HEAD
-const notfoundstring = 'No such Estimate Part Flooring';
-=======
->>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
+
 
 
 module.exports = api;  // at the very end
@@ -29,8 +26,7 @@ module.exports = api;  // at the very end
 //notfoundstring = 'No such estimatePartFlooring';
 // >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
 
-<<<<<<< HEAD
-=======
+
 
 module.exports = api;  // at the very end
 
@@ -51,7 +47,7 @@ module.exports = api;  // at the very end
 
 
 
->>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
+
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
@@ -62,7 +58,6 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
-<<<<<<< HEAD
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
@@ -71,8 +66,7 @@ api.get('/findone/:id', function(req, res){
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
-=======
->>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
+
 
 // GET create
 api.get("/create", function(req, res) {
