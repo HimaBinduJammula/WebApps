@@ -5,7 +5,9 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
+// <<<<<<< HEAD
 
+//const notfoundstring = 'No such waterproofing primer';
 
 
 const notfoundstring = 'No such waterproofing primer';
@@ -13,6 +15,8 @@ const notfoundstring = 'No such waterproofing primer';
 
 
 
+
+// =======
 
 
 
@@ -28,7 +32,10 @@ module.exports = api;  // at the very end
 
 //notfoundstring = 'No such estimatePartFlooring';
 
+// <<<<<<< HEAD
+// =======
 
+// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
 
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
@@ -51,7 +58,6 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
-
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
