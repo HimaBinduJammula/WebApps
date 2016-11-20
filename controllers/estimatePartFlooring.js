@@ -5,20 +5,12 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
-// <<<<<<< HEAD
+
 
 //const notfoundstring = 'No such waterproofing primer';
 
 
 const notfoundstring = 'No such waterproofing primer';
-
-
-
-
-
-// =======
-
-
 
 
 module.exports = api;  // at the very end
@@ -66,7 +58,6 @@ api.get('/findone/:id', function(req, res){
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
-
 
 // GET create
 api.get("/create", function(req, res) {
