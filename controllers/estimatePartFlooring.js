@@ -6,35 +6,9 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
 
-<<<<<<< HEAD
 const notfoundstring = 'No such Estimate Part Flooring';
-=======
 
 
-module.exports = api;  // at the very end
-
-//notfoundstring = 'No such estimatePartFlooring';
-
-
-
-
->>>>>>> 507ba61967c1e455e8a760f6824697fbeaceaacf
-
-
-// See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
-// Specify the handler for each required combination of URI and HTTP verb 
-// HTML5 forms can only have GET and POST methods (use POST for DELETE)
-
-
-// HANDLE JSON REQUESTS --------------------------------------------
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 507ba61967c1e455e8a760f6824697fbeaceaacf
-// GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
 });
