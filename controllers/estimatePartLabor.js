@@ -14,6 +14,8 @@ api.get("/", function (request, response) {
   response.render("labor_cost/index.ejs");
 });
 
+module.exports = api;
+
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     var data = req.app.locals.estimatePartLabors.query;
@@ -118,10 +120,13 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.type = req.body.type;
+    item.count = req.body.count;
+    item.hoursPerPerson = req.body.hoursPerPerson;
+    item.dollarsPerHour = req.body.dollarsPerHour;
+    item.nightsPerPerson = req.body.nightsPerPerson;
+    item.costPerNight = req.body.costPerNight;
+
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartLabor');
@@ -137,10 +142,13 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.type = req.body.type;
+    item.count = req.body.count;
+    item.hoursPerPerson = req.body.hoursPerPerson;
+    item.dollarsPerHour = req.body.dollarsPerHour;
+    item.nightsPerPerson = req.body.nightsPerPerson;
+    item.costPerNight = req.body.costPerNight;
+
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartLabor');
 });
@@ -156,7 +164,12 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartLabor');
 });
-module.exports = api;
+
+api.get("/", function (request, response) {
+	
+ response.render("labor_cost/index.ejs");
+});
+
 // This model is managed by Team 5-10
 // Hima Bindu Jammula
 // Shravani Alampalli
