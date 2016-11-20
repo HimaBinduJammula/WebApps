@@ -10,7 +10,12 @@
     <thead>
       <tr>
       <th> ID </th>
-        <th>Subtotal</th>
+        <th>type</th>
+        <th>count</th>
+        <th>hoursPerPerson</th>
+        <th>dollarsPerHour</th>
+        <th>nightsPerPerson</th>
+        <th>costPerNight</th>
        <th>Actions</th>
     </tr>
     </thead>
@@ -18,8 +23,14 @@
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
          <tr>
                      <td><%=  estimatePartLabors.query[i]._id %></td>
+                     <td><%=  estimatePartLabors.query[i].type %></td>
+                     <td><%=  estimatePartLabors.query[i].count %></td>
+                     <td><%=  estimatePartLabors.query[i].hoursPerPerson %></td>
+                                          <td><%=  estimatePartLabors.query[i].dollarsPerHour %></td>
 
-            <td><%=  estimatePartLabors.query[i].subtotal %></td>
+                     <td><%=  estimatePartLabors.query[i].nightsPerPerson %></td>
+                     <td><%=  estimatePartLabors.query[i].costPerNight %></td>
+                      
             <td>
             <a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
 						<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
