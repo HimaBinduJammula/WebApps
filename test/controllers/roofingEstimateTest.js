@@ -5,14 +5,18 @@ var expect = require("chai").expect;
 const appport = 8081;
 const appname = "jce";
 const testId = 1;
+<<<<<<< HEAD:test/controllers/waterproofingPrimersTest.js
+const resourceName = "waterproofingPrimers";  
+=======
 const defaultPath = "roofingEstimate";  
+>>>>>>> 38070afa321bc1bb316f675846452eccd59eb88c:test/controllers/roofingEstimateTest.js
 var app = express();
 
 describe("Materials -roofing estimates unit test",function(){
 
   it("should return index page",function(done){
     request(app)
-    .get(defaultPath+"/")
+    .get(resourceName+"/")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -20,7 +24,7 @@ describe("Materials -roofing estimates unit test",function(){
   });
   it("should return create page",function(done){
     request(app)
-    .get(defaultPath+"/create")
+    .get(resourceName+"/create")
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -28,7 +32,7 @@ describe("Materials -roofing estimates unit test",function(){
   });
   it("should return delete page for id",function(done){
     request(app)
-    .get(defaultPath+"/delete/"+testId)
+    .get(resourceName+"/delete/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -36,7 +40,7 @@ describe("Materials -roofing estimates unit test",function(){
   });
   it("should return details page for id",function(done){
     request(app)
-    .get(defaultPath+"/details/"+testId)
+    .get(resourceName+"/details/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
@@ -44,7 +48,7 @@ describe("Materials -roofing estimates unit test",function(){
   });
   it("should return edit page for id",function(done){
     request(app)
-    .get(defaultPath+"/edit/"+testId)
+    .get(resourceName+"/edit/"+testId)
     .expect(200) // expected HTTP response
     .end(function(err,res){
       done();
