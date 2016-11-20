@@ -5,7 +5,7 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
-// <<<<<<< HEAD
+
 
 //const notfoundstring = 'No such waterproofing primer';
 
@@ -13,17 +13,6 @@ var Model = require('../models/estimatePartFlooring.js');
 const notfoundstring = 'No such waterproofing primer';
 
 
-
-
-
-// =======
-
-
-const notfoundstring = 'No such Estimate Part Flooring';
-
-
-<<<<<<< HEAD
-=======
 module.exports = api;  // at the very end
 
 //notfoundstring = 'No such estimatePartFlooring';
@@ -52,7 +41,6 @@ module.exports = api;  // at the very end
 
 
 // GET to this controller root URI
->>>>>>> 704f5e337251ed66fc89dfefa904777f3eda0820
 api.get("/", function (request, response) {
  response.render("flooring_cost/index.ejs");
 });
@@ -70,10 +58,6 @@ api.get('/findone/:id', function(req, res){
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 704f5e337251ed66fc89dfefa904777f3eda0820
 
 // GET create
 api.get("/create", function(req, res) {
