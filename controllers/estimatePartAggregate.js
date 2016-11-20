@@ -36,7 +36,6 @@ api.get("/create", function(req, res) {
         { title: " PartAggregate", layout: "layout.ejs" });
 });
 
-
 // DELETE
 api.get('/delete/:id', function(req, res) {
     console.log("Handling GET /delete/:id " + req);
@@ -45,13 +44,14 @@ api.get('/delete/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('aggregate_cost/delete.ejs',
+    return res.render('Aggregate/delete.ejs',
         {
-            title: "PartAggregate",
+            title: "Aggregate",
             layout: "layout.ejs",
             estimatePartAggregate: item
         });
 });
+
 
 // GET /details/:id
 api.get('/details/:id', function(req, res) {
