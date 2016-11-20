@@ -5,6 +5,7 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartFlooring.js');
+// <<<<<<< HEAD
 
 //const notfoundstring = 'No such waterproofing primer';
 
@@ -15,12 +16,24 @@ const notfoundstring = 'No such waterproofing primer';
 
 
 
+// =======
+
+
+
+module.exports = api;  // at the very end
+
+//notfoundstring = 'No such estimatePartFlooring';
+// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
 
 
 module.exports = api;  // at the very end
 
 //notfoundstring = 'No such estimatePartFlooring';
 
+// <<<<<<< HEAD
+// =======
+
+// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
 
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
@@ -29,6 +42,7 @@ module.exports = api;  // at the very end
 
 
 // HANDLE JSON REQUESTS --------------------------------------------
+
 
 
 // GET to this controller root URI
@@ -41,6 +55,8 @@ api.get('/findall', function(req, res){
     var data = req.app.locals.estimatePartFloorings.query;
     res.send(JSON.stringify(data));
 });
+
+// GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooring_cost/create.ejs",
@@ -91,7 +107,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartFloorings: item
+            estimatePartFlooring: item
         });
 });
 
@@ -142,5 +158,7 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartFlooring');
 });
+
+
 
 module.exports = api;

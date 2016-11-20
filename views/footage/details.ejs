@@ -1,15 +1,22 @@
-<!-- This model is managed by Team 5-4 
-Harish Babu Achanta
-Hari Kiran Akunuri
-Mounika Naidu Chanati-->
 <br/>
 <br/>
-<h2>Details for Footage primer product</h2>
+<h2>Details for Footage</h2>
 <br/>
 <br/>
-<p>Item
-	<%=  estimatePartFootage.sqft %>
-</p>
+<table class="table table-hover table-bordered">
+	<thead>
+		<th> ID : </th>
+		<th> Square Foot : </th>
+		
+	</thead>
+	<tbody>
+		<tr>
+			<td> <%=  estimatePartFootage._id %> </td>
+			<td> <%=  estimatePartFootage.sqft %></td>
+			
+		</tr>
+	</tbody>
+</table>
 
 <br/>
 <form method="get" action="/estimatePartFootage">

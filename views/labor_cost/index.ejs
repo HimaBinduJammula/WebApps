@@ -4,11 +4,12 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartLabors.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+				<a href="estimatePartLabor/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th> ID </th>
         <th>Subtotal</th>
        <th>Actions</th>
     </tr>
@@ -16,10 +17,19 @@
     <tbody>
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
          <tr>
+                     <td><%=  estimatePartLabors.query[i]._id %></td>
+
             <td><%=  estimatePartLabors.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            <a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
+						<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
+						<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i]._id %>"> Edit </a>
+            </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!--This model is managed by Team 5-10
+Hima Bindu Jammula
+Shravani Alampalli-->

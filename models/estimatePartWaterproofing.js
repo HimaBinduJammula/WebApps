@@ -36,3 +36,7 @@ var EstimatePartWaterpWaterproofingSchema = new Schema({
 
 var estimatePartWaterpWaterproofing = mongoose.model('EstimatePartWaterpWaterproofing', EstimatePartWaterpWaterproofingSchema)
 module.exports = estimatePartWaterpWaterproofing
+
+// This model is managed by Team 5-07
+// Swetha Gudivaka
+// Karuna Reddy Gangidi

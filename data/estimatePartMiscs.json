@@ -3,18 +3,14 @@
     "entries": [
       {
         "_id":1,
-        "entry": {
           "description": "misc cost 1",
           "cost": 100
-        }
       },
 
       {
         "_id":2,
-        "entry": {
           "description": "misc cost 2",
           "cost": 200
-        }
       }
     ],
     "subtotal": 300
