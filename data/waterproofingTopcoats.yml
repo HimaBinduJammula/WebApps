@@ -1,10 +1,6 @@
 ---
-
-
-
 - name: 7430 - urethane
   _id: 1
-
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 10
