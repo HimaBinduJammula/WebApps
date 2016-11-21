@@ -3,11 +3,12 @@
 <a href="/flooringEstimate/create">Add a new one.</a></p>
 
 
-<% for (var i = 0; i < flooringEstimates.query.length; i++) { %>     
+<% for (var i = flooringEstimates.query.length-1; i >-1; i--) { %>     
     <div class="panel panel-default">
     <div class="panel-heading"></div>
     <div class="text-muted pull-left"> </div> 
         <div class="panel-body">
+            ID : <%=  flooringEstimates.query[i]._id %><br>
             Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
             City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
             Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>

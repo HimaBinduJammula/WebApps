@@ -1,6 +1,3 @@
-// This model is managed by Team 5-6
-// Naganjali Mutyala
-// Akhila Patlola
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -18,6 +15,22 @@ var api = express.Router();
 api.get("/", function (request, response) {
   response.render("roofing_cost/index.ejs");
 });
+
+api.get('/findall', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    var data = req.app.locals.estimatePartAbouts.query;
+    res.send(JSON.stringify(data));
+});
+
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartAbouts.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
+
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
@@ -37,7 +50,7 @@ api.get('/delete/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartRoofing: item
         });
 });
 
@@ -53,7 +66,7 @@ api.get('/details/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartRoofing: item
         });
 });
 
@@ -69,7 +82,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartRoofing: item
         });
 });
 
@@ -82,13 +95,13 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
+    item.roofType = req.body.roofType;
+    item.processType = req.body.processType;
+    
     item.displayorder = parseInt(req.body.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartRoofing');
 });
 
 // POST update
@@ -101,12 +114,11 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.roofType = req.body.roofType;
+    item.processType = req.body.processType;
+    item.subtotal = parseInt(req.body.subtotal);
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartRoofing');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -118,7 +130,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/waterproofingPrimer');
+    return res.redirect('/estimatePartRoofing');
 });
 
 

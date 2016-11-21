@@ -3,11 +3,12 @@
  <h2>Material roofing basecoat costs</h2>
 
 <p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="roofingBasecoat/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -16,15 +17,27 @@
     </tr>
     </thead>
     <tbody>
+    <% count=0; %>
 <% for (var i = 0; i < roofingBasecoats.query.length; i++) { %>
-         <tr>
+         <tr> <% count++; %>
+         <td>
+							<%=  roofingBasecoats.query[i]._id %>
+						</td>
             <td><%=  roofingBasecoats.query[i].name %></td>
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
             <td><%=  roofingBasecoats.query[i].price %></td>
             <td><%=  roofingBasecoats.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+							<a href="roofingBasecoat/delete/<%=  count%>"> Delete </a> |
+							<a href="roofingBasecoat/details/<%= count%>"> Details </a> |
+							<a href="roofingBasecoat/edit/<%= count %>"> Edit </a>
+						</td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This view is managed by team 5-13 -->
+<!--  Chilmakuri, Venkat Sandeep -->
+<!-- Siddamsetty, Sashidhar  -->
+<!-- Chandupatla, Rahul Reddy -->

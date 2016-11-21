@@ -1,0 +1,80 @@
+<h2>Create a new Aggregate Parts estimate</h2></br>
+    <br/>
+
+    <br/>
+
+    <p>There are currently
+        <%= estimatePartAggregates.query.length %> estimated part aggregates. </p>
+    <br/>
+    <% 
+    maxID=0; 
+    for (var i=0; i<estimatePartAggregates.query.length; i++) {
+        if(estimatePartAggregates.query[i]._id > maxID) {
+            maxID=estimatePartAggregates.query[i]._id;
+            }
+    }
+    maxDisplayorder=0; 
+    for (var i=0; i<estimatePartAggregates.query.length; i++) {
+        if(estimatePartAggregates.query[i].displayorder > maxDisplayorder) {
+            maxDisplayorder=estimatePartAggregates.query[i].displayorder;
+            }
+    }
+    %>
+        <div class="content">
+            <div>
+                <form name="estimatePartAggregate" method="POST" action="/estimatePartAggregate/save" + _id.value>
+
+                    <div class="form-group" id=frm>
+                        <label for="_id">ID</label>
+                        <input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+                    </div>
+
+
+                    <div class="form-group">
+                    <label for="usesAggregate">Uses Aggregate?</label>
+                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" >
+                    </div>
+
+                    <div class="form-group">
+                    <label for="aggregateTypeSelection">Aggregate Type</label>
+                    <div class="funkyradio">
+                            <div class="funkyradio-primary">
+                                <input type="radio" name="radio" id="Sand" checked/>
+                                <label for="Sand">Sand</label>
+                            </div>
+                            <div class="funkyradio-success">
+                                <input type="radio" name="radio" id="Quartz" />
+                                <label for="Quartz">Quartz</label>
+                            </div>
+                            <div class="funkyradio-warning">
+                                <input type="radio" name="radio" id="Flake" />
+                                <label for="Flake">Flake</label>
+                            </div>
+                            <div class="funkyradio-danger">
+                                <input type="radio" name="radio" id="Glass" />
+                                <label for="Glass">Glass Beads</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
+                        <input type="input" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" >
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coverageSqFt">Coverage Square per feet</label>
+                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" >
+
+                    </div>
+
+                    <input type="submit" value="Post entry" class="btn btn-danger">
+            </div>
+            </form></br>
+             <form method="get" action="/estimatePartAggregate">
+               <input type="submit" value="Return to list" class="btn btn-caution" />
+             </form>
+<!--- The view is maintained by team R9 -->
+    <!--- Sri Sai Ravali Chinthareddy-->
+    <!--- Avyakta Pallerla -->
