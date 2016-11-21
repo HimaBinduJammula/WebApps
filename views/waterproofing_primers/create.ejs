@@ -7,13 +7,13 @@
 <br/>
 <% 
 maxID=0; 
-for (let i=0; i<waterproofingPrimers.query.length; i++) {
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
     if(waterproofingPrimers.query[i]._id > maxID) {
         maxID=waterproofingPrimers.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (let i=0; i<waterproofingPrimers.query.length; i++) {
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
     if(waterproofingPrimers.query[i].displayorder > maxDisplayorder) {
         maxDisplayorder=waterproofingPrimers.query[i].displayorder;
         }
