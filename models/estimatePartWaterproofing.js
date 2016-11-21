@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
   , WaterproofingTopcoat = require('./WaterproofingTopcoat.js')
 
 var EstimatePartWaterpWaterproofingSchema = new Schema({
+  _id: { type: Number, required: true },
   productType: { type: String, required: true, default: 'Urethane', enum: ['Urethane', 'Cementicious Overlay'] },
 
   usesUrethane: { type: Boolean, required: true, default: false },
@@ -36,3 +37,7 @@ var EstimatePartWaterpWaterproofingSchema = new Schema({
 
 var estimatePartWaterpWaterproofing = mongoose.model('EstimatePartWaterpWaterproofing', EstimatePartWaterpWaterproofingSchema)
 module.exports = estimatePartWaterpWaterproofing
+
+// This model is managed by Team 5-07
+// Swetha Gudivaka
+// Karuna Reddy Gangidi

@@ -2,13 +2,34 @@
   {
     "_id":1,
     "productType": "Urethane",
-    "usesUrethane": false,
-    "subtotal": 55
+    "usesUrethane": true,
+    "subtotal": 56
   },
   {
     "_id":2,
-    "productType": "Urethane",
+    "productType": "Polyethylene",
     "usesUrethane": false,
     "subtotal": 70
+  },
+  {
+    "_id":3,
+    "productType": "Bitumen",
+    "usesUrethane": false,
+    "subtotal": 65
+  },
+  {
+    "_id":4,
+    "productType": "Polyvinylchloride",
+    "usesUrethane": false,
+    "subtotal": 60
+  },
+  {
+    "_id":5,
+    "productType": "Polyurethane",
+    "usesUrethane": false,
+    "subtotal": 85
   }
+
 ]
+
+

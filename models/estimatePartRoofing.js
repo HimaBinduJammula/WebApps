@@ -1,7 +1,6 @@
 // This model is managed by Team 5-6
 // Naganjali Mutyala
 // Akhila Patlola
-
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
     , RoofingBasecoat = require('./roofingBasecoat.js')
@@ -10,6 +9,7 @@ var mongoose = require('mongoose')
     , RoofingTopcoat = require('./roofingTopcoat.js')
 
 var EstimatePartRoofingSchema = new Schema({
+    _id: { type: Number, required: true },
     roofType: { type: String, required: true, default: 'Metal', enum: ['Metal', 'Mod Bit', 'Single Ply'] },
     processType: { type: String, required: true, default: 'Roof Coatings', enum: ['Roof Coatings', 'Polyurethane Foam & Coatings'] },
 
@@ -34,3 +34,6 @@ var EstimatePartRoofingSchema = new Schema({
 
 var estimatePartRoofing = mongoose.model('EstimatePartRoofing', EstimatePartRoofingSchema)
 module.exports = estimatePartRoofing
+
+// This model is managed by by team section-R06
+// ------------,-----------------

@@ -1,30 +1,36 @@
 ---
 - name: 7441 - urethane
+  _id: 1
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 10
   price: 44.00
 - name: 7490 - aliphatic urethane
+  _id: 2
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 20
   price: 52.25
 - name: 70613 - permathane II
+  _id: 3
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 30
   price: 46.20
-- name: 70630 - urethane 
+- name: 70630 - urethane
+  _id: 4
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 40
   price: 41.80
 - name: 7860 - silicone 
+  _id: 5
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 50
   price: 33.25
 - name: 7251 - acrylic
+  _id: 6
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 60
@@ -35,3 +41,7 @@
 #70630 - urethane                $41.80/gal
 #7860 - silicone                 $33.25/gal
 #7251 - acrylic                  $19.40/gal
+# This model is managed by Team 5-13
+# Chilmakuri, Venkata Sandeep
+# Siddamsetty, Sashidhar
+# Chandupatla, Rahul Reddy

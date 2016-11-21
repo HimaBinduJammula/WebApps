@@ -50,9 +50,26 @@
     "costPerSquareFoot": 3.50,
     "bidPerSquareFoot": 6.00
   },
-  {
+     {
     "_type": "flooringEstimate",
     "_id": 4,
+    "estimatePartAbout": {
+      "client": "Home Insurance",
+      "created": "2016-10-28",
+      "address": "103 Main Street",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 1800
+    },
+    "costPerSquareFoot": 4.50,
+    "bidPerSquareFoot": 8
+  },
+  {
+    "_type": "flooringEstimate",
+    "_id": 5,
     "estimatePartAbout": {
       "client": "Barks Puppy Palace",
       "created": "2016-10-04",

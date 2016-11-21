@@ -3,12 +3,29 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var express = require('express');
-var api = express.Router();
-const notfoundstring = 'No such estimatePartWaterproofing';
+var Model = require('../models/waterproofingPrimer.js');
+const notfoundstring = 'No such waterproofing primer';
+
+// var express = require('express');
+// var api = express.Router();
+// const notfoundstring = 'No such estimatePartWaterproofing';
+
 
 // see app.js for the root request this controller handles
 
+// See app.js to find default view folder (e.g.,"views")
+// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
+// Specify the handler for each required combination of URI and HTTP verb 
+// HTML5 forms can only have GET and POST methods (use POST for DELETE)
+
+
+// HANDLE JSON REQUESTS --------------------------------------------
+
+api.get('/findall', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    var data = req.app.locals.waterproofingPrimers.query;
+    res.send(JSON.stringify(data));
+});
 // GET to this controller root URI
 api.get("/", function (request, response) {
  response.render("waterproofing_cost/index.ejs");
@@ -30,11 +47,11 @@ api.get('/delete/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_cost/delete.ejs',
-        {
-            title: "WP Primers",
-            layout: "layout.ejs",
-            waterproofingPrimer: item
-        });
+    {
+        title: "WP Primers",
+        layout: "layout.ejs",
+        estimatePartWaterproofing: item
+    });
 });
 
 // GET /details/:id
@@ -46,11 +63,11 @@ api.get('/details/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_cost/details.ejs',
-        {
-            title: "estimate part water proofing",
-            layout: "layout.ejs",
-            estimatePartWaterproofing: item
-        });
+    {
+        title: "estimate part water proofing",
+        layout: "layout.ejs",
+        estimatePartWaterproofing: item
+    });
 });
 
 // GET one
@@ -65,7 +82,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartWaterproofing: item
         });
 });
 
@@ -78,10 +95,9 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.productType = req.body.productType;
+    item.usesUrethane = req.body.usesUrethane;
+    item.subtotal = parseInt(req.body.subtotal);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartWaterproofing');
@@ -97,10 +113,9 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.productType = req.body.productType;
+    item.usesUrethane = req.body.usesUrethane;
+    item.subtotal = parseInt(req.body.subtotal);
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartWaterproofing');
 });
