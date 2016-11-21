@@ -32,11 +32,12 @@ api.get('/findall', function(req, res){
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimatePartFootages.query;
+    var data = req.app.locals.estimatePartFootages.query[0].entries;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
 });
+
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('footage/index.ejs',
