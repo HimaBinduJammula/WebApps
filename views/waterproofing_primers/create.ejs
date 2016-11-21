@@ -1,19 +1,19 @@
 <br/>
 
 <br/>
-<h2>Create a new waterproofing primer product</h2>
+<h2>Create a new waterproofing Primer product</h2>
 <p>There are currently
-	<%= waterproofingPrimers.query.length %> waterproofing primers. </p>
+	<%= waterproofingPrimers.query.length %> waterproofingPrimers. </p>
 <br/>
 <% 
 maxID=0; 
-for (let i=0; i<waterproofingPrimers.query.length; i++) {
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
     if(waterproofingPrimers.query[i]._id > maxID) {
         maxID=waterproofingPrimers.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (let i=0; i<waterproofingPrimers.query.length; i++) {
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
     if(waterproofingPrimers.query[i].displayorder > maxDisplayorder) {
         maxDisplayorder=waterproofingPrimers.query[i].displayorder;
         }
@@ -49,7 +49,7 @@ for (let i=0; i<waterproofingPrimers.query.length; i++) {
 
 				<div class="form-group">
 					<label for="displayorder">Display Order</label>
-					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>					required>
+					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>
 				</div>
 
 				<div class="form-group">
@@ -62,3 +62,8 @@ for (let i=0; i<waterproofingPrimers.query.length; i++) {
 			</form>
 		</div>
 	</div>
+    
+<!-- This view is managed by team 5-14 -->
+<!--  Snigda,Jataprolu -->
+<!-- Samyuktha,Ganga  -->
+<!-- Sruthi,Palpandian -->
