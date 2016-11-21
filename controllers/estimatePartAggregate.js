@@ -9,8 +9,10 @@ const notfoundstring = 'No such estimatePartAggregate';
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
-api.get("/", function (request, response) {
-  response.render("aggregate_cost/index.ejs");
+api.get('/', function(req, res) {
+    console.log("Handling GET " + req);
+    return res.render('aggregate_cost/index.ejs',
+        { title: "WP Primers", layout: "layout.ejs" });
 });
 
 // See app.js to find default view folder (e.g.,"views")

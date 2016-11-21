@@ -1,5 +1,8 @@
 [
+  
   {
+    "entries": [
+      {
 	"_id": 1,
     "isUsed": true,
     "aggregateTypeSelection": "Sand",
@@ -31,4 +34,8 @@
     "coverageSqFt": 250,
     "subtotal": 700
   }
+],
+"total":2000
+  }
 ]
+
