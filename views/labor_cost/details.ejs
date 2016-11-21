@@ -4,11 +4,16 @@
 <br/>
 <br/>
 <p>Item
-	<%=  estimatePartLabor._id %>
+<p>ID              :	<%=  estimatePartLabor._id %></p>
+<p>type 		   :	<%=  estimatePartLabor.type %></p>
+<p>count 		   :	<%=  estimatePartLabor.count %></p>
+<p>hoursPerPerson  :	<%=  estimatePartLabor.hoursPerPerson %></p>
+<p>dollarsPerHour  :	<%=  estimatePartLabor.dollarsPerHour %></p>
+<p>nightsPerPerson :	<%=  estimatePartLabor.nightsPerPerson %></p>
+<p>costPerNight    :	<%=  estimatePartLabor.costPerNight %></p>
+	 
 </p>
-<p>
-	<%=  estimatePartLabor.subtotal %>
-</p>
+ 
 
 <br/>
 <form method="get" action="/estimatePartLabor">
