@@ -1,6 +1,7 @@
 [
   {
     "_type": "flooringEstimate",
+    "_id": 1,
     "estimatePartAbout": {
       "client": "Acme Hall",
       "created": "2016-10-04",
@@ -15,8 +16,60 @@
     "costPerSquareFoot": 3.50,
     "bidPerSquareFoot": 6.00
   },
+    {
+    "_type": "flooringEstimate",
+    "_id": 2,
+    "estimatePartAbout": {
+      "client": "NW Missouri State",
+      "created": "2016-10-23",
+      "address": "800 University Drive",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 2000
+    },
+    "costPerSquareFoot": 3.50,
+    "bidPerSquareFoot": 6.00
+  },
+    {
+    "_type": "flooringEstimate",
+    "_id": 3,
+    "estimatePartAbout": {
+      "client": "US Bank",
+      "created": "2016-07-25",
+      "address": "800 University Drive",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 2000
+    },
+    "costPerSquareFoot": 3.50,
+    "bidPerSquareFoot": 6.00
+  },
+     {
+    "_type": "flooringEstimate",
+    "_id": 4,
+    "estimatePartAbout": {
+      "client": "Home Insurance",
+      "created": "2016-10-28",
+      "address": "103 Main Street",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 1800
+    },
+    "costPerSquareFoot": 4.50,
+    "bidPerSquareFoot": 8
+  },
   {
     "_type": "flooringEstimate",
+    "_id": 5,
     "estimatePartAbout": {
       "client": "Barks Puppy Palace",
       "created": "2016-10-04",

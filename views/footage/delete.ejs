@@ -5,19 +5,27 @@ Mounika Naidu Chanati-->
 
 <br/>
 <br/>
-<h2>Confirm deletion of Footage Value</h2>
+<h2>Confirm deletion of Square Footage</h2>
 <br/>
 <br/>
-<p>Item
-	<%=  estimatePartFootage._id %>
-</p>
-<p>
-	<%=  estimatePartFootage.entry.description %>
-</p>
-<p>
-		<%=  estimatePartFootage.entry.length %>
-		<%=  estimatePartFootage.entry.width %>
-</p>
+<table class="table table-hover table-bordered">
+	<thead>
+		<th> ID  </th>
+		<th>Description  </th>
+		<th>  Length </th>
+		<th>  Width </th>
+		
+	</thead>
+	<tbody>
+		<tr>
+			<td> <%=  estimatePartFootage._id %> </td>
+			<td> <%=  estimatePartFootage.description %></td>
+			<td> <%=  estimatePartFootage.length %></td>
+			<td> <%=  estimatePartFootage.width %></td>
+		</tr>
+	</tbody>
+</table>
+
 
 <br/>
 <form method="get" action="/estimatePartFootage">

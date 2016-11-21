@@ -1,26 +1,28 @@
 <h2>Recent flooring estimates</h2>
 <p>There are  <%= flooringEstimates.query.length %> flooring estimates. <br/>
 <a href="/flooringEstimate/create">Add a new one.</a></p>
-<% for(var item in flooringEstimates.query) { %>
-<div class="panel panel-default">
-<div class="panel-heading">
-<div class="text-muted pull-right">
-<%= flooringEstimates.published %></div>
-<%= flooringEstimates.title %></div>
-<% include ..\..\views\estimateparts\est-about %>
-<% include ..\..\views\estimateparts\est-footage %>
-<% include ..\..\views\estimateparts\est-flooring %>
-<% include ..\..\views\estimateparts\est-aggregate %>
-<% include ..\..\views\estimateparts\est-labor %>
-<% include ..\..\views\estimateparts\est-mileage %>
-<% include ..\..\views\estimateparts\est-misc %>
-<% include ..\..\views\estimateparts\est-result %>
-<div class="panel-body">
-<%= flooringEstimates.comment %>
-</div>
-</div>
-<% } %>
 
+
+<% for (var i = flooringEstimates.query.length-1; i >-1; i--) { %>     
+    <div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="text-muted pull-left"> </div> 
+        <div class="panel-body">
+            ID : <%=  flooringEstimates.query[i]._id %><br>
+            Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
+            City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
+            Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>
+            Month :<%= flooringEstimates.query[i].estimatePartAbout.month %><br>
+            Sqft : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br>
+            CostPerSqrFoot : <%= flooringEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
+
+            <a href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete </a>
+                <a href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>">| Details |</a> 
+                <a href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"> Edit</a><br>
+        </div>
+    </div>
+ <% } %>
 <!--This model is managed by team 5-R01
 Dambadeni Kalu Achchillage, Nilantha
 Muralidhar Gouda Buddanagoudagari -->

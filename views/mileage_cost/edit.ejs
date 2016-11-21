@@ -1,7 +1,32 @@
-
-
-
 <!-- This model is managed by Team 5-11 --> 
 <!--  Ravva, Shanmukha Manikantha Surya Vamsi -->
 <!-- Avasarala, Venkata Bhardwaj -->
 <!--  Vallapurapu, Shankar -->
+
+<br/>
+<h2>Edit <%= title %></h2>
+<br/>
+<a href="/estimatePartMileage" class="btn btn-info" ><i class="glyphicon glyphicon-chevron-left"></i> Return to list</a>
+<br/><br/>
+<form method="POST" action="/estimatePartMileage/save/<%= estimatePartMileage._id %>">
+<table class="table table-hover table-bordered">
+    <tr><th>ID</th> <td> <%= estimatePartMileage._id %>  </td></tr>
+	<tr><th>Description</th> <td><input type="text" class="form-control" name="description" value="<%= estimatePartMileage.description %>">  </input></td></tr>
+	<tr><th>Number Of Vehicles</th> <td><input type="number" class="form-control" name="numberOfVehicles" value="<%= estimatePartMileage.numberOfVehicles %>"> </input></td></tr>
+	<tr><th>Start Location</th> <td><input type="text" class="form-control" name="startLocation" value="<%= estimatePartMileage.startLocation %>" > </input></td></tr>
+	<tr><th>End Location</th> <td><input type="text" class="form-control" name="endLocation" value="<%= estimatePartMileage.endLocation %>"> </input></td></tr>
+	<tr><th>Miles Per Drive</th> <td><input type="number" class="form-control" name="milesPerDrive" value="<%= estimatePartMileage.milesPerDrive %>"> </input></td></tr>
+	<!-- <tr><th>Dollars Per Mile</th> <td><input type="text" value="<%= estimatePartMileages.query[0].dollarsPerMile %>"> </input></td></tr> -->
+	<tr><td colspan="2"> 
+		<div class="row">
+			<div class="col-md-2"> 
+				<!-- <a href="/estimatePartMileage" class="btn btn-info" ><i class="glyphicon glyphicon-chevron-left"></i> Return to list</a> -->
+			</div>
+			<div class="col-md-5"> 
+					<button type="submit"  class="btn btn-success pull-right" ><i class="glyphicon glyphicon-saved"></i> Save this item</button>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+</form>

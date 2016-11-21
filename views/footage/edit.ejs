@@ -2,3 +2,30 @@
 Harish Babu Achanta
 Hari Kiran Akunuri
 Mounika Naidu Chanati-->
+
+<h2>Edit Square Footage</h2>
+<br/>
+<br/>
+<a href="/estimatePartFootage" class="btn btn-info" >Return to list</a>
+<br/><br/>
+<form method="POST" action="/estimatePartFootage/save/<%= estimatePartFootage._id %>">
+<table class="table table-hover table-bordered">
+    <tr><th>ID</th> <td> <%= estimatePartFootage._id %>  </td></tr>
+	<tr><th>Description</th> <td><input type="text" class="form-control" name="description" value="<%= estimatePartFootage.description %>">  </input></td></tr>
+	<tr><th>Length</th> <td><input type="number" class="form-control" name="length" value="<%= estimatePartFootage.length %>"> </input></td></tr>
+	<tr><th>Width</th> <td><input type="number" class="form-control" name="width" value="<%= estimatePartFootage.width %>"> </input></td></tr>
+
+	<!-- <tr><th>Dollars Per Mile</th> <td><input type="text" value="<%= estimatePartFootages.query[0].sqft %>"> </input></td></tr> -->
+	<tr><td colspan="2"> 
+		<div class="row">
+			<div class="col-md-2"> 
+				<!-- <a href="/estimatePartFootage" class="btn btn-info" > Return to list</a> -->
+			</div>
+			<div class="col-md-5"> 
+					<button type="submit"  class="btn btn-success pull-right" > Save this item</button>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+</form>

@@ -1,0 +1,34 @@
+<h2>Edit Labor</h2>
+<br/>
+<br/>
+<a href="/estimatePartLabor" class="btn btn-info" >Return to list</a>
+<br/><br/>
+<form method="POST" action="/estimatePartLabor/save/<%= estimatePartLabor._id %>">
+<table class="table table-hover table-bordered">
+    <tr><th>ID</th> <td> <%= estimatePartLabor._id %>  </td></tr>
+	<tr><th>type</th> <td><input type="text" class="form-control" name="type" value="<%= estimatePartLabor.type %>">  </input></td></tr>
+    <tr><th>count</th> <td><input type="number" class="form-control" name="count" value="<%= estimatePartLabor.count %>"> </input></td></tr>	
+    <tr><th>hoursPerPerson</th> <td><input type="number" class="form-control" name="hoursPerPerson" value="<%= estimatePartLabor.hoursPerPerson %>"> </input></td></tr>
+    <tr><th>dollarsPerHour</th> <td><input type="number" class="form-control" name="dollarsPerHour" value="<%= estimatePartLabor.dollarsPerHour %>">  </input></td></tr>
+    <tr><th>nightsPerPerson</th> <td><input type="number" class="form-control" name="nightsPerPerson" value="<%= estimatePartLabor.nightsPerPerson %>"> </input></td></tr>
+    <tr><th>costPerNight</th> <td><input type="number" class="form-control" name="costPerNight" value="<%= estimatePartLabor.costPerNight %>"> </input></td></tr>
+   
+    <!-- <tr><th>Dollars Per Mile</th> <td><input type="number" value="<%= estimatePartLabors.query[0].value %>"> </input></td></tr> -->
+	
+    <tr><td colspan="2"> 
+		<div class="row">
+			<div class="col-md-2"> 
+				<!-- <a href="/estimatePartLabor" class="btn btn-info" > Return to list</a> -->
+			</div>
+			<div class="col-md-5"> 
+					<button type="submit"  class="btn btn-success pull-right" > Save this item</button>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+</form>
+
+<!--This model is managed by Team 5-10
+Hima Bindu Jammula
+Shravani Alampalli-->
