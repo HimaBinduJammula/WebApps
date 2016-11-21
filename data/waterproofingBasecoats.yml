@@ -10,9 +10,7 @@
   unit: gal
   displayorder: 20
   price: 33.65
-- id: 3
-  name: FC7500/7960 fast cure urethane 
-
+- id: 3 
 - name: 7430 - urethane
   _id: 1
   unit: gal
