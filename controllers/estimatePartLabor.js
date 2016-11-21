@@ -96,20 +96,22 @@ api.get('/details/:id', function(req, res) {
 
 
 // GET one
+// GET one
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
-    var id = parseInt(req.params.sqft);
-    var data = req.app.locals.estimatePartLabors.query;
-    var item = find(data, { 'sqft': id });
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
+    var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('labor_cost/edit.ejs',
         {
-            title: "Labor",
+            title: "estimatePartLabor",
             layout: "layout.ejs",
             estimatePartLabor: item
         });
 });
+
 
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
