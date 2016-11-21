@@ -1,36 +1,21 @@
 ---
-<<<<<<< HEAD
-- id: 1
+- _id: 1
   name: 7432 - urethane
   unit: gal
   displayorder: 10
   price: 41.00
-- id: 2
+- _id: 2
   name: 70410 - low odor urethane
   unit: gal
   displayorder: 20
   price: 33.65
-- id: 3
-  name: FC7500/7960 fast cure urethane 
-=======
-- name: 7430 - urethane
-  _id: 1
-  unit: gal
-  displayorder: 10
-  price: 41.00
-- name: 70410 - low odor urethane
-  _id: 2
-  unit: gal
-  displayorder: 20
-  price: 33.65
-- name: FC7500/7960 fast cure urethane
-  _id: 3
->>>>>>> e93ef0af864a01bfe4e7401173d967d955b207f7
+- _id: 3
+  name: 70411 - low odor urethane
   unit: gal
   displayorder: 30
   price: 33.65 
-- name: FC7500/7960 fast cure urethane
-  _id: 4
+- _id: 4
+  name: FC7500/7960 fast cure urethane
   unit: gal
   displayorder: 40
   price: 33.65  
