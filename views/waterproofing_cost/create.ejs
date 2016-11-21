@@ -1,0 +1,43 @@
+<br/>
+<br/>
+<% 
+maxID=0; 
+for (var i=0; i<estimatePartWaterproofings.query.length; i++) {
+    if(estimatePartWaterproofings.query[i]._id > maxID) {
+        maxID=estimatePartWaterproofings.query[i]._id;
+        }
+}
+%>
+<h2>Edit waterproofing primer product</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartWaterproofing/save" >
+
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required >
+			</div>
+
+			<div class="form-group">
+				<label for="name">productType</label>
+				<input type="text" class="form-control" id="productType" name="productType"  required>
+			</div>
+
+			<div class="form-group">
+				<label for="unit">usesUrethane</label>
+				<input type="text" class="form-control" id="usesUrethane" name="usesUrethane"  required>
+			</div>
+
+			<div class="form-group">
+				<label for="price">Cost</label>
+				<input type="number" class="form-control" id="subtotal" name="subtotal"  required>
+			</div>
+
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/estimatePartWaterproofing">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>

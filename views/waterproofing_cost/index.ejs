@@ -4,27 +4,42 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartWaterproofings.query.length %> entries. <br/>
-<a href="create">Add a new one.</a></p>
+<a href="/estimatePartWaterproofing/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
       <th>ID</th>
-        <th>Subtotal</th>
-       <th>Actions</th>
+      <th>Product Type</th>
+      <th>usesUrethane</th>
+      <th>Subtotal</th>
+      <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartWaterproofings.query.length; i++) { %>
+<%
+var total_cost =0;
+ for (var i = 0; i < estimatePartWaterproofings.query.length; i++) { 
+
+%>
          <tr>
             <td><%=  estimatePartWaterproofings.query[i]._id %></td>
+            <td><%=  estimatePartWaterproofings.query[i].productType %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesUrethane %></td>
             <td><%=  estimatePartWaterproofings.query[i].subtotal %></td>
-            <td><a href="estimatePartWaterproofing/delete/<%= i+1 %>">Delete</a>
-            <a href="estimatePartWaterproofing/details/<%= i+1 %>">Details</a>
-            <a href="estimatePartWaterproofing/edit/<%= i+1 %>">Edit</a>
+            <td><a href="estimatePartWaterproofing/delete/<%= estimatePartWaterproofings.query[i]._id %>">Delete</a>
+            <a href="estimatePartWaterproofing/details/<%= estimatePartWaterproofings.query[i]._id %>">Details</a>
+            <a href="estimatePartWaterproofing/edit/<%= estimatePartWaterproofings.query[i]._id %>">Edit</a>
             </td>
          </tr>
-         <% } %>
+<% 
+total_cost += estimatePartWaterproofings.query[i].subtotal;
+} %>
+<tr>
+  <td colspan=5>
+    Total estiamted water proofing cost <strong><%= total_cost %></strong>
+    </td>
+</tr>
 </tbody>
 </table>
 </div>
