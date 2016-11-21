@@ -91,7 +91,7 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('mileage_cost/details.ejs',
         {
-            title: "Esitmate Part Misc",
+            title: "Esitmate Part Mileage",
             layout: "layout.ejs",
             estimatePartMileage: item,
             mileageRateNow : getLatestMileageRate(req.app.locals.mileageRates.query)
