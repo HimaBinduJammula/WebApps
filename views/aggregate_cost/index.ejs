@@ -17,8 +17,7 @@
         <th>coverageSqFt</th>
         <th>Subtotal</th>
        <th>Actions</th>
-
-       
+      
     </tr>
     </thead>
     <tbody>
@@ -28,7 +27,6 @@
      for(var j=0; j<estimatePartAggregates.query[i].entries.length;j++){
         var entry = estimatePartAggregates.query[i].entries[j];
         
-  
       %>
         <tr>
             <td> <%= entry._id %></td>
@@ -38,9 +36,6 @@
             <td> <%= entry.coverageSqFt %></td>
             <td> <%= entry.subtotal %></td>
 
-             
-
-
             <td>
             <a href="estimatePartAggregate/delete/<%=  entry._id %>"> Delete </a> 
 							<a href="estimatePartAggregate/details/<%= entry._id %>"> Details </a> 
@@ -49,8 +44,7 @@
          </tr>
          <% } %>
          <% } %>
-        
-        
+            
 </tbody>
 </table>
 </div>
