@@ -95,7 +95,7 @@ api.get('/edit/:id', function(req, res) {
 // POST new
 api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query[0].entries;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
@@ -104,14 +104,14 @@ api.post('/save', function(req, res) {
      item.width = req.body.width;    
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // POST update
 api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query[0].entries;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
@@ -122,23 +122,23 @@ api.post('/save/:id', function(req, res) {
 
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', function(req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query[0].entries;
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
 	
- response.render("footage/index.ejs");
+ response.render("Aggregate/index.ejs");
 });
