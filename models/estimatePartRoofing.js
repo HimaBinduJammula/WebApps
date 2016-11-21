@@ -10,6 +10,7 @@ var mongoose = require('mongoose')
     , RoofingTopcoat = require('./roofingTopcoat.js')
 
 var EstimatePartRoofingSchema = new Schema({
+    _id: { type: Number, required: true },
     roofType: { type: String, required: true, default: 'Metal', enum: ['Metal', 'Mod Bit', 'Single Ply'] },
     processType: { type: String, required: true, default: 'Roof Coatings', enum: ['Roof Coatings', 'Polyurethane Foam & Coatings'] },
 
