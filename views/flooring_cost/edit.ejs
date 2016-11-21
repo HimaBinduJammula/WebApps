@@ -1,3 +1,41 @@
+<br/>
+<br/>
+<h2>Edit flooring cost</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartFloorings/save/<%= estimatePartFloorings._id %>">
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartFloorings._id %>" required disabled>
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" value="<%= estimatePartFloorings.name %>" required>
+			</div>
+			<div class="form-group">
+				<label for="unit">Unit</label>
+				<input type="text" class="form-control" id="unit" name="unit" value="<%= estimatePartFloorings.unit %>" required>
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<input type="number" class="form-control" id="price" name="price" value="<%= estimatePartFloorings.price %>" required>
+			</div>
+			<div class="form-group">
+				<label for="displayorder">Display Order</label>
+				<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= estimatePartFloorings.displayorder %>"
+					required>
+			</div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/estimatePartFlooring">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>
+
+
+
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>

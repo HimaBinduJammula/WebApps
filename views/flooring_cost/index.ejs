@@ -1,35 +1,47 @@
-<% console.log(estimatePartFloorings.query); %>
+<% console.log(estimatePartFloorings.query[0].entries); %>
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartFloorings.query.length %> entries. <br/>
-<a href="estimatePartFlooring/create">Add a new one.</a></p>
+<p>There are  <%= estimatePartFloorings.query[0].length %> entries. <br/>
+<a href="/estimatePartFlooring/create">Add a new one.</a></p>
 <table class="table" border="1">
     <thead>
       <tr>
-           <th>Subtotal</th>
+           <th>Id</th>
+           <th>FloorSystemType</th>
+           <th>UsesUrethane</th>
        <th>Actions</th>
+       
     </tr>
     </thead>
     <tbody>
+
+
+
+
+<% count=0; %>
 <% for (var i = 0; i < estimatePartFloorings.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartFloorings.query[i].subtotal %></td>
-            <td><a href="estimatePartFlooring/delete/<%= i+1 %>">Delete</a>  
-            <a href="estimatePartFlooring/details/<%= i+1 %>">Details</a>  
-            <a href="estimatePartFlooring/edit/<%= i+1 %>">Edit</a></td>
+         <tr> <% count++; %>
+         <td>
+              <%=  estimatePartFloorings.query[i]._id %>
+            </td>
+            <td><%=  estimatePartFloorings.query[i].floorSystemType %></td>
+            <td><%=  estimatePartFloorings.query[i].usesUrethane %></td>            
+            <td>
+              <a href="/estimatePartFlooring/delete/<%=  count%>"> Delete </a> |
+              <a href="/estimatePartFlooring/details/<%= count%>"> Details </a> |
+              <a href="/estimatePartFlooring/edit/<%= count %>"> Edit </a>
+            </td>
          </tr>
          <% } %>
+
+
+
+
+
 </tbody>
 </table>
 </div>
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>
-<<<<<<< HEAD
-=======
-<!-- Saravana Palaniyappan --!>
-<!-- Lakshmi Supriya --!>
-=======
->>>>>>> 74f5fce260607591d53ca8cf834d8df6deb0e780
-

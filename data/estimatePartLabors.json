@@ -1,75 +1,51 @@
 [
   {
-    "_id":1,
+    
     "entries": [{
-        "entry": {
+        
+          "_id":1,
           "type": "apprentice",
           "count": 3,
           "hoursPerPerson":24,
           "dollarsPerHour":15,
           "nightsPerPerson":2,
           "costPerNight":80
-    }},
+    },
     {  
-        "entry": {
-
+        
+          "_id":2,
           "type": "assistant",
           "count": 2,
-          "hoursPerPerson":24,
+          "hoursPerPerson":20,
           "dollarsPerHour":10,
-          "nightsPerPerson":2,
+          "nightsPerPerson":3,
           "costPerNight":80
-    }}
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
     ],
     "subtotal": 1880
-  },
-
-  {
-    "_id":2,
-    "entries1": [{
-        "entry": {
-          "type": "apprentice",
-          "count": 2,
-          "hoursPerPerson":24,
-          "dollarsPerHour":15,
-          "nightsPerPerson":2,
-          "costPerNight":80
-    }},
-    {  
-        "entry": {
-          "type": "assistant",
-          "count": 1,
-          "hoursPerPerson":24,
-          "dollarsPerHour":10,
-          "nightsPerPerson":2,
-          "costPerNight":80
-    }}
-    ],
-    "subtotal": 1200
-  },
-
-  {
-    "_id":3,
-    "entries1": [{
-        "entry": {
-          "type": "apprentice",
-          "count": 2,
-          "hoursPerPerson":24,
-          "dollarsPerHour":15,
-          "nightsPerPerson":2,
-          "costPerNight":80
-    }},
-    {  
-        "entry": {
-          "type": "assistant",
-          "count": 1,
-          "hoursPerPerson":24,
-          "dollarsPerHour":10,
-          "nightsPerPerson":2,
-          "costPerNight":80
-    }}
-    ],
-    "subtotal": 1680
   }
 
 ]

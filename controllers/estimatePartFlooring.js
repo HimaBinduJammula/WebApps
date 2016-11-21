@@ -15,19 +15,9 @@ const notfoundstring = 'No such waterproofing primer';
 
 module.exports = api;  // at the very end
 
-//notfoundstring = 'No such estimatePartFlooring';
-// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
-
-
-
 module.exports = api;  // at the very end
 
 //notfoundstring = 'No such estimatePartFlooring';
-
-// <<<<<<< HEAD
-// =======
-
-// >>>>>>> 5eb376028265ffc69ba0a3ae967b80e036bd1bae
 
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
