@@ -4,10 +4,10 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/aggregateMaterial.js');
-const notfoundstring = 'No such aggregate Materials';
+const notfoundstring = 'No such aggregate material';
 
 // See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "aggregate_Materials")
+// see app.js to find  default URI for this controller (e.g., "aggregateMaterial")
 // Specify the handler for each required combination of URI and HTTP verb 
 // HTML5 forms can only have GET and POST methods (use POST for DELETE)
 
@@ -15,14 +15,14 @@ const notfoundstring = 'No such aggregate Materials';
 
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.aggregateMaterial.query;
+    var data = req.app.locals.aggregateMaterials.query;
     res.send(JSON.stringify(data));
 });
 
 api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
-    var data = req.app.locals.aggregateMaterial.query;
+    var data = req.app.locals.aggregateMaterials.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     res.send(JSON.stringify(item));
@@ -34,14 +34,14 @@ api.get('/findone/:id', function(req, res){
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('aggregate/index.ejs',
-        { title: "AG Materials", layout: "layout.ejs" });
+        { title: "Aggregate Materials", layout: "layout.ejs" });
 });
 
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("aggregate/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "Aggregate Materials", layout: "layout.ejs" });
 });
 
 // GET /delete/:id
@@ -54,9 +54,9 @@ api.get('/delete/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate/delete.ejs',
         {
-            title: "WP Primers",
+            title: "Aggregate Materials",
             layout: "layout.ejs",
-            aggregate_Materials: item
+            aggregateMaterial: item
         });
 });
 
@@ -70,9 +70,9 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate/details.ejs',
         {
-            title: "WP Primers",
+            title: "Aggregate Materials",
             layout: "layout.ejs",
-            aggregate_Materials: item
+            aggregateMaterial: item
         });
 });
 
@@ -86,9 +86,9 @@ api.get('/edit/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('aggregate/edit.ejs',
         {
-            title: "AG Materials",
+            title: "Aggregate Materials",
             layout: "layout.ejs",
-            aggregate_Materials: item
+            aggregateMaterial: item
         });
 });
 
@@ -107,7 +107,7 @@ api.post('/save', function(req, res) {
     item.displayorder = parseInt(req.body.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/aggregateMaterial');
+    return res.redirect('/aggregate');
 });
 
 // POST update
@@ -125,7 +125,7 @@ api.post('/save/:id', function(req, res) {
     item.price = req.body.price;
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/aggregateMaterial');
+    return res.redirect('/aggregate');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -137,7 +137,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/aggregateMaterial');
+    return res.redirect('/aggregate');
 });
 
 module.exports = api;

@@ -41,7 +41,7 @@ api.get('/delete/:id', function(req, res){
     }
     console.log("RETURNING VIEW FOR"+ JSON.stringify(item));
      res.render('mileage_cost/delete.ejs',{
-    	title: "Miscellaneous Costs",
+    	title: "Mileage Cost",
     	layout: "layout.ejs",
     	estimatePartMileage: item
     });
@@ -91,9 +91,10 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('mileage_cost/details.ejs',
         {
-            title: "Esitmate Part Misc",
+            title: "Esitmate Part Mileage",
             layout: "layout.ejs",
-            estimatePartMileage: item
+            estimatePartMileage: item,
+            mileageRateNow : getLatestMileageRate(req.app.locals.mileageRates.query)
         });
 });
 
