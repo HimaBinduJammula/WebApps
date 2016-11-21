@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
   , WaterproofingTopcoat = require('./WaterproofingTopcoat.js')
 
 var EstimatePartWaterpWaterproofingSchema = new Schema({
+  _id: { type: Number, required: true },
   productType: { type: String, required: true, default: 'Urethane', enum: ['Urethane', 'Cementicious Overlay'] },
 
   usesUrethane: { type: Boolean, required: true, default: false },

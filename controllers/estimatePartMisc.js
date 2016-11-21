@@ -42,7 +42,7 @@ api.get('/delete/:id', function(req, res){
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("misc_cost/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartMiscs.query[0].entries) });
+        { title: "Miscellaneous Item", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartMiscs.query[0].entries) });
 });
 
 function genrateUID(items){
