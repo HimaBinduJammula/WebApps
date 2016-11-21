@@ -47,11 +47,11 @@ api.get('/delete/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_cost/delete.ejs',
-        {
-            title: "WP Primers",
-            layout: "layout.ejs",
-            waterproofingPrimer: item
-        });
+    {
+        title: "WP Primers",
+        layout: "layout.ejs",
+        estimatePartWaterproofing: item
+    });
 });
 
 // GET /details/:id
@@ -63,11 +63,11 @@ api.get('/details/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_cost/details.ejs',
-        {
-            title: "estimate part water proofing",
-            layout: "layout.ejs",
-            estimatePartWaterproofing: item
-        });
+    {
+        title: "estimate part water proofing",
+        layout: "layout.ejs",
+        estimatePartWaterproofing: item
+    });
 });
 
 // GET one
@@ -82,7 +82,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartWaterproofing: item
         });
 });
 
@@ -95,10 +95,9 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.productType = req.body.productType;
+    item.usesUrethane = req.body.usesUrethane;
+    item.subtotal = parseInt(req.body.subtotal);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartWaterproofing');
@@ -114,10 +113,9 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.productType = req.body.productType;
+    item.usesUrethane = req.body.usesUrethane;
+    item.subtotal = parseInt(req.body.subtotal);
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartWaterproofing');
 });
