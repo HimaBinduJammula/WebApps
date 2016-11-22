@@ -1,9 +1,9 @@
-<% console.log(flooringCoatings.query); %>
+<% console.log(aggregateMaterials.query); %>
 	<div class="container">
-		<h2>Material Flooring coatings costs</h2>
+		<h2>Aggregate Materials costs</h2>
 		<p>There are
-			<%= flooringCoatings.query.length %> flooring coating. <br/>
-				<a href="flooringCoating/create">Add a new one.</a></p>
+			<%= aggregateMaterials.query.length %> Aggregate Materials. <br/>
+				<a href="aggregate/create"class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>Add a new one.</a></p>
 		<table class="table" border="1">
 			<thead>
 				<tr>
@@ -16,27 +16,27 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% for (var i = 0; i < flooringCoatings.query.length; i++) { %>
+				<% for (var i = 0; i < aggregateMaterials.query.length; i++) { %>
 					<tr>
 						<td>
-							<%=  flooringCoatings.query[i]._id %>
+							<%=  aggregateMaterials.query[i]._id %>
 						</td>
 						<td>
-							<%=  flooringCoatings.query[i].name %>
+							<%=  aggregateMaterials.query[i].name %>
 						</td>
 						<td>
-							<%=  flooringCoatings.query[i].displayorder %>
+							<%=  aggregateMaterials.query[i].displayorder %>
 						</td>
 						<td>
-							<%=  flooringCoatings.query[i].price %>
+							<%=  aggregateMaterials.query[i].price %>
 						</td>
 						<td>
-							<%=  flooringCoatings.query[i].unit %>
+							<%=  aggregateMaterials.query[i].unit %>
 						</td>
 						<td>
-							<a href="flooringCoating/delete/<%=  flooringCoatings.query[i]._id %>"> Delete </a> |
-							<a href="flooringCoating/details/<%= flooringCoatings.query[i]._id %>"> Details </a> |
-							<a href="flooringCoating/edit/<%=    flooringCoatings.query[i]._id %>"> Edit </a>
+							<a href="aggregate/delete/<%=  aggregateMaterials.query[i]._id %>"class="btn btn-danger" > <span class="glyphicon glyphicon-trash"></span> Delete </a> |
+							<a href="aggregate/details/<%= aggregateMaterials.query[i]._id %>"class="btn btn-info">	<span class="glyphicon glyphicon-list-alt"></span> Details </a> |
+							<a href="aggregate/edit/<%=    aggregateMaterials.query[i]._id %>"class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
 						</td>
 					</tr>
 					<% } %>

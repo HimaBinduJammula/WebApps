@@ -1,63 +1,33 @@
+h2>Edit Square Aggregate</h2>
 <br/>
 <br/>
-<h2>Edit waterproofing primer product</h2>
-<div class="content">
-	
-		<form method="POST" action="/estimatePartAggregate/save/<%= estimatePartAggregate._id %>">
-				<div class="form-group" id=frm>
-					<label for="_id">ID</label>
-					<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAggregate._id %>" required readonly>
-				</div>
+<a href="/estimatePartAggregate" class="btn btn-info" >Return to list</a>
+<br/><br/>
+<form method="POST" action="/estimatePartAggregate/save/<%= estimatePartAggregate._id %>">
+<table class="table table-hover table-bordered">
+    <tr><th>ID</th> <td> <%= estimatePartAggregate._id %>  </td></tr>
+	<tr><th>isUsed?</th> <td><input type="text" class="form-control" name="isUsed" value="<%= estimatePartAggregate.isUsed %>">  </input></td></tr>
+	<tr><th>Type</th> <td><input type="text" class="form-control" name="aggregateTypeSelection" value="<%= estimatePartAggregate.aggregateTypeSelection  %>"> </input></td></tr>
+	<tr><th>Material</th> <td><input type="text" class="form-control" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>"> </input></td></tr>
+	<tr><th>coverageSqFt</th> <td><input type="number" class="form-control" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>"> </input></td></tr>
+	<tr><th>Subtotal</th> <td><input type="number" class="form-control" name="subtotal" value="<%= estimatePartAggregate.subtotal %>"> </input></td></tr>
 
 
-                <div class="form-group">
-                <label for="usesAggregate">Uses Aggregate?</label>
-                <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" value="<%= estimatePartAggregate.isUsed %>">
-                </div>
-
-                <div class="form-group">
-                <label for="aggregateTypeSelection">Aggregate Type</label>
-                <div class="funkyradio">
-                    <div class="funkyradio-primary">
-                        <input type="radio" name="radio" id="Sand" checked/>
-                        <label for="Sand">Sand</label>
-                    </div>
-                    <div class="funkyradio-success">
-                        <input type="radio" name="radio" id="Quartz" />
-                        <label for="Quartz">Quartz</label>
-                    </div>
-                    <div class="funkyradio-warning">
-                        <input type="radio" name="radio" id="Flake" />
-                        <label for="Flake">Flake</label>
-                    </div>
-                    <div class="funkyradio-danger">
-                        <input type="radio" name="radio" id="Glass" />
-                    <label for="Glass">Glass Beads</label>
-                    </div>
-                </div>
-                </div>
-
-                <div class="form-group">
-                <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
-                <input type="input" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>">
-
-                </div>
-                <div class="form-group">
-                <label for="coverageSqFt">Coverage Square per feet</label>
-                <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>">
-
-                </div>
-                <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-			
-			
-		</form>
-		<br/>
-		<form method="get" action="/waterproofingPrimer">
-			<input type="submit" value="Return to list" class="btn btn-caution" />
-		</form>
-	</div>
-</div>
+	<!-- <tr><th>Dollars Per Mile</th> <td><input type="text" value="<%= estimatePartAggregates.query[0].sqft %>"> </input></td></tr> -->
+	<tr><td colspan="2"> 
+		<div class="row">
+			<div class="col-md-2"> 
+				<!-- <a href="/estimatePartAggregate" class="btn btn-info" > Return to list</a> -->
+			</div>
+			<div class="col-md-5"> 
+					<button type="submit"  class="btn btn-success pull-right" > Save this item</button>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+</form>
 <!--- The view is maintained by team R9 -->
-    <!--- Sri Sai Ravali Chinthareddy-->
-    <!--- Avyakta Pallerla -->
+<!--- Avyakta Pallerla -->
+<!--- Sri Sai Ravali Chinthareddy-->
+    

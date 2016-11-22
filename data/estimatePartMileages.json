@@ -1,6 +1,6 @@
 [
   {
-    "dollarsPerMile": 0.5,
+    "dollarsPerMile": 1,
     "entries": [
         {
           "_id":1,
@@ -10,8 +10,7 @@
           "endLocation": "Maryville, MO",
           "milesPerDrive": 100
           
-        }
-        ,
+        },
         {
           "_id":2,
           "description": "personal vehicle",
@@ -19,9 +18,32 @@
           "startLocation": "OPKS",
           "endLocation": "Maryville, MO",
           "milesPerDrive": 100
-        
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
       }
     ],
-    "subtotal": 250
+    "subtotal": 500
   }
 ]

@@ -1,36 +1,35 @@
 <br/>
 <br/>
-<h2>Details for Aggregate Parts estimate</h2>
+<h2>Details for Aggregate</h2>
 <br/>
 <br/>
-
-<p>Item
-	<%=  estimatePartAggregate._id %>
-</p>
-
-<p>
-Is Used? : <%=  estimatePartAggregate.isUsed %>
-</p>
-
-<p>
-Aggregate Type Selection :	<%=  estimatePartAggregate.aggregateTypeSelection %> 
-</p>
-<p>
-	Aggregate Material Selection : <%=  estimatePartAggregate.aggregateMaterialSelection %>
-</p>
-<p>
-	Coverage Sq per Ft : <%=  estimatePartAggregate.coverageSqFt %>
-</p>
-<p>
-	<%=  estimatePartAggregate.subtotal %>
-</p>
+<table class="table table-hover table-bordered">
+	<thead>
+		<th> ID  </th>
+		<th> isUsed?  </th>
+		<th> Type  </th>
+		<th> Material  </th>	
+		<th>coverageSqFt</th>
+		<th>Subtotal</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td> <%=  estimatePartAggregate._id %> </td>
+			<td> <%=  estimatePartAggregate.isUsed %></td>
+			<td> <%=  estimatePartAggregate.aggregateTypeSelection %></td>
+			<td> <%=  estimatePartAggregate.aggregateMaterialSelection %></td>
+			<td> <%=  estimatePartAggregate.coverageSqFt %></td>
+			<td> <%=  estimatePartAggregate.subtotal %></td>
+		</tr>
+	</tbody>
+</table>
 
 <br/>
-
 <form method="get" action="/estimatePartAggregate">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 
 <!--- The view is maintained by team R9 -->
-    <!--- Sri Sai Ravali Chinthareddy-->
-    <!--- Avyakta Pallerla -->
+<!--- Avyakta Pallerla -->
+<!--- Sri Sai Ravali Chinthareddy-->
+    

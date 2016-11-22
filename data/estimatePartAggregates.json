@@ -1,6 +1,6 @@
 [
   {
-	"_id": 1,
+	  "_id": 1,
     "isUsed": true,
     "aggregateTypeSelection": "Sand",
     "aggregateMaterialSelection": "7992 - 16/30 mesh sand",
@@ -10,25 +10,26 @@
   {
 	"_id": 2,
     "isUsed": true,
-    "aggregateTypeSelection": "Sand",
-    "aggregateMaterialSelection": "7992 - 16/30 mesh sand",
+    "aggregateTypeSelection": "Primers",
+    "aggregateMaterialSelection": "7992 - 16/30 mesh primers",
     "coverageSqFt": 200,
     "subtotal": 300
   },
   {
 	"_id": 3,
     "isUsed": true,
-    "aggregateTypeSelection": "Sand",
-    "aggregateMaterialSelection": "7992 - 16/30 mesh sand",
+    "aggregateTypeSelection": "Rock",
+    "aggregateMaterialSelection": "7992 - 16/30 mesh rock",
     "coverageSqFt": 150,
     "subtotal": 550
   },
   {
 	"_id": 4,
     "isUsed": true,
-    "aggregateTypeSelection": "Sand",
-    "aggregateMaterialSelection": "7992 - 16/30 mesh sand",
+    "aggregateTypeSelection": "Base Coats",
+    "aggregateMaterialSelection": "7992 - 16/30 mesh Base Coats",
     "coverageSqFt": 250,
     "subtotal": 700
   }
 ]
+

@@ -1,20 +1,20 @@
 <br/>
 <br/>
-<h2>Create a new flooring coating product</h2>
+<h2>Create a new Aggregate Material product</h2>
 <p>There are currently
-	<%= aggregateMaterial.query.length %> aggregateMaterial. </p>
+	<%= aggregateMaterials.query.length %> aggregateMaterials. </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<aggregateMaterial.query.length; i++) {
-    if(aggregateMaterial.query[i]._id > maxID) {
-        maxID=aggregateMaterial.query[i]._id;
+for (var i=0; i<aggregateMaterials.query.length; i++) {
+    if(aggregateMaterials.query[i]._id > maxID) {
+        maxID=aggregateMaterials.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<aggregateMaterial.query.length; i++) {
-    if(aggregateMaterial.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=aggregateMaterial.query[i].displayorder;
+for (var i=0; i<aggregateMaterials.query.length; i++) {
+    if(aggregateMaterials.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=aggregateMaterials.query[i].displayorder;
         }
 }
 %>
@@ -24,7 +24,7 @@ for (var i=0; i<aggregateMaterial.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="aggregateMaterial" method="POST" action="/aggregateMaterial/save" + _id.value>
+			<form name="aggregate" method="POST" action="/aggregate/save" + _id.value>
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
 					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
@@ -50,8 +50,11 @@ for (var i=0; i<aggregateMaterial.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/aggregateMaterial">
+			<form method="get" action="/aggregate">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>
 	</div>
+	<!-- This view is managed by team 5-12 -->
+<!--  Harsha Vardhan Reddy Alla -->
+<!-- Saiteja Guduri  -->

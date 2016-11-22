@@ -1,12 +1,81 @@
+<br/>
+
+<br/>
+<h2>Create a new Estimate part flooring product</h2>
+<p>There are currently
+	<%= estimatePartFloorings.query.length %> Estimate part flooring. </p>
+<br/>
+<% 
+maxID=0; 
+for (var i=0; i<estimatePartFloorings.query.length; i++) {
+    if(estimatePartFloorings.query[i]._id > maxID) {
+        maxID=estimatePartFloorings.query[i]._id;
+        }
+}
+%>
+	<p>The largest ID is
+		<%= maxID %>. </p>
+	
+	<div class="content">
+		<div>
+			<form name="estimatePartFlooring" method="POST" action="/flooring_cost/save" + _id.value>
+
+				<div class="form-group" id=frm>
+					<label for="_id">ID</label>
+					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="floorSystemType">Floor System Type</label>
+					<input type="text" class="form-control" id="floorSystemType" name="floorSystemType" value="Epoxy" required>
+				</div>
+
+				<div class="form-group">
+					<label for="usesUrethane">UsesErethane ?</label>
+					<input type="text" class="form-control" id="usesUrethane" name="usesUrethane" required>
+				</div>
+
+				<div class="form-group">
+					<label for="urethaneProductSelection">Urethane Product Selection:</label>
+					<input type="text" class="form-control" id="urethaneProductSelection" name="urethaneProductSelection" required>
+				</div>
+
+				<div class="form-group">
+					<label for="urethaneCoverageSqFt">Urethane Coverage SqFt:</label>
+					<input type="text" class="form-control" id="urethaneCoverageSqFt" name="urethaneCoverageSqFt" required>
+				</div>
+
+			   <div class="form-group">
+					<label for="usesEpoxy">UsesEpoxy ?</label>
+					<input type="text" class="form-control" id="usesEpoxy" name="usesEpoxy" required>
+				</div>
+
+				<div class="form-group">
+					<label for="expoxyProductSelection">Epoxy Product Selection:</label>
+					<input type="text" class="form-control" id="expoxyProductSelection" name="expoxyProductSelection" required>
+				</div>
+
+				<div class="form-group">
+					<label for="expoxyCoverageSqFt">Epoxy Coverage</label>
+					<input type="number" class="form-control" id="expoxyCoverageSqFt" name="expoxyCoverageSqFt" required>
+				</div>
+
+				<div class="form-group">
+					<label for="subtotal">Sub Total</label>
+					<input type="number" class="form-control" id="subtotal" name="subtotal" value="0" required>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Post new entry" class="btn btn-primary" />
+				</div>
+			</form>
+			<br/>
+			<form method="get" action="/estimatePartFlooring">
+				<input type="submit" value="Return to list" class="btn btn-caution" />
+			</form>
+		</div>
+	</div>
+
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>
-<<<<<<< HEAD
-
-<!-- Saravana Palaniyappan --!>
-<!-- Lakshmi Supriya --!>
-=======
-<!-- Saravana Palaniyappan --!>
-<!-- Lakshmi Supriya --!>
-
->>>>>>> 507ba61967c1e455e8a760f6824697fbeaceaacf
