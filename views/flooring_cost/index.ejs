@@ -5,19 +5,19 @@
 <p>There are  <%= estimatePartFloorings.query.length %> entries. <br/>
 <a href="estimatePartFlooring/create">Add a new one.</a></p>
 
-<table class="table" border="1">
+<table class="table table-hover table-bordered" >
     <thead>
       <tr>
             <th>ID</th>
-			<th>Floor System Type</th>
-			<th>Uses Urethane</th>
-			<th>Urethane Product Selection</th>
-            <th>Urethane Coverage SqFt</th>
-			<th>Uses Epoxy</th>
-            <th>Epoxy Product Selection</th>
-            <th>Epoxy Coverage SqFt</th>
-			<th>Subtotal</th>
-       <th>Actions</th>
+			<th>Type</th>
+			<th>Urethane?</th>
+			<th>U Product</th>
+            <th>U Coverage SqFt</th>
+			<th>Epoxy?</th>
+            <th>E Product</th>
+            <th>E Coverage SqFt</th>
+			<th >Subtotal</th>
+            <th >Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -55,15 +55,18 @@
                         </td>
 
             <td>
-                <a href="estimatePartFlooring/delete/<%=  estimatePartFloorings.query[i]._id %>"> Delete </a> |
-                <a href="estimatePartFlooring/details/<%= estimatePartFloorings.query[i]._id %>"> Details </a> |
-                <a href="estimatePartFlooring/edit/<%=    estimatePartFloorings.query[i]._id %>"> Edit </a>
+                <a href="estimatePartFlooring/delete/<%=  estimatePartFloorings.query[i]._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> 
+                <a href="estimatePartFlooring/edit/<%= estimatePartFloorings.query[i]._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
+                <a href="estimatePartFlooring/details/<%= estimatePartFloorings.query[i]._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
             </td>
          </tr>
          <% } %>
+            <tr>
+            <td colspan="10" align="center" ><strong> Total Estimated Cost for Flooring : <strong> <span id="fnlCost" >$<%= subTotal %> </strong></span> </td>
+            </tr>        
 </tbody>
 </table>
-<p> Total Estimated Cost for Flooring : <strong> $<%= subTotal %> </strong> </p>
+ 
 
 </div>
 
