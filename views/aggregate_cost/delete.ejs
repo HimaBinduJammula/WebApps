@@ -1,0 +1,33 @@
+<br/>
+<br/>
+<h2>Confirm deletion of Aggregate</h2>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<p>Item
+
+<p>ID              :	<%=  estimatePartAggregate._id %></p>
+<p>isUsed? 		   :	<%=  estimatePartAggregate.isUsed %></p>
+<p>Type 		   :	<%=  estimatePartAggregate.aggregateTypeSelection %></p>
+<p>Material		   :	<%=  estimatePartAggregate.aggregateMaterialSelection %></p>
+<p>coverageSqFt    :	<%=  estimatePartAggregate.coverageSqFt %></p>
+<p>Subtotal        :	<%=  estimatePartAggregate.subtotal %></p>
+	 
+</p>
+
+<br/>
+<form method="get" action="/estimatePartAggregate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/estimatePartAggregate/delete/<%= estimatePartAggregate._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>
+
+
+<!--- The view is maintained by team R9 -->
+<!--- Avyakta Pallerla -->
+<!--- Sri Sai Ravali Chinthareddy-->
+    

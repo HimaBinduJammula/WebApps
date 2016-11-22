@@ -1,30 +1,75 @@
-
 <% console.log(estimatePartFloorings.query); %>
 <div class="container">
- <h2>All entries</h2>
+<h2>All entries</h2>
 
 <p>There are  <%= estimatePartFloorings.query.length %> entries. <br/>
 <a href="estimatePartFlooring/create">Add a new one.</a></p>
-<table class="table" border="1">
+
+<table class="table table-hover table-bordered" >
     <thead>
       <tr>
-           <th>Subtotal</th>
-       <th>Actions</th>
+            <th>ID</th>
+			<th>Type</th>
+			<th>Urethane?</th>
+			<th>U Product</th>
+            <th>U Coverage SqFt</th>
+			<th>Epoxy?</th>
+            <th>E Product</th>
+            <th>E Coverage SqFt</th>
+			<th >Subtotal</th>
+            <th >Actions</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartFloorings.query.length; i++) { %>
+ <% var subTotal = 0 %>
+<% for (var i = 0; i < estimatePartFloorings.query.length; i++) { 
+    subTotal += estimatePartFloorings.query[i].subtotal;
+    %>
          <tr>
-            <td><%=  estimatePartFloorings.query[i].subtotal %></td>
-            <td><a href="estimatePartFlooring/delete/<%= i+1 %>">Delete</a>  
-            <a href="estimatePartFlooring/details/<%= i+1 %>">Details</a>  
-            <a href="estimatePartFlooring/edit/<%= i+1 %>">Edit</a></td>
+                        <td>
+							<%=  estimatePartFloorings.query[i]._id %>
+						</td>
+						<td>
+							<%=  estimatePartFloorings.query[i].floorSystemType %>
+						</td>
+						<td>
+							<%=  estimatePartFloorings.query[i].usesUrethane %>
+						</td>
+						<td>
+							<%=  estimatePartFloorings.query[i].urethaneProductSelection %>
+						</td>
+						<td>
+							<%=  estimatePartFloorings.query[i].urethaneCoverageSqFt %>
+						</td>
+                        <td>
+							<%=  estimatePartFloorings.query[i].usesEpoxy %>
+						</td>
+						<td>
+							<%=  estimatePartFloorings.query[i].expoxyProductSelection %>
+						</td>
+                        <td>
+							<%=  estimatePartFloorings.query[i].expoxyCoverageSqFt %>
+						</td>
+                        <td>
+                            <%=  estimatePartFloorings.query[i].subtotal %>
+                        </td>
+
+            <td>
+                <a href="estimatePartFlooring/delete/<%=  estimatePartFloorings.query[i]._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> 
+                <a href="estimatePartFlooring/edit/<%= estimatePartFloorings.query[i]._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
+                <a href="estimatePartFlooring/details/<%= estimatePartFloorings.query[i]._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+            </td>
          </tr>
          <% } %>
+            <tr>
+            <td colspan="10" align="center" ><strong> Total Estimated Cost for Flooring : <strong> <span id="fnlCost" >$<%= subTotal %> </strong></span> </td>
+            </tr>        
 </tbody>
 </table>
+ 
+
 </div>
+
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>
-

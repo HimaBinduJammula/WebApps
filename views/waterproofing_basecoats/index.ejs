@@ -4,11 +4,11 @@
  <h2>Material Waterproofing Basecoat costs</h2>
 
 <p>There are  <%= waterproofingBasecoats.query.length %> waterproofing basecoats. <br/>
-<a href="create.ejs">Add a new one.</a></p>
-
+<a href="waterproofingTopcoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
 <table class="table" border="1">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -19,19 +19,23 @@
     <tbody>
 <% for (var i = 0; i < waterproofingBasecoats.query.length; i++) { %>
          <tr>
+            <td><%=  waterproofingBasecoats.query[i]._id %>	</td>
             <td><%=  waterproofingBasecoats.query[i].name %></td>
             <td><%=  waterproofingBasecoats.query[i].displayorder %></td>
             <td><%=  waterproofingBasecoats.query[i].price %></td>
             <td><%=  waterproofingBasecoats.query[i].unit %></td>
             <td>
-            <a target="blank" href="/waterproofingBasecoat/delete"<%= waterproofingBasecoats.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
-            <a  target="blank" href="/waterproofingBasecoat/details"  <%= waterproofingBasecoats.query[i].id %>"> Details</a> |
-            <a target="blank" href="/waterproofingBasecoat/edit" <%= waterproofingBasecoats.query[i].id %>">  Edit </a> 
-            
-            </td>
-Chat con
+							<a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger" >	<span class="glyphicon glyphicon-trash"></span> Delete </a>
+            <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">	  <span class="glyphicon glyphicon-list-alt"></span> Details </a>
+			      <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
+							
+						</td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This project is managed by R14 --!>
+<!-- Sruthi Palpandian--!>
+<!-- Snigda Jataprolu --!>
+<!-- Ganga Samyuktha Reddy --!>

@@ -28,8 +28,8 @@
             <td> <%= estimatePartMileage.startLocation %></td>
             <td> <%= estimatePartMileage.endLocation %></td>
             <td> <%= estimatePartMileage.milesPerDrive %></td>
-            <td> <%= estimatePartMileages.query[0].dollarsPerMile %></td>
-            <td> <%= estimatePartMileage.numberOfVehicles*estimatePartMileage.milesPerDrive*estimatePartMileages.query[0].dollarsPerMile %></td>
+            <td> <%= mileageRateNow.dollarsPerMile %></td>
+            <td> <%= estimatePartMileage.numberOfVehicles*estimatePartMileage.milesPerDrive*mileageRateNow.dollarsPerMile %></td>
         </tr>
 </tbody>
 </table>

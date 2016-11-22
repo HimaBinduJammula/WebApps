@@ -1,35 +1,53 @@
-<% include ..\..\views\header.ejs %>
+
 <% console.log(estimatePartAggregates.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
-				<a href="estimatePartAggregate/create">Add a new one.</a></p>
 
+				<a href="estimatePartAggregate/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>isUsed?</th>
         <th>Type</th>
+        <th>Material</th>
+        <th>coverageSqFt</th>
+        <th>Subtotal</th>
        <th>Actions</th>
+      
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartAggregates.query[i].isUsed %></td>
-            <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
+
+<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
+
+        var entry = estimatePartAggregates.query[i];
+        
+      %>
+        <tr>
+            <td> <%= entry._id %></td>
+            <td> <%= entry.isUsed %></td>
+            <td> <%= entry.aggregateTypeSelection %></td>
+            <td> <%= entry.aggregateMaterialSelection %></td>
+            <td> <%= entry.coverageSqFt %></td>
+            <td> <%= entry.subtotal %></td>
+
             <td>
-            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i].isUsed %>"> Delete </a> |
-							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i].isUsed %>"> Details </a> |
-							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i].isUsed%>"> Edit </a>
+            <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 
+							<a href="estimatePartAggregate/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+							<a href="estimatePartAggregate/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
             </td>
+
+            
          </tr>
          <% } %>
+            
 </tbody>
 </table>
 </div>
 <!-- This view is managed by Team 5-09 -->
-<!-- Sri Sai Ravali Chinthareddy -->
 <!-- Avyakta Pallerla -->
+<!-- Sri Sai Ravali Chinthareddy -->

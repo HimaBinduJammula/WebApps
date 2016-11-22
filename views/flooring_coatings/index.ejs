@@ -1,40 +1,49 @@
-<% include ..\..\views\header.ejs %>
 <% console.log(flooringCoatings.query); %>
-<div class="container">
- <h2>Material flooring coating costs</h2>
-
-<p>There are  <%= flooringCoatings.query.length %> flooring coatings. <br/>
-<a href="create.ejs">Add a new one.</a></p>
-
-<table class="table" border="1">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Display Order</th>
-        <th>Price</th>
-        <th>Unit</th>
-       <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-<% for (var i = 0; i < flooringCoatings.query.length; i++) { %>
-         <tr>
-            <td><%=  flooringCoatings.query[i].name %></td>
-            <td><%=  flooringCoatings.query[i].displayorder %></td>
-            <td><%=  flooringCoatings.query[i].price %></td>
-            <td><%=  flooringCoatings.query[i].unit %></td>
-            <td>
-            <a target="blank" href="/flooring_coatings/delete"<%= flooringCoatings.query[i].id %>"><%style:"color:red"%>Delete</style></a> | 
-            <a  target="blank" href="/flooring_coatings/details"  <%= flooringCoatings.query[i].id %>"> Details</a> |
-            <a target="blank" href="/flooring_coatings/edit" <%= flooringCoatings.query[i].id %>">  Edit </a> 
-            
-            </td>
-         </tr>
-         <% } %>
-</tbody>
-</table>
-</div>
-
-<!--This model is managed by Team 5-12 -->
-<!-- Harsha Vardhan Reddy Alla -->
-<!-- Saiteja Guduri -->
+	<div class="container">
+		<h2>Material Flooring coatings costs</h2>
+		<p>There are
+			<%= flooringCoatings.query.length %> flooring coating. <br/>
+				<a href="flooringCoating/create"class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < flooringCoatings.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  flooringCoatings.query[i]._id %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].name %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].price %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].unit %>
+						</td>
+						<td>
+							<a href="flooringCoating/delete/<%=  flooringCoatings.query[i]._id %>"class="btn btn-danger" > <span class="glyphicon glyphicon-trash"></span> Delete </a> |
+							<a href="flooringCoating/details/<%= flooringCoatings.query[i]._id %>"class="btn btn-info">	<span class="glyphicon glyphicon-list-alt"></span> Details </a> |
+							<a href="flooringCoating/edit/<%=    flooringCoatings.query[i]._id %>"class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
+						</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>
+	<!--  This model is managed by Team 5-12
+Harsha Vardhan Reddy Alla
+Saiteja Guduri
+-->

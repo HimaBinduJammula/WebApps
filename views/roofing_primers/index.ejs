@@ -4,11 +4,12 @@
  <h2>Material roofing primer costs</h2>
 
 <p>There are  <%= roofingPrimers.query.length %> roofing primers. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="roofingPrimer/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -17,15 +18,25 @@
     </tr>
     </thead>
     <tbody>
+    <% count=0; %>
 <% for (var i = 0; i < roofingPrimers.query.length; i++) { %>
-         <tr>
+         <tr><% count++; %>
+             <td><%= roofingPrimers.query[i]._id %></td>
             <td><%=  roofingPrimers.query[i].name %></td>
             <td><%=  roofingPrimers.query[i].displayorder %></td>
             <td><%=  roofingPrimers.query[i].price %></td>
             <td><%=  roofingPrimers.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+							<a href="roofingPrimer/delete/<%=  count%>"> Delete </a> |
+							<a href="roofingPrimer/details/<%=  count%>"> Details </a> |
+							<a href="roofingPrimer/edit/<%=  count%>"> Edit </a>
+						</td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This view is managed by team 5-13 -->
+<!--  Chilmakuri, Venkat Sandeep -->
+<!-- Siddamsetty, Sashidhar  -->
+<!-- Chandupatla, Rahul Reddy -->

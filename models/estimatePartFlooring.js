@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
   , FlooringCoating = require('./flooringCoating.js')
 
 var EstimatePartFlooringSchema = new Schema({
+  _id: { type: Number, required: true },
   floorSystemType: { type: String, required: true, default: 'Epoxy', enum: ['Epoxy', 'Decorative Expoxy', 'Urethane'] },
   usesUrethane: { type: Boolean, required: true, default: false },
   urethaneProductSelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
@@ -16,7 +17,7 @@ var EstimatePartFlooringSchema = new Schema({
 var estimatePartFlooring = mongoose.model('EstimatePartFlooring', EstimatePartFlooringSchema)
 module.exports = estimatePartFlooring
 
-
 // This data is managed by Team 5-05
 // Lakshmi Supriya Nakerikanti
 // Saravana Kumar Palaniyappan
+

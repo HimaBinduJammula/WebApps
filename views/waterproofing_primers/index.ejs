@@ -4,7 +4,7 @@
 
 		<p>There are
 			<%= waterproofingPrimers.query.length %> waterproofing primers. <br/>
-				<a href="waterproofingPrimer/create">Add a new one.</a></p>
+				<a href="waterproofingTopcoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
 
 		<table class="table" border="1">
 			<thead>
@@ -36,12 +36,17 @@
 							<%=  waterproofingPrimers.query[i].unit %>
 						</td>
 						<td>
-							<a href="waterproofingPrimer/delete/<%=  waterproofingPrimers.query[i]._id %>"> Delete </a> |
-							<a href="waterproofingPrimer/details/<%= waterproofingPrimers.query[i]._id %>"> Details </a> |
-							<a href="waterproofingPrimer/edit/<%=    waterproofingPrimers.query[i]._id %>"> Edit </a>
+							<a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger" >	<span class="glyphicon glyphicon-trash"></span> Delete </a>
+            <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">	  <span class="glyphicon glyphicon-list-alt"></span> Details </a>
+			      <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
+							
 						</td>
 					</tr>
 					<% } %>
 			</tbody>
 		</table>
 	</div>
+<!-- This project is managed by R14 --!>
+<!-- Sruthi Palpandian--!>
+<!-- Snigda Jataprolu --!>
+<!-- Ganga Samyuktha Reddy --!>

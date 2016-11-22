@@ -7,17 +7,17 @@
 <br/>
 <% 
 maxID=0; 
-for (let i=0; i<mileageRates.query.length; i++) {
+for (var i=0; i<mileageRates.query.length; i++) {
     if(mileageRates.query[i]._id > maxID) {
         maxID=mileageRates.query[i]._id;
         }
 }
 maxRate=0; 
-for (let i=0; i<mileageRates.query.length; i++) {
+for (var i=0; i<mileageRates.query.length; i++) {
     if(mileageRates.query[i].dollarsPerMile > maxRate) {
         maxRate=mileageRates.query[i].dollarsPerMile;
         }
-}
+} 
 
 %>
 	<p>The largest ID is

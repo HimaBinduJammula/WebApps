@@ -1,7 +1,47 @@
 [
   {
+    "_id":1,
+    "floorSystemType": "Urethane",
+    "usesUrethane": "Yes",
+    "urethaneProductSelection": "U1",
+    "urethaneCoverageSqFt": 100,
+    "usesEpoxy": "Yes",
+    "expoxyProductSelection": "E1",
+    "expoxyCoverageSqFt": 150,
+    "subtotal": 250
+  },
+  {
+    "_id":2,
     "floorSystemType": "Epoxy",
-    "usesUrethane": false,
-    "subtotal": 22
+    "usesUrethane": "Yes",
+    "urethaneProductSelection": "U2",
+    "urethaneCoverageSqFt": 100,
+    "usesEpoxy": "Yes",
+    "expoxyProductSelection": "E4",
+    "expoxyCoverageSqFt":100,
+    "subtotal": 200
+  },
+  {
+    "_id":3,
+    "floorSystemType": "Urethane",
+    "usesUrethane": "Yes",
+    "urethaneProductSelection": "U3",
+    "urethaneCoverageSqFt": 100,
+    "usesEpoxy": "Yes",
+    "expoxyProductSelection": "E3",
+    "expoxyCoverageSqFt": 150,
+    "subtotal": 250
+  },
+  {
+    "_id":4,
+    "floorSystemType": "Epoxy",
+    "usesUrethane": "Yes",
+    "urethaneProductSelection": "U4",
+    "urethaneCoverageSqFt": 100,
+    "usesEpoxy": "Yes",
+    "expoxyProductSelection": "E4",
+   "expoxyCoverageSqFt": 200,
+    "subtotal": 300
   }
 ]
+
