@@ -3,7 +3,7 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartAggregates.query[0].entries.length %> entries. <br/>
+<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
 				<a href="estimatePartAggregate/create">Add a new one.</a></p>
 
@@ -23,9 +23,8 @@
     <tbody>
 
 <% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
-    
-     for(var j=0; j<estimatePartAggregates.query[i].entries.length;j++){
-        var entry = estimatePartAggregates.query[i].entries[j];
+
+        var entry = estimatePartAggregates.query[i];
         
       %>
         <tr>
@@ -42,7 +41,6 @@
 							<a href="estimatePartAggregate/edit/<%=    entry._id %>"> Edit </a>
             </td>
          </tr>
-         <% } %>
          <% } %>
             
 </tbody>

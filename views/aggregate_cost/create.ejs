@@ -13,12 +13,6 @@
             maxID=estimatePartAggregates.query[i]._id;
             }
     }
-    maxDisplayorder=0; 
-    for (var i=0; i<estimatePartAggregates.query.length; i++) {
-        if(estimatePartAggregates.query[i].displayorder > maxDisplayorder) {
-            maxDisplayorder=estimatePartAggregates.query[i].displayorder;
-            }
-    }
     %>
         <div class="content">
             <div>
@@ -31,27 +25,27 @@
 
 
                     <div class="form-group">
-                    <label for="usesAggregate">Uses Aggregate?</label>
-                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" >
+                    <label for="isUsed">Uses Aggregate?</label>
+                        <input type="checkbox" class="form-control" id="isUsed" name="isUsed" >
                     </div>
 
                     <div class="form-group">
                     <label for="aggregateTypeSelection">Aggregate Type</label>
                     <div class="funkyradio">
                             <div class="funkyradio-primary">
-                                <input type="radio" name="radio" id="Sand" checked/>
+                                <input type="radio" value="Sand" name="aggregateTypeSelection" id="Sand" checked/>
                                 <label for="Sand">Sand</label>
                             </div>
                             <div class="funkyradio-success">
-                                <input type="radio" name="radio" id="Quartz" />
+                                <input type="radio" value="Quartz" name="aggregateTypeSelection" id="Quartz" />
                                 <label for="Quartz">Quartz</label>
                             </div>
                             <div class="funkyradio-warning">
-                                <input type="radio" name="radio" id="Flake" />
+                                <input type="radio" value="Flake" name="aggregateTypeSelection" id="Flake" />
                                 <label for="Flake">Flake</label>
                             </div>
                             <div class="funkyradio-danger">
-                                <input type="radio" name="radio" id="Glass" />
+                                <input type="radio" value="Glass Beads" name="aggregateTypeSelection" id="Glass" />
                                 <label for="Glass">Glass Beads</label>
                             </div>
                         </div>
@@ -59,14 +53,17 @@
 
                     <div class="form-group">
                         <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
-                        <input type="input" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" >
-
+                        <input type="text" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" />
                     </div>
 
                     <div class="form-group">
                         <label for="coverageSqFt">Coverage Square per feet</label>
-                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" >
+                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" />
+                    </div>
 
+                    <div class="form-group">
+                        <label for="subtotal">Cost</label>
+                        <input type="number" class="form-control" id="subtotal" name="subtotal" />
                     </div>
 
                     <input type="submit" value="Post entry" class="btn btn-danger">
