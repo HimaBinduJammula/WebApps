@@ -96,7 +96,6 @@ api.get('/details/:id', function(req, res) {
 
 
 // GET one
-// GET one
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
@@ -139,7 +138,7 @@ api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
-    var data = req.app.locals.estimatePartLabors.query;
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
