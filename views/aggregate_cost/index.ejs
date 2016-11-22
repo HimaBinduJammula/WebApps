@@ -3,7 +3,7 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartAggregates.query[0].entries.length %> entries. <br/>
+<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
 				<a href="estimatePartAggregate/create">Add a new one.</a></p>
 
@@ -23,9 +23,8 @@
     <tbody>
 
 <% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
-    
-     for(var j=0; j<estimatePartAggregates.query[i].entries.length;j++){
-        var entry = estimatePartAggregates.query[i].entries[j];
+
+        var entry = estimatePartAggregates.query[i];
         
       %>
         <tr>
@@ -37,17 +36,18 @@
             <td> <%= entry.subtotal %></td>
 
             <td>
-            <a href="estimatePartAggregate/delete/<%=  entry._id %>"> Delete </a> 
-							<a href="estimatePartAggregate/details/<%= entry._id %>"> Details </a> 
-							<a href="estimatePartAggregate/edit/<%=    entry._id %>"> Edit </a>
+            <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 
+							<a href="estimatePartAggregate/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+							<a href="estimatePartAggregate/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
             </td>
+
+            
          </tr>
-         <% } %>
          <% } %>
             
 </tbody>
 </table>
 </div>
 <!-- This view is managed by Team 5-09 -->
-<!-- Sri Sai Ravali Chinthareddy -->
 <!-- Avyakta Pallerla -->
+<!-- Sri Sai Ravali Chinthareddy -->

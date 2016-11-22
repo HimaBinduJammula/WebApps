@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
 var EntryFootageSchema = new Schema({
+    _id: { type: Number, required: true },
     description: { type: String, required: true },
     widthFeet: { type: Number, required: true, default: 10 },
     lengthFeet: { type: Number, required: true, default: 100 }
