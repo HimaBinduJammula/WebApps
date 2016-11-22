@@ -9,11 +9,11 @@
 <table class="table" border="1">
     <thead>
       <tr>
-       <th>ID</th>
+       <th>Id</th>
        <th>Description</th>
-       <th>Length</th>
-       <th>Width</th>
-       <th>SqFt</th>
+       <th>Length_ft</th>
+       <th>Width_ft</th>
+       <th >Area_sqft</th>
 
 
        <th>Actions</th>
@@ -32,21 +32,24 @@
             <td> <%= entry.description %></td>
             <td> <%= entry.length %></td>
             <td> <%= entry.width %></td>
-            <td> <%= sqft %></td>
+            <td bgcolor = "#CACACA"> <%= sqft %></td>
              <%totsqft+= sqft %>
 
 
             <td>
-            <a href="estimatePartFootage/delete/<%=  entry._id %>"> Delete </a> 
-							<a href="estimatePartFootage/details/<%= entry._id %>"> Details </a> 
-							<a href="estimatePartFootage/edit/<%=    entry._id %>"> Edit </a>
+
+            <a href="estimatePartFootage/delete/<%=  entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> 
+			<a href="estimatePartFootage/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+			<a href="estimatePartFootage/edit/<%=    entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
+
             </td>
          </tr>
          <% } %>
          <% } %>
         
          <tr> 
-            <td colspan="4" > <strong> TOTAL SQUARE FOOTAGE :  <%=  totsqft %> </strong></span> </td>
+            <td colspan="4" bgcolor = "#ddd"> <strong> Calculated total sqft:  <%=  totsqft %> </strong></span> </td>
+            
          </tr>
 </tbody>
 </table>

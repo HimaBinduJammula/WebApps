@@ -3,10 +3,15 @@
 /* ==========================================================================
    needed for BootStrap menu
    ========================================================================== */
-  body {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    background: #01335a;
+    border-bottom: 3px solid #f7ee00;
+}
 
 .dropdown-submenu {
     position: relative;
@@ -19,6 +24,7 @@ table{
 thead tr{
   background-color: #CACACA;
 }
+
 tfoot tr{
  background-color: #CACACA; 
 }

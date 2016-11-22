@@ -4,11 +4,11 @@
 
 
 <% for (var i = flooringEstimates.query.length-1; i >-1; i--) { %>     
-    <div class="panel panel-default">
-    <div class="panel-heading"></div>
+    <div class="panel panel-info">
+    <div class="panel-heading">ID : <%=  flooringEstimates.query[i]._id %></div>
     <div class="text-muted pull-left"> </div> 
         <div class="panel-body">
-            ID : <%=  flooringEstimates.query[i]._id %><br>
+            
             Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
             City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
             Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>
@@ -17,9 +17,9 @@
             CostPerSqrFoot : <%= flooringEstimates.query[i].costPerSquareFoot %><br>
             BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
 
-            <a href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete </a>
-                <a href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>">| Details |</a> 
-                <a href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"> Edit</a><br>
+            <a class="btn btn-danger btn-sm" href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete</a>
+            <a class="btn btn-info btn-sm" href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>"> Details </a> 
+            <a class="btn btn-warning btn-sm" href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>">Edit</a><br>
         </div>
     </div>
  <% } %>
