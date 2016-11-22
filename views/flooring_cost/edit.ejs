@@ -1,27 +1,55 @@
+<br/<br/>
 <br/>
-<br/>
-<h2>Edit estimatePartFlooring product</h2>
+<h2>Edit Estimate Part Flooring</h2>
 <div class="content">
 	<div>
 		<form method="POST" action="/estimatePartFlooring/save/<%= estimatePartFlooring._id %>">
 
+			
 			<div class="form-group" id=frm>
 				<label for="_id">ID</label>
 				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartFlooring._id %>" required disabled>
 			</div>
 
+			
 			<div class="form-group">
-				<label for="FloorSystemType">FloorSystemType</label>
-				<input type="text" class="form-control" id="floorSystemType" name="floorSystemType" value="<%= estimatePartFlooring.roofType %>" required>
+				<label for="type">Floorig Type Selection</label>
+				<input type="text" class="form-control" id="type" name="unit" value="<%= estimatePartFlooring.floorSystemType %>" required>
 			</div>
 
-			<div class="form-group">
-				<label for="processType">processType</label>
-				<input type="text" class="form-control" id="usesUrethane" name="usesUrethane" value="<%= estimatePartFlooring.processType %>" required>
+            <div class="form-group">
+				<label for="type">Uses Erethane</label>
+				<input type="text" class="form-control" id="type" name="unit" value="<%= estimatePartFlooring.usesUrethane %>" required>
 			</div>
 
+            <div class="form-group">
+				<label for="type">Urethane Product Selection:</label>
+				<input type="text" class="form-control" id="type" name="unit" value="<%= estimatePartFlooring.urethaneProductSelection %>" required>
+			</div>
+			
+            <div class="form-group">
+				<label for="urethaneCov">Urethane Coverage:</label>
+				<input type="number" class="form-control" id="type" name="urethaneCov" value="<%= estimatePartFlooring.urethaneCoverageSqFt %>" required>
+			</div>
+
+            <div class="form-group">
+				<label for="usesEpo">Uses Epoxy?</label>
+				<input type="text" class="form-control" id="type" name="usesEpo" value="<%= estimatePartFlooring.usesEpoxy %>" required>
+			</div>
+                        
 			<div class="form-group">
-				<label for="price">subtotal</label>
+				<label for="epoProduct">Epoxy Product Selection:</label>
+				<input type="text" class="form-control" id="epoProduct" name="epoProduct" value="<%= estimatePartFlooring.expoxyProductSelection %>" required>
+			</div>
+
+            <div class="form-group">
+				<label for="epoCoverage">Epoxy Coverage:</label>
+				<input type="number" class="form-control" id="epoCoverage" name="epoCoverage" value="<%= estimatePartFlooring.expoxyCoverageSqFt %>" required>
+			</div>
+            
+
+		    <div class="form-group">
+				<label for="subtotal">Subtotal</label>
 				<input type="number" class="form-control" id="subtotal" name="subtotal" value="<%= estimatePartFlooring.subtotal %>" required>
 			</div>
 
@@ -33,6 +61,7 @@
 		</form>
 	</div>
 </div>
-<!-- This view is managed by team 05-06-->
-<!-- Naganjali Mutyala-->
-<!-- Akhila Patllola-->
+
+<!-- This part is managed by 05-05 --!>
+<!-- Supriya Nakerikanti --!>
+<!-- Saravana Palaniyappan --!>
