@@ -3,7 +3,7 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/estimatePartFootage.js');
+var Model = require('../models/entryFootage.js');
 const notfoundstring = 'No such estimate Part Footage';
 
 
@@ -41,7 +41,7 @@ api.get('/findone/:id', function(req, res){
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('footage/index.ejs',
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "Footage", layout: "layout.ejs" });
 });
 
 // GET create

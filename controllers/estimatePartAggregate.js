@@ -30,6 +30,14 @@ api.get('/findall', function(req, res){
 
 module.exports = api;  // at the very end
 
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartAggregates.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
 
 // GET create
 api.get("/create", function(req, res) {
@@ -41,7 +49,7 @@ api.get("/create", function(req, res) {
 // DELETE
 api.get('/delete/:id', function(req, res){
     // res.setHeader('Content-Type', 'application/html');
-    var data = req.app.locals.estimatePartAggregates.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     id = req.params.id;
     var item = data.find(function(dt){
     	return dt._id==id;
@@ -62,7 +70,7 @@ api.get('/delete/:id', function(req, res){
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimatePartAggregates.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -78,7 +86,7 @@ api.get('/details/:id', function(req, res) {
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimatePartAggregates.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -95,50 +103,52 @@ api.get('/edit/:id', function(req, res) {
 // POST new
 api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.description = req.body.description;
-    item.length = req.body.length;
-     item.width = req.body.width;    
+    item.isUsed = req.body.isUsed;
+    item.aggregateTypeSelection = req.body.aggregateTypeSelection;    
+    item.aggregateMaterialSelection = req.body.aggregateMaterialSelection;
+    item.coverageSqFt = req.body.coverageSqFt;
+    item.subtotal= req.body.subtotal;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // POST update
 api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.description = req.body.description;
-    item.length = req.body.length;
-        item.width = req.body.width;
-
-    item.displayorder = req.body.displayorder;
+    item.isUsed = req.body.isUsed;
+    item.aggregateTypeSelection = req.body.aggregateTypeSelection;    
+    item.aggregateMaterialSelection = req.body.aggregateMaterialSelection;
+    item.coverageSqFt = req.body.coverageSqFt;
+    item.subtotal= req.body.subtotal;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', function(req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
-    var data = req.app.locals.estimatePartFootages.query[0].entries;
+    var data = req.app.locals.estimatePartAggregates.query;
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/estimatePartFootage');
+    return res.redirect('/estimatePartAggregate');
 });
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
 	
- response.render("footage/index.ejs");
+ response.render("aggregate_cost/index.ejs");
 });
