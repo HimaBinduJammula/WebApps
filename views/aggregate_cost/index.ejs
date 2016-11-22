@@ -36,10 +36,12 @@
             <td> <%= entry.subtotal %></td>
 
             <td>
-            <a href="estimatePartAggregate/delete/<%=  entry._id %>"> Delete </a> 
-							<a href="estimatePartAggregate/details/<%= entry._id %>"> Details </a> 
-							<a href="estimatePartAggregate/edit/<%=    entry._id %>"> Edit </a>
+            <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 
+							<a href="estimatePartAggregate/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+							<a href="estimatePartAggregate/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
             </td>
+
+            
          </tr>
          <% } %>
             
@@ -47,5 +49,5 @@
 </table>
 </div>
 <!-- This view is managed by Team 5-09 -->
-<!-- Sri Sai Ravali Chinthareddy -->
 <!-- Avyakta Pallerla -->
+<!-- Sri Sai Ravali Chinthareddy -->

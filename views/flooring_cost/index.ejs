@@ -1,47 +1,42 @@
-<% console.log(estimatePartFloorings.query[0].entries); %>
+<% console.log(estimatePartFloorings.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartFloorings.query[0].length %> entries. <br/>
 <a href="/estimatePartFlooring/create">Add a new one.</a></p>
+
 <table class="table" border="1">
     <thead>
       <tr>
-           <th>Id</th>
-           <th>FloorSystemType</th>
+        <th>ID</th>
+        <th>FloorSystemType</th>
            <th>UsesUrethane</th>
-       <th>Actions</th>
-       
+        <th>Total Cost</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-
-
-
-
-<% count=0; %>
-<% for (var i = 0; i < estimatePartFloorings.query.length; i++) { %>
-         <tr> <% count++; %>
-         <td>
-              <%=  estimatePartFloorings.query[i]._id %>
-            </td>
+    <% var subTotal = 0 %>
+<% for (var i = 0; i < estimatePartFloorings.query.length; i++) { 
+    subTotal += estimatePartFloorings.query[i].subtotal;
+    %>
+         <tr>
+            <td><%=  estimatePartFloorings.query[i]._id %></td>
             <td><%=  estimatePartFloorings.query[i].floorSystemType %></td>
-            <td><%=  estimatePartFloorings.query[i].usesUrethane %></td>            
-            <td>
-              <a href="/estimatePartFlooring/delete/<%=  count%>"> Delete </a> |
-              <a href="/estimatePartFlooring/details/<%= count%>"> Details </a> |
-              <a href="/estimatePartFlooring/edit/<%= count %>"> Edit </a>
-            </td>
+            <td><%=  estimatePartFloorings.query[i].usesUrethane %></td>
+            <td> $<%=  estimatePartFloorings.query[i].subtotal %></td>
+            <td><a href="estimatePartFlooring/delete/<%= estimatePartFloorings.query[i]._id %>">Delete</a>
+                <a href="estimatePartFlooring/details/<%= estimatePartFloorings.query[i]._id %>">Details</a>
+                <a href="estimatePartFlooring/edit/<%= estimatePartFloorings.query[i]._id %>">Edit</a></td>
          </tr>
          <% } %>
-
-
-
-
-
 </tbody>
 </table>
+<p> Total Estimated Cost for Flooring : <strong> $<%= subTotal %> </strong> </p>
 </div>
+
+
+
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
 <!-- Saravana Palaniyappan --!>
