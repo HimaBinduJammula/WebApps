@@ -4,20 +4,22 @@
 
 <p>There are  <%= estimatePartFootages.query[0].entries.length %> entries. <br/>
 
-				<a class="btn btn-info" href="estimatePartFootage/create"><i class="glyphicon glyphicon-pencil"></i>Add a new one.</a></p>
+				<a href="estimatePartFootage/create">Add a new one.</a></p>
 
-<table class="table table-hover table-bordered">    
+<table class="table" border="1">
     <thead>
       <tr>
-       <th>ID</th>
+       <th>Id</th>
        <th>Description</th>
-       <th>Length</th>
-       <th>Width</th>
-       <th>SqFt</th>
+       <th>Length_ft</th>
+       <th>Width_ft</th>
+       <th >Area_sqft</th>
+
+
        <th>Actions</th>
     </tr>
     </thead>
-    <tbody> 
+    <tbody>
 <% for (var i = 0; i < estimatePartFootages.query.length; i++) { 
     var totsqft=0;
      for(var j=0; j<estimatePartFootages.query[i].entries.length;j++){
@@ -30,21 +32,24 @@
             <td> <%= entry.description %></td>
             <td> <%= entry.length %></td>
             <td> <%= entry.width %></td>
-            <td> <%= sqft %></td>
+            <td bgcolor = "#CACACA"> <%= sqft %></td>
              <%totsqft+= sqft %>
 
 
             <td>
-            <a href="estimatePartFootage/delete/<%=  entry._id %>"  class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>Delete </a> 
-		    <a href="estimatePartFootage/details/<%= entry._id %>" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> Details </a> 
-            <a href="estimatePartFootage/edit/<%=    entry._id %>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit </a>
+
+            <a href="estimatePartFootage/delete/<%=  entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> 
+			<a href="estimatePartFootage/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+			<a href="estimatePartFootage/edit/<%=    entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> Edit </a>
+
             </td>
          </tr>
          <% } %>
          <% } %>
         
          <tr> 
-            <td colspan="4" > <strong> TOTAL SQUARE FOOTAGE :  <%=  totsqft %> SqFt </strong></span> </td>
+            <td colspan="4" bgcolor = "#ddd"> <strong> Calculated total sqft:  <%=  totsqft %> </strong></span> </td>
+            
          </tr>
 </tbody>
 </table>

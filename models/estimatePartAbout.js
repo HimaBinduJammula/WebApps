@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
 var EstimatePartAboutSchema = new Schema({
+  _id: { type: Number, required: true },
   client: { type: String, required: true },
   address: { type: String, required: false },
   city: { type: String, required: true },
