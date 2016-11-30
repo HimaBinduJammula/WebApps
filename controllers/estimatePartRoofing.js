@@ -135,7 +135,7 @@ api.post('/delete/:id', function(req, res, next) {
 
 
 module.exports = api;
-// this module is managed by R06
+// This model is managed by by team section-R06
 // Naganjali muthyala
-// Akhila
+// Akhila Reddy Patlolla
 
