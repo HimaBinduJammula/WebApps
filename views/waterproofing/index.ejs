@@ -1,25 +1,43 @@
-<h2>Recent waterproofing estimates</h2>
-<p>There are  <%= waterproofingEstimates.query.length %> waterproofing estimates. <br/>
-<a href="/waterproofingEstimate/create">Add a new one.</a></p>
-<% for(var item in waterproofingEstimates.query) { %>
-<div class="panel panel-default">
-<div class="panel-heading">
-<div class="text-muted pull-right">
-<%= waterproofingEstimates.published %></div>
-<%= waterproofingEstimates.title %></div>
-<% include ..\..\views\estimateparts\est-about %>
-<% include ..\..\views\estimateparts\est-footage %>
-<% include ..\..\views\estimateparts\est-flooring %>
-<% include ..\..\views\estimateparts\est-aggregate %>
-<% include ..\..\views\estimateparts\est-labor %>
-<% include ..\..\views\estimateparts\est-mileage %>
-<% include ..\..\views\estimateparts\est-misc %>
-<% include ..\..\views\estimateparts\est-result %>
-<div class="panel-body">
-<%= waterproofingEstimates.comment %>
+<div class="container">
+   <h2>Recent waterProofing estimates</h2>
+   <% console.log(waterProofingEstimates.query); %>
+
+<p>There are  <%= waterProofingEstimates.query.length %> waterProofing estimates. <br/>
+<a href="/waterProofingEstimate/create">Add a new one.</a></p>
+   <table class="table" border="1">
+      <thead>
+         <tr>
+            <th>Client</th>
+            <th>City</th>
+            <th>Year</th>
+            <th>Month</th>
+            <th>SqFt</th>
+            <th>Cost ($/sqft)</th>
+            <th>Bid ($/sqft)</th>
+            <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+     
+<% for (var i = 0; i < waterProofingEstimates.query.length; i++) { %>      
+   <tr>
+            <td><%=  waterProofingEstimates.query[i].estimatePartAbout.client %></td>
+            <td><%=  waterProofingEstimates.query[i].estimatePartAbout.city %></td>
+            <td><%= waterProofingEstimates.query[i].estimatePartAbout.year %></td>
+            <td><%= waterProofingEstimates.query[i].estimatePartAbout.month %></td>
+            <td><%= waterProofingEstimates.query[i].estimateSquareFootage.sqft %></td>
+            <td><%= waterProofingEstimates.query[i].costPerSquareFoot %></td>
+            <td><%= waterProofingEstimates.query[i].bidPerSquareFoot %></td>
+            <td>
+                   <a class="btn btn-danger btn-sm" href="/waterProofingEstimate/delete/<%= waterProofingEstimates.query[i]._id %>">Delete</a>
+            <a class="btn btn-info btn-sm" href="/waterProofingEstimate/details/<%= waterProofingEstimates.query[i]._id %>"> Details </a> 
+            <a class="btn btn-warning btn-sm" href="/waterProofingEstimate/edit/<%= waterProofingEstimates.query[i]._id %>">Edit</a><br>
+         </td>
+         </tr>
+         <% } %>
+      </tbody>
+   </table>
 </div>
-</div>
-<% } %>
 
 <!--This view is managed by team 5-3
 Cher-Xa Thao
