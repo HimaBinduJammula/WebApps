@@ -13,6 +13,14 @@ api.get('/findall', function(req, res){
     res.send(JSON.stringify(data));
 });
 
+api.get('/findone/:id', function(req, res){
+  res.setHeader('Content-type', 'application/json');
+  var id = parseInt(req.params.id);
+    var data = req.app.locals.waterproofingEstimates.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
 
 //GET /api/waterproofingEstimate
 api.get("/", function (request, response) {
@@ -23,8 +31,17 @@ api.get("/", function (request, response) {
 
 
 //GET create 
-api.get("/create", function (request, response) {
+api.get("/create", function (req, res) {
   response.render("waterproofing/create.ejs");
+});
+
+api.post('/save', function(req, res) {
+     console.log("Handling POST " + req);
+     var data = req.app.locals.waterproofingEstimates.query;
+     var item = new Model;
+     console.log("NEW ID " + req.body._id);
+     item._id = parseInt(req.body._id);
+     return res.redirect('/waterproofingEstimate');
 });
 
 module.exports = api;
