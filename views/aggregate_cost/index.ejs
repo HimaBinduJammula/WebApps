@@ -1,5 +1,15 @@
 
 <% console.log(estimatePartAggregates.query); %>
+<% 
+function find(data,id){
+  for(var i=0; i<data.length; i++){
+      if(data[i]._id==id)
+        return data[i];
+  }
+  return false;
+} 
+
+%>
 <div class="container">
  <h2>All entries</h2>
 
@@ -31,7 +41,7 @@
             <td> <%= entry._id %></td>
             <td> <%= entry.isUsed %></td>
             <td> <%= entry.aggregateTypeSelection %></td>
-            <td> <%= entry.aggregateMaterialSelection %></td>
+            <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).name %></td>
             <td> <%= entry.coverageSqFt %></td>
             <td> <%= entry.subtotal %></td>
 
