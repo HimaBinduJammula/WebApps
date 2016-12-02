@@ -1,3 +1,27 @@
+<br/>
+<h2>Details for roofing estimate</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  waterProofingEstimate._id %><br>
+	<%=  waterProofingEstimate._type %>
+</p>
+<p>Client : <%=waterProofingEstimate.estimatePartAbout.client%></P>
+<p>Created : <%=waterProofingEstimate.estimatePartAbout.created%></P>
+<p>Address : <%=waterProofingEstimate.estimatePartAbout.address%></P>
+<p>City : <%=waterProofingEstimate.estimatePartAbout.city%></P>
+<p>Ztate : <%=waterProofingEstimate.estimatePartAbout.state%></P>
+<p>zipcode : <%=waterProofingEstimate.estimatePartAbout.zipcode%></P>
+<br>
+<p>Squre Footage : <%=waterProofingEstimate.estimateSquareFootage.sqft%></P>
+<br>
+<p>CostPerSquareFoot : $<%=waterProofingEstimate.costPerSquareFoot%></P>
+<p>BidPerSquareFoot : $<%=waterProofingEstimate.bidPerSquareFoot%></P>
+
+<form method="get" action="/waterProofingEstimate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+
 <!--This view is managed by team 5-3
 Cher-Xa Thao
 Brandyn Kopp -->
