@@ -3,7 +3,7 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/estimatePartLabor.js');
+var Model = require('../models/entryLabor.js');
 const notfoundstring = 'No such estimate Part Labor found';
 
 
@@ -117,7 +117,7 @@ api.get('/edit/:id', function(req, res) {
 // POST new
 api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
-    var data = req.app.locals.estimatePartLabors.query;
+    var data = req.app.locals.estimatePartLabors.query[0].entries;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
