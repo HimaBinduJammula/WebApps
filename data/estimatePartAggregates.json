@@ -10,7 +10,7 @@
   {
 	"_id": 2,
     "isUsed": true,
-    "aggregateTypeSelection": "Primers",
+    "aggregateTypeSelection": "Quartz",
     "aggregateMaterialSelection": 3,
     "coverageSqFt": 200,
     "subtotal": 300
