@@ -1,25 +1,3 @@
-<h2>Recent waterproofing estimates</h2>
-<p>There are  <%= waterproofingEstimates.query.length %> waterproofing estimates. <br/>
-<a href="/waterproofingEstimate/create">Add a new one.</a></p>
-<% for(var item in waterproofingEstimates.query) { %>
-<div class="panel panel-default">
-<div class="panel-heading">
-<div class="text-muted pull-right">
-<%= waterproofingEstimates.published %></div>
-<%= waterproofingEstimates.title %></div>
-<% include ..\..\views\estimateparts\est-about %>
-<% include ..\..\views\estimateparts\est-footage %>
-<% include ..\..\views\estimateparts\est-flooring %>
-<% include ..\..\views\estimateparts\est-aggregate %>
-<% include ..\..\views\estimateparts\est-labor %>
-<% include ..\..\views\estimateparts\est-mileage %>
-<% include ..\..\views\estimateparts\est-misc %>
-<% include ..\..\views\estimateparts\est-result %>
-<div class="panel-body">
-<%= waterproofingEstimates.comment %>
-</div>
-</div>
-<% } %>
 
 <!--This view is managed by team 5-3
 Cher-Xa Thao
