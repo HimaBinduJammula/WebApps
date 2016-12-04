@@ -31,7 +31,7 @@
             <td> <%= entry._id %></td>
             <td> <%= entry.isUsed %></td>
             <td> <%= entry.aggregateTypeSelection %></td>
-            <td> <%= entry.aggregateMaterialSelection %></td>
+            <td> <%= entry.aggregateMaterialSelection || entry.aggregateMaterialSelection.name %></td>
             <td> <%= entry.coverageSqFt %></td>
             <td> <%= entry.subtotal %></td>
 
