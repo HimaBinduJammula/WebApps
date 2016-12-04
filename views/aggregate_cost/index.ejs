@@ -1,11 +1,22 @@
 
 <% console.log(estimatePartAggregates.query); %>
+<% 
+function find(data,id){
+  for(var i=0; i<data.length; i++){
+      if(data[i]._id==id)
+        return data[i];
+  }
+  return false;
+} 
+
+%>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
-				<a href="estimatePartAggregate/create">Add a new one.</a></p>
+<a class="btn btn-info" href="estimatePartAggregate/create"><i class="glyphicon glyphicon-pencil"></i> Add a New One.</a></p>
+
 
 <table class="table" border="1">
     <thead>
@@ -31,7 +42,7 @@
             <td> <%= entry._id %></td>
             <td> <%= entry.isUsed %></td>
             <td> <%= entry.aggregateTypeSelection %></td>
-            <td> <%= entry.aggregateMaterialSelection || entry.aggregateMaterialSelection.name %></td>
+            <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).name %></td>
             <td> <%= entry.coverageSqFt %></td>
             <td> <%= entry.subtotal %></td>
 
