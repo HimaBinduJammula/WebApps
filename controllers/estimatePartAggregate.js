@@ -107,7 +107,7 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.isUsed = req.body.isUsed;
+    item.isUsed = req.body.isUsed?true:false;
     item.aggregateTypeSelection = req.body.aggregateTypeSelection;    
     item.aggregateMaterialSelection = req.body.aggregateMaterialSelection;
     item.coverageSqFt = req.body.coverageSqFt;
