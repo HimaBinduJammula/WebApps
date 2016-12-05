@@ -187,7 +187,15 @@ function getLatestMileageRate(rates){
     return curMilRate;
 }
 
+// module.exports = mileageRateNow = function(){
+//     return getLatestMileageRate(allMileageRates.query);
+// };
+// module.exports = api;
 
+module.exports = { 
+        mileageRateNow : function(){
+                return getLatestMileageRate(allMileageRates.query);
+            },
+        api : api
+}
 
-
-module.exports = api;
