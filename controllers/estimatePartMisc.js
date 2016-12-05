@@ -5,9 +5,11 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/entryMisc.js');
 const notfoundstring = 'No such estimatePartMisc';
-var MileageRateNow = require('../controllers/estimatePartMileage.js').mileageRateNow();
+var ePartMileage = require('../controllers/estimatePartMileage.js');
 
-console.log("Mileage rate as of now :",MileageRateNow);
+console.log("Mileage rate as of now :",ePartMileage.mileageRateNow());
+console.log("Mileage rate as of now :",ePartMileage.subTotal());
+
 // see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "estimatePartMisc")
@@ -156,7 +158,9 @@ api.post('/delete/:id', function(req, res, next) {
 // GET to this controller root URI
 api.get("/", function (request, response) {
 	// console.log(request.app.locals.estimatePartMiscs.query[0].entries);
- response.render("misc_cost/index.ejs");
+ response.render("misc_cost/index.ejs",{
+    totalMileageCost: ePartMileage.subTotal()
+ });
 });
 
 module.exports = api;

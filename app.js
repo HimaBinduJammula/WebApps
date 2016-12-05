@@ -94,6 +94,7 @@ app.locals.flooringCoatings = db.find(flooringCoatings);
 app.locals.flooringEstimates = db.find(flooringEstimates);
 app.locals.mileageRates = db.find(mileageRates);
 global.allMileageRates = app.locals.mileageRates;
+global.estimatePartMileages = app.locals.estimatePartMileages;
 app.locals.roofingBasecoats = db.find(roofingBasecoats);
 app.locals.roofingEstimates = db.find(roofingEstimates);
 app.locals.roofingPrimers = db.find(roofingPrimers);
