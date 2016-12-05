@@ -5,7 +5,9 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/entryMisc.js');
 const notfoundstring = 'No such estimatePartMisc';
+var MileageRateNow = require('../controllers/estimatePartMileage.js').mileageRateNow();
 
+console.log("Mileage rate as of now :",MileageRateNow);
 // see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "estimatePartMisc")

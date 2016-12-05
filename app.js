@@ -93,6 +93,7 @@ app.locals.estimatePartWaterproofings = db.find(estimatePartWaterproofings);
 app.locals.flooringCoatings = db.find(flooringCoatings);
 app.locals.flooringEstimates = db.find(flooringEstimates);
 app.locals.mileageRates = db.find(mileageRates);
+global.allMileageRates = app.locals.mileageRates;
 app.locals.roofingBasecoats = db.find(roofingBasecoats);
 app.locals.roofingEstimates = db.find(roofingEstimates);
 app.locals.roofingPrimers = db.find(roofingPrimers);
@@ -136,7 +137,7 @@ app.use('/estimatePartAggregate', require('./controllers/estimatePartAggregate.j
 app.use('/estimatePartFlooring', require('./controllers/estimatePartFlooring.js'));
 app.use('/estimatePartFootage', require('./controllers/estimatePartFootage.js'));
 app.use('/estimatePartLabor', require('./controllers/estimatePartLabor.js'));
-app.use('/estimatePartMileage', require('./controllers/estimatePartMileage.js'));
+app.use('/estimatePartMileage', require('./controllers/estimatePartMileage.js').api);
 app.use('/estimatePartMisc', require('./controllers/estimatePartMisc.js'));
 app.use('/estimatePartRoofing', require('./controllers/estimatePartRoofing.js'));
 app.use('/estimatePartWaterproofing', require('./controllers/estimatePartWaterproofing.js'));
