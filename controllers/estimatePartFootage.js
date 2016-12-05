@@ -166,6 +166,16 @@ api.get("/", function (request, response) {
 
 
 module.exports = {
-    
+    subTotal : function(){
+        var totsqft=0;
+         for (var i = 0; i < estimatePartFootages.query.length; i++) { 
+             for(var j=0; j<estimatePartFootages.query[i].entries.length;j++){
+                var entry = estimatePartFootages.query[i].entries[j];
+                var sqft= entry.length*entry.width;
+                totsqft += sqft;
+            }
+        }
+        return totsqft;
+    },
     api:api
 }

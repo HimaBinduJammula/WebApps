@@ -43,7 +43,7 @@ function find(data,id){
             <td> <%= entry.aggregateTypeSelection %></td>
             <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).name %></td>
             <td> <%= entry.coverageSqFt %></td>
-            <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).price*entry.coverageSqFt %></td>
+            <td> $<%= ((sqrFootage/find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).price)*entry.coverageSqFt).toFixed(2) %></td>
 
             <td>
             <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 
