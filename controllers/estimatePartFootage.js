@@ -14,7 +14,7 @@ api.get("/", function (request, response) {
  response.render("footage/index.ejs");
 });
 
-module.exports = api;
+
 
 // HANDLE JSON REQUESTS --------------------------------------------
 api.get('/findall', function(req, res){
@@ -165,3 +165,7 @@ api.get("/", function (request, response) {
 });
 
 
+module.exports = {
+    
+    api:api
+}
