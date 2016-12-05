@@ -27,13 +27,12 @@ function find(data,id){
         <th>Material</th>
         <th>coverageSqFt</th>
         <th>Subtotal</th>
-       <th>Actions</th>
-      
+       <th>Actions</th>  
     </tr>
     </thead>
     <tbody>
 
-<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
+<% for (var i = estimatePartAggregates.query.length-1; i>=0; i--) { 
 
         var entry = estimatePartAggregates.query[i];
         
@@ -44,7 +43,7 @@ function find(data,id){
             <td> <%= entry.aggregateTypeSelection %></td>
             <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).name %></td>
             <td> <%= entry.coverageSqFt %></td>
-            <td> <%= entry.subtotal %></td>
+            <td> $<%= ((sqrFootage/find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).price)*entry.coverageSqFt).toFixed(2) %></td>
 
             <td>
             <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 

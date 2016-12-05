@@ -4,15 +4,16 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/estimatePartAggregate.js');
+var ePartFootage = require('./estimatePartFootage').subTotal();
 const notfoundstring = 'No such estimatePartAggregate';
-
+console.log("ePartFootage", ePartFootage);
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('aggregate_cost/index.ejs',
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "WP Primers", layout: "layout.ejs", sqrFootage: ePartFootage });
 });
 
 // See app.js to find default view folder (e.g.,"views")
