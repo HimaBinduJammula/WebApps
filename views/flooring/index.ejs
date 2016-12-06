@@ -8,14 +8,44 @@
     <div class="panel-heading">ID : <%=  flooringEstimates.query[i]._id %></div>
     <div class="text-muted pull-left"> </div> 
         <div class="panel-body">
+            Client :   <%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
+            Created :  <%=  flooringEstimates.query[i].estimatePartAbout.created %><br>
+            Address :  <%=  flooringEstimates.query[i].estimatePartAbout.address %><br>
+            City :     <%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
+            State :    <%=  flooringEstimates.query[i].estimatePartAbout.state %><br>
+            Zip Code : <%=  flooringEstimates.query[i].estimatePartAbout.zipcode %><br>
+            Latitude : <%=  flooringEstimates.query[i].estimatePartAbout.latitude %><br>
+            Longitude :<%=  flooringEstimates.query[i].estimatePartAbout.longitude %><br><br>
+
+            Total Squar Footage : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br><br>
             
-            Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
-            City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
-            Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>
-            Month :<%= flooringEstimates.query[i].estimatePartAbout.month %><br>
-            Sqft : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br>
+            Floor System Type: <%= flooringEstimates.query[i].estimatePartFooring.floorSystemType%><br>
+            Uses Urethane: <%= flooringEstimates.query[i].estimatePartFooring.usesUrethane%><br>
+            Urethane Product Selection: <%= flooringEstimates.query[i].estimatePartFooring.urethaneProductSelection%><br><br>
+
+            Uses Epoxy: <%= flooringEstimates.query[i].estimatePartFooring.usesEpoxy%><br>
+            Expoxy Product Selection: <%= flooringEstimates.query[i].estimatePartFooring.expoxyProductSelection%><br><br>
+            Aggregate Selection: <%= flooringEstimates.query[i].estimatePartAggregate.aggregateTypeSelection%><br><br>
+            Labor (Total): <%= flooringEstimates.query[i].estimatePartLabor.subtotal%><br><br>
+            Total Number of Vehicles : <% var numOfVehi=0; for (var k = 0; k <flooringEstimates.query[i].estimatePartMileage.entries.length; k++) { 
+                     numOfVehi += parseInt(flooringEstimates.query[i].estimatePartMileage.entries[k].numberOfVehicles);%>
+                     
+                   <% } %><%= numOfVehi%>
+                <br>
+            Mileage Cost (Total): <%= flooringEstimates.query[i].estimatePartMileage.subtotal%><br><br>
+
+           <% for(var j =0; j < flooringEstimates.query[i].estimatePartMiscs.entries.length; j++){ %>
+                    Miscs Cost <%= j+1 %> :  <%= flooringEstimates.query[i].estimatePartMiscs.entries[j].description%>
+                    : $<%= flooringEstimates.query[i].estimatePartMiscs.entries[j].cost%><br>
+                    <% } %>
+            Total Miscs Cost : <%= flooringEstimates.query[i].estimatePartMiscs.subtotal%><br>
+           
+
+
+<br>
             CostPerSqrFoot : <%= flooringEstimates.query[i].costPerSquareFoot %><br>
             BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
+
 
             <a class="btn btn-danger" href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
             <a class="btn btn-info" href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-list-alt"></span> Details </a> 
