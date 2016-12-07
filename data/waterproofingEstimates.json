@@ -1,6 +1,7 @@
 [
   {
     "_type": "waterproofingEstimate",
+    "_id": 1,
     "estimatePartAbout": {
       "client": "Amanda Dance",
       "created": "2016-10-04",
@@ -17,6 +18,7 @@
   },
   {
     "_type": "waterproofingEstimate",
+    "_id": 2,
     "estimatePartAbout": {
       "client": "Balaji Bikes",
       "created": "2016-10-04",

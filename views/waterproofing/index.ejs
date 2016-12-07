@@ -1,4 +1,28 @@
+<h2>Recent waterproofing estimates</h2>
+<p>There are  <%= waterproofingEstimates.query.length %> waterproofing estimates. <br/>
+<a href="/waterproofingEstimate/create">Add a new one.</a></p>
 
+
+<% for (var i = waterproofingEstimates.query.length-1; i >-1; i--) { %>     
+    <div class="panel panel-info">
+    <div class="panel-heading">ID : <%=  waterproofingEstimates.query[i]._id %></div>
+    <div class="text-muted pull-left"> </div> 
+        <div class="panel-body">
+            
+            Client :<%=  waterproofingEstimates.query[i].estimatePartAbout.client %><br>
+            City :<%=  waterproofingEstimates.query[i].estimatePartAbout.city %><br>
+            Year : <%= waterproofingEstimates.query[i].estimatePartAbout.year %><br>
+            Month :<%= waterproofingEstimates.query[i].estimatePartAbout.month %><br>
+            Sqft : <%= waterproofingEstimates.query[i].estimateSquareFootage.sqft %><br>
+            CostPerSqrFoot : <%= waterproofingEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot :<%= waterproofingEstimates.query[i].bidPerSquareFoot %><br>
+
+            <a class="btn btn-danger" href="/waterproofingEstimate/delete/<%= waterproofingEstimates.query[i]._id %>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+            <a class="btn btn-info" href="/waterproofingEstimate/details/<%= waterproofingEstimates.query[i]._id %>"><span class="glyphicon glyphicon-list-alt"></span> Details </a> 
+            <a class="btn btn-warning" href="/waterproofingEstimate/edit/<%= waterproofingEstimates.query[i]._id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a><br>
+        </div>
+    </div>
+ <% } %>
 <!--This view is managed by team 5-3
 Cher-Xa Thao
 Brandyn Kopp -->
