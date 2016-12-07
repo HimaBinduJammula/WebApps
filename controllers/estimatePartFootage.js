@@ -159,10 +159,13 @@ api.post('/delete/:id', function(req, res, next) {
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
-api.get("/", function (request, response) {
+api.get("/", function (request, response) {d1
 	
  response.render("footage/index.ejs");
 });
+
+module.exports = api;
+
 
 
 module.exports = {

@@ -7,7 +7,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartRoofings.query.length %> entries. <br/>
-<a href="estimatePartRoofing/create">Add a new one.</a></p>
+<a href="estimatePartRoofing/create"><i class = "glyphicon glyphicon-pencil"></i> Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -29,9 +29,9 @@
             <td><%=  estimatePartRoofings.query[i].roofType %></td>
             <td><%=  estimatePartRoofings.query[i].processType %></td>
             <td> $<%=  estimatePartRoofings.query[i].subtotal %></td>
-            <td><a href="estimatePartRoofing/delete/<%= estimatePartRoofings.query[i]._id %>">Delete</a>
-                <a href="estimatePartRoofing/details/<%= estimatePartRoofings.query[i]._id %>">Details</a>
-                <a href="estimatePartRoofing/edit/<%= estimatePartRoofings.query[i]._id %>">Edit</a></td>
+            <td><a class = "btn btn-danger" href="estimatePartRoofing/delete/<%= estimatePartRoofings.query[i]._id %>"><i class = "glyphicon glyphicon-trash"></i> Delete</a>
+                <a class = "btn btn-info" href="estimatePartRoofing/details/<%= estimatePartRoofings.query[i]._id %>"><i class = "glyphicon glyphicon-list-alt"></i> Details</a>
+                <a class = "btn btn-warning" href="estimatePartRoofing/edit/<%= estimatePartRoofings.query[i]._id %>"><i class = "glyphicon glyphicon-edit"></i> Edit</a></td>
          </tr>
          <% } %>
 </tbody>
