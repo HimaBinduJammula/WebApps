@@ -15,7 +15,17 @@
 <p>zipcode : <%=flooringEstimate.estimatePartAbout.zipcode%></P>
 <p>Latitude : <%=flooringEstimate.estimatePartAbout.latitude %></p>
 <p>Longitude :<%=flooringEstimate.estimatePartAbout.longitude %></p><br>
-<p>Squre Footage : <%=flooringEstimate.estimateSquareFootage.sqft%></P>
+
+<p>Floor Area </p>
+<% var l,w; var t = 0; for(var k = 0; k < flooringEstimate.estimateSquareFootage.entries.length; k++){ %> 
+<% l = flooringEstimate.estimateSquareFootage.entries[k].length %>
+<% w = flooringEstimate.estimateSquareFootage.entries[k].width %>
+<% t += (l*w); %>
+<p> <%= flooringEstimate.estimateSquareFootage.entries[k].description %> :
+length : <%= l %>
+Width : <%= w %></p>
+<% } %></p>
+<p>Total Squre Footage : <%= t %></P>
 <br>
 
 <p>Floor System Type: <%= flooringEstimate.estimatePartFooring.floorSystemType%></p>
