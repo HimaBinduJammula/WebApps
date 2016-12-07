@@ -1,7 +1,5 @@
-<br/>
-
-<br/>
-<h2>Create a new Estimate part flooring product</h2>
+<br/><br/>
+<h2>Create a new estimate part flooring product</h2>
 <p>There are currently
 	<%= estimatePartFloorings.query.length %> Estimate part flooring. </p>
 <br/>
@@ -18,52 +16,28 @@ for (var i=0; i<estimatePartFloorings.query.length; i++) {
 	
 	<div class="content">
 		<div>
-			<form name="estimatePartFlooring" method="POST" action="/flooring_cost/save" + _id.value>
+			<form name="estimatePartFlooring" method="POST" action="/estimatePartFlooring/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
 					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
 				</div>
 
-				<div class="form-group">
-					<label for="floorSystemType">Floor System Type</label>
-					<input type="text" class="form-control" id="floorSystemType" name="floorSystemType" value="Epoxy" required>
-				</div>
+				
 
-				<div class="form-group">
-					<label for="usesUrethane">UsesErethane ?</label>
-					<input type="text" class="form-control" id="usesUrethane" name="usesUrethane" required>
-				</div>
-
-				<div class="form-group">
-					<label for="urethaneProductSelection">Urethane Product Selection:</label>
-					<input type="text" class="form-control" id="urethaneProductSelection" name="urethaneProductSelection" required>
-				</div>
-
-				<div class="form-group">
-					<label for="urethaneCoverageSqFt">Urethane Coverage SqFt:</label>
-					<input type="text" class="form-control" id="urethaneCoverageSqFt" name="urethaneCoverageSqFt" required>
-				</div>
-
-			   <div class="form-group">
-					<label for="usesEpoxy">UsesEpoxy ?</label>
-					<input type="text" class="form-control" id="usesEpoxy" name="usesEpoxy" required>
-				</div>
-
-				<div class="form-group">
-					<label for="expoxyProductSelection">Epoxy Product Selection:</label>
-					<input type="text" class="form-control" id="expoxyProductSelection" name="expoxyProductSelection" required>
-				</div>
-
-				<div class="form-group">
-					<label for="expoxyCoverageSqFt">Epoxy Coverage</label>
-					<input type="number" class="form-control" id="expoxyCoverageSqFt" name="expoxyCoverageSqFt" required>
-				</div>
-
-				<div class="form-group">
+			<!--	<div class="form-group">
 					<label for="subtotal">Sub Total</label>
 					<input type="number" class="form-control" id="subtotal" name="subtotal" value="0" required>
-				</div>
+					<% 
+                        var sqft = 2000;
+                        var urethaneCost = 0;
+                        var epoxyCost = 0;
+                        var subTotal = urethaneCost  + epoxyCost;
+                    %>
+                    <%=  subTotal %>
+				</div> -->
+
+				<% include ..\estimateparts\est-flooring %>
 
 				<div class="form-group">
 					<input type="submit" value="Post new entry" class="btn btn-primary" />
@@ -75,6 +49,8 @@ for (var i=0; i<estimatePartFloorings.query.length; i++) {
 			</form>
 		</div>
 	</div>
+<script src="../js/estimatePartFlooring.js"></script>
+
 
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>
