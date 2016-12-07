@@ -8,8 +8,8 @@ const notfoundstring = 'No such waterproofing estimate';
 //Base:  api/waterproofingEstimate
 
 //GET /api/waterproofingEstimate
-api.get("/", function (request, response) {
-  response.render("waterproofing/waterproofing.ejs");
+api.get("/", function (req, res) {
+  res.render("waterproofing/waterproofing.ejs");
 });
 
 api.get('/findall', function(req, res){
@@ -19,7 +19,7 @@ api.get('/findall', function(req, res){
 });
 
 api.get('/findone/:id', function(req, res){
-  res.setHeader('Content-type', 'application/json');
+  res.setHeader('Content-Type', 'application/json');
   var id = parseInt(req.params.id);
     var data = req.app.locals.waterproofingEstimates.query;
     var item = find(data, { '_id': id });
@@ -32,10 +32,10 @@ api.get('/findone/:id', function(req, res){
 
 //GET create 
 api.get("/create", function (req, res) {
-  response.render("waterproofing/create.ejs");
+  res.render("waterproofing/create.ejs");
 });
 
-//
+//POST a new waterproofing entry
 api.post('/save', function(req, res) {
      console.log("Handling POST " + req);
      var data = req.app.locals.waterproofingEstimates.query;
@@ -45,11 +45,11 @@ api.post('/save', function(req, res) {
      return res.redirect('/waterproofingEstimate');
 });
 
-//
-api.get('/details', function(req,res){
+//GET /details
+api.get('/details/:id', function(req,res){
       console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.roofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -65,7 +65,7 @@ api.get('/details', function(req,res){
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.roofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -82,7 +82,7 @@ api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
-    var data = req.app.locals.roofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
@@ -96,7 +96,7 @@ api.post('/save/:id', function(req, res) {
 api.get('/delete/:id', function(req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.roofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -113,7 +113,7 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
-    var data = req.app.locals.roofingEstimates.query;
+    var data = req.app.locals.waterproofingEstimates.query;
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
