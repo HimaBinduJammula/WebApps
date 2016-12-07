@@ -13,9 +13,42 @@
 <p>City : <%=flooringEstimate.estimatePartAbout.city%></P>
 <p>Ztate : <%=flooringEstimate.estimatePartAbout.state%></P>
 <p>zipcode : <%=flooringEstimate.estimatePartAbout.zipcode%></P>
+<p>Latitude : <%=flooringEstimate.estimatePartAbout.latitude %></p>
+<p>Longitude :<%=flooringEstimate.estimatePartAbout.longitude %></p><br>
+
+<p>Floor Area </p>
+<% for(var k = 0; k < flooringEstimate.estimateSquareFootage.entries.length; k++){ %>
+<%= flooringEstimate.estimateSquareFootage.entries[k].description %> : 
+length : <%= flooringEstimate.estimateSquareFootage.entries[k].length %> &nbsp;
+Width : <%= flooringEstimate.estimateSquareFootage.entries[k].width %></p>
+<% } %></p>
+<p>Total Squre Footage : <%=flooringEstimate.estimateSquareFootage.sqft%></P>
 <br>
-<p>Squre Footage : <%=flooringEstimate.estimateSquareFootage.sqft%></P>
-<br>
+
+<p>Floor System Type: <%= flooringEstimate.estimatePartFooring.floorSystemType%></p>
+<p>Uses Urethane: <%= flooringEstimate.estimatePartFooring.usesUrethane%></p>
+<p>Urethane Product Selection: <%= flooringEstimate.estimatePartFooring.urethaneProductSelection%></p><br>
+
+<p>Uses Epoxy: <%= flooringEstimate.estimatePartFooring.usesEpoxy%></p>
+<p>Expoxy Product Selection: <%= flooringEstimate.estimatePartFooring.expoxyProductSelection%></p><br>
+
+<p>Aggregate Selection: <%= flooringEstimate.estimatePartAggregate.aggregateTypeSelection%></p><br>
+
+<p>Labor (Total): <%= flooringEstimate.estimatePartLabor.subtotal%></p><br>
+<p>Required Vehicles </p>
+<% for(var i = 0; i < flooringEstimate.estimatePartMileage.entries.length; i++) {%>
+<p><%= flooringEstimate.estimatePartMileage.entries[i].description %> :
+   <%= flooringEstimate.estimatePartMileage.entries[i].numberOfVehicles %> </p>
+<% } %></p>
+<p>Total Milage Cost : <%= flooringEstimate.estimatePartMileage.subtotal%></p><br>
+
+<p>Miscellaneous Costs </p>
+<% for(var j = 0; j < flooringEstimate.estimatePartMiscs.entries.length; j++){ %>
+<%= flooringEstimate.estimatePartMiscs.entries[j].description %> : 
+<%= flooringEstimate.estimatePartMiscs.entries[j].cost %></p>
+<% } %></p>
+Total Miscellaneous Cost : <%=flooringEstimate.estimatePartMiscs.subtotal%> </p> <br>
+
 <p>CostPerSquareFoot : $<%=flooringEstimate.costPerSquareFoot%></P>
 <p>BidPerSquareFoot : $<%=flooringEstimate.bidPerSquareFoot%></P>
 

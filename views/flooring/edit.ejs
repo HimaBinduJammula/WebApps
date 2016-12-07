@@ -46,22 +46,38 @@
 			
 			<div class="form-group">
 				<label for="latitude">latitude</label>
-				<input type="number" class="form-control" id="latitude" name="latitude" value="<%=flooringEstimate.estimatePartAbout.latitude%>"
+				<input type="number" step = 0.0000001 max=90 min=-90 class="form-control" id="latitude" name="latitude" value="<%=flooringEstimate.estimatePartAbout.latitude%>"
 					required>
 			</div>
 
             <div class="form-group">
-				<label for="Longitude">Longitude</label>
-				<input type="number" class="form-control" id="Longitude" name="Longitude" value="<%=flooringEstimate.estimatePartAbout.Longitude%>"
+				<label for="longitude">Longitude</label>
+				<input type="number" step = 0.000001 max=180 min=-180 class="form-control" id="longitude" name="longitude" value="<%=flooringEstimate.estimatePartAbout.longitude %>"
 					required>
 			</div>
 
-
-            <div class="form-group">
-				<label for="Squre_Footage">Squre Footage</label>
-				<input type="number" max=20000 min=400 class="form-control" id="Squre_Footage" name="Squre_Footage" value="<%=flooringEstimate.estimateSquareFootage.sqft%>"
-					required>
+			<p><b>Floor Area </b></p>
+			<% var d,l,w; var t = 0; for(var k = 0; k < flooringEstimate.estimateSquareFootage.entries.length; k++){ %> 
+			<% l = flooringEstimate.estimateSquareFootage.entries[k].length %>
+			<% w = flooringEstimate.estimateSquareFootage.entries[k].width %>
+			<% d = flooringEstimate.estimateSquareFootage.entries[k].description %>
+			<% t += (l*w); %>
+			<b><%= d %></b>
+			<div class = "form-group">
+				<lable for= length >Length :</lable>
+				<input type="number" class="form-control" name = "length" value = "<%= l %>">
 			</div>
+			<div class = "form-group">
+				<lable for= width>Width : </lable>
+				<input type="number" class="form-control" name = "width" value = "<%= w %>">
+			</div>
+			<% } %></p>
+			<div class = "form-group">
+				<lable for= sqft><b>Total Squre_Footage : </b></lable>
+				<input type="number" class="form-control" name = "sqft" value = "<%= t %>" readonly>
+			</div>
+			
+			
 
             <div class="form-group">
 				<label for="CostPerSquareFoot">CostPerSquareFoot</label>
@@ -74,6 +90,7 @@
 				<input type="number" step = 0.01 class="form-control" id="BidPerSquareFoot" name="BidPerSquareFoot" value="<%=flooringEstimate.bidPerSquareFoot%>"
 					required>
 			</div>
+
 
 			<input type="submit" value="Save" class="btn btn-primary" />
 		</form>

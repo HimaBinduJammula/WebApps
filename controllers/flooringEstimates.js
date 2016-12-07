@@ -103,7 +103,10 @@ api.post('/save/:id', function(req, res) {
     item.estimatePartAbout.city = req.body.City;
     item.estimatePartAbout.state = req.body.State;
     item.estimatePartAbout.zipcode = req.body.zipcode;
-    item.estimateSquareFootage.sqft = req.body.Squre_Footage;
+    item.estimatePartAbout.latitude = req.body.latitude;
+    item.estimatePartAbout.longitude = req.body.longitude;
+    
+    item.estimateSquareFootage.sqft = req.body.sqft;
     item.costPerSquareFoot = req.body.CostPerSquareFoot;
     item.bidPerSquareFoot = req.body.BidPerSquareFoot;
     

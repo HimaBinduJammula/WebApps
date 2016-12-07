@@ -7,7 +7,7 @@ var mongoose = require('mongoose')
   , Labor = require('./estimatePartLabor.js')
   , Mileage = require('./estimatePartMileage.js')
   , Miscellaneous = require('./estimatePartAbout.js')
-
+/*
 var FlooringEstimateSchema = new Schema({
   _id: { type: Number, required: true },
   about: { type: Schema.Types.ObjectId, ref: About },
@@ -22,6 +22,25 @@ var FlooringEstimateSchema = new Schema({
   updated: { type: Date, default: Date.now },
   isComplete: Boolean
 })
+*/
+
+var FlooringEstimateSchema = new Schema({
+    _id: { type: Number, required: true },
+  estimatePartAbout: [{ type: Schema.Types.ObjectId, ref: About, required: true }],
+  estimatePartFootage: [{ type: Schema.Types.ObjectId, ref: Footage, required: true }],
+  estimatePartFlooring: [{ type: Schema.Types.ObjectId, ref: Flooring, required: true }],
+  estimatePartAggregate: [{ type: Schema.Types.ObjectId, ref: Aggregate, required: true }],
+  estimatePartLabor:[ { type: Schema.Types.ObjectId, ref: Labor, required: true }],
+  estimatePartMileage: [{ type: Schema.Types.ObjectId, ref: Mileage, required: true }],
+  estimatePartMisc:[ { type: Schema.Types.ObjectId, ref: Miscellaneous, required: true }],
+  comment: { type: String, required: false },
+  profitMargin: { type: Number, required: true, default: .50 },
+  costPerSquareFoot: Number,
+  bidPerSquareFoot: Number,
+  updated: { type: Date, default: Date.now },
+  isComplete: Boolean
+});
+
 
 FlooringEstimateSchema.virtual('created').get(function () {
   return this._id.getTimestamp()
