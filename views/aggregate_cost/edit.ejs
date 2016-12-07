@@ -6,9 +6,22 @@
 <form method="POST" action="/estimatePartAggregate/save/<%= estimatePartAggregate._id %>">
 <table class="table table-hover table-bordered">
     <tr><th>ID</th> <td> <%= estimatePartAggregate._id %>  </td></tr>
-	<tr><th>isUsed?</th> <td><input type="checkbox" class="form-control" name="isUsed" value="<%= estimatePartAggregate.isUsed %>">  </input></td></tr>
+	<tr><th>isUsed?</th> <td><input type="checkbox" class="form-control" name="isUsed" <%= estimatePartAggregate.isUsed?"checked":"unchecked" %> >  </input></td></tr>
 	<tr><th>Type</th> <td><input type="text" class="form-control" name="aggregateTypeSelection" value="<%= estimatePartAggregate.aggregateTypeSelection  %>"> </input></td></tr>
-	<tr><th>Material</th> <td><input type="text" class="form-control" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>"> </input></td></tr>
+	
+	<tr><th>Material</th> <td>
+	<div class="form-group">
+        <select class="form-control" name="aggregateMaterialSelection">
+        <% 
+            var data = aggregateMaterials.query;
+            for( var i=0; i<data.length; i++){ %>
+                <option value="<%= data[i]._id %>" <%= estimatePartAggregate.aggregateMaterialSelection==data[i]._id?'selected':'unchecked' %> > <%= data[i].name %> </option>
+            <% } %>
+        </select>
+        <!-- <input type="text" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" /> -->
+    </div>
+	</td></tr>
+
 	<tr><th>coverageSqFt</th> <td><input type="number" class="form-control" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>"> </input></td></tr>
 	<!--
 	<tr><th>Subtotal</th> <td><input type="number" class="form-control" name="subtotal" value="<%= estimatePartAggregate.subtotal %>"> </input></td></tr>

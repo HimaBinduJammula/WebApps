@@ -127,7 +127,7 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.isUsed = req.body.isUsed;
+    item.isUsed = req.body.isUsed?true:false;
     item.aggregateTypeSelection = req.body.aggregateTypeSelection;    
     item.aggregateMaterialSelection = req.body.aggregateMaterialSelection;
     item.coverageSqFt = req.body.coverageSqFt;
