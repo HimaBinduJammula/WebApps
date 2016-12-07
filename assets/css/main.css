@@ -40,6 +40,15 @@ tfoot tr{
   padding: 5px;
   border-radius: 6px;
 }
+
+#ttlCost{
+  color:#ffffff;
+  text-shadow: 2px 2px 3px #000000;
+  font-size: 1.5em;
+  background-color: #a94442;
+  padding: 5px;
+  border-radius: 6px;
+}
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
