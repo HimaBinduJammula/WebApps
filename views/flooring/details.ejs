@@ -46,9 +46,11 @@ Width : <%= w %></p>
 <p>Total Milage Cost : <%= flooringEstimate.estimatePartMileage.subtotal%></p><br>
 
 <p>Miscellaneous Costs </p>
-<% for(var j = 0; j < flooringEstimate.estimatePartMiscs.entries.length; j++){ %>
+<% var misCost; var totmisCost =0;; for(var j = 0; j < flooringEstimate.estimatePartMiscs.entries.length; j++){ %>
 <%= flooringEstimate.estimatePartMiscs.entries[j].description %> : 
-<%= flooringEstimate.estimatePartMiscs.entries[j].cost %></p>
+<% misCost = flooringEstimate.estimatePartMiscs.entries[j].cost; %>
+<%=  misCost%></p>
+<% totmisCost += misCost; %>
 <% } %></p>
 Total Miscellaneous Cost : <%=flooringEstimate.estimatePartMiscs.subtotal%> </p> <br>
 

@@ -939,29 +939,29 @@
             "entries": [
           {
             "_id":1,
-              "description": "misc cost 1",
-              "cost": 400
+              "description": "supply type 1",
+              "cost": 100
           },
 
           {
             "_id":2,
-              "description": "misc cost 2",
-              "cost": 500
+              "description": "supply type 2",
+              "cost": 200
           },
           {
             "_id":3,
-              "description": "misc cost 3",
-              "cost": 600
+              "description": "supply type 3",
+              "cost": 300
           },
           {
             "_id":4,
-              "description": "misc cost 4",
-              "cost": 700
+              "description": "supply type 4",
+              "cost": 500
           },
           {
             "_id":5,
-              "description": "misc cost 5",
-              "cost": 800
+              "description": "supply type 5",
+              "cost": 100
           }
         ],
         "subtotal" : 1200

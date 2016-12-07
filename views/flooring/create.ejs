@@ -27,6 +27,60 @@
 <% include ..\estimateparts\fg-misc %>
 <% include ..\estimateparts\fg-comment %>
 
+<button class="btn btn-success" onclick="calculate()">Calculate</button><br><br>
+
+<%
+    var total_unit_cost = 3.90;
+    var sqft=3000;
+    
+    var total_cost = 8750;
+    var total_unit_cost_1=(8750/3000).toFixed(2);
+%>
+<table class="table">
+<tr>
+    <th colspan="2">Flooring Estimates</th>
+</tr>
+<tr>
+    <td>Total area in sqft</td>
+    <td><%= sqft %></td>
+</tr>
+<tr>
+    <td>Total cost in $USD</td>
+    <td>$<%= total_cost %></td>
+</tr>
+<tr>
+    <td>unit cost in $/sqft</td>
+    <td>$<%= total_unit_cost_1 %></td>
+</tr>
+</table>
+
+
+
+<table class="table table-responsive">
+<thead>
+<tr>
+    <th>Profit</th>
+    <th>Total cost in $USD</th>
+    <th>Bid Price in $/sqft</th>
+
+</tr>
+</thead>
+<% for(var j=0; j<6; j++){
+    var percentage = 50+(j*10);
+     %>
+<tbody>
+<form>
+    <tr>
+        <td>
+            <div class = "radio">
+            <lable><input type ="radio" id ='regular' name="optradio"> <%= percentage%>%</lable>
+            </td>
+        <td>$<%= (total_cost+total_cost*percentage/100).toFixed(1) %></td>
+        <td>$<%= (((total_cost*percentage/100)+total_cost)/sqft).toFixed(1) %></td></div>
+    </tr> 
+<% } %>
+</table>
+
 <div class="form-group">
 <input type="submit" value="Post entry" class="btn btn-success">
 </div>
