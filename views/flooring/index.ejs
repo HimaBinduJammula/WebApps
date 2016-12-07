@@ -28,7 +28,7 @@
             Aggregate Selection: <%= flooringEstimates.query[i].estimatePartAggregate.aggregateTypeSelection%><br><br>
 
 
-            Labor Cost(Total): 
+            Labor Cost(Total): $
             <% var cnt, hrsPerPerson, rate, pernight, nights; var totalLabor = 0;
             for(var a = 0; a <flooringEstimates.query[i].estimatePartLabor.entries.length; a++){
             cnt = flooringEstimates.query[i].estimatePartLabor.entries[a].count;
@@ -36,7 +36,7 @@
             rate = flooringEstimates.query[i].estimatePartLabor.entries[a].dollarsPerHour;
             pernight = flooringEstimates.query[i].estimatePartLabor.entries[a].costPerNight;
             nights = flooringEstimates.query[i].estimatePartLabor.entries[a].nightsPerPerson;
-            totalLabor += ((cnt*hrsPerPerson*rate)+(pernight*nights*cnt));}%> <%= totalLabor%><br><br>
+            totalLabor += ((cnt*hrsPerPerson*rate)+(pernight*nights*cnt));}%> <%=totalLabor%><br><br>
 
             Total Number of Vehicles : <% var numOfVehi=0; var transport; for (var k = 0; k <flooringEstimates.query[i].estimatePartMileage.entries.length; k++) { 
                      numOfVehi += parseInt(flooringEstimates.query[i].estimatePartMileage.entries[k].numberOfVehicles);%>
@@ -44,7 +44,7 @@
                    <% } %><%= numOfVehi%>
                 <br>
                 <% transport =flooringEstimates.query[i].estimatePartMileage.subtotal;%>
-            Mileage Cost (Total): <%= transport%><br><br>
+            Mileage Cost (Total): $<%= transport%><br><br>
 
            <% var cost; var totMiscs = 0; for(var j =0; j < flooringEstimates.query[i].estimatePartMiscs.entries.length; j++){ %>
                     Miscs Cost <%= j+1 %> :  <%= flooringEstimates.query[i].estimatePartMiscs.entries[j].description%>
@@ -53,52 +53,10 @@
 
                     <%  totMiscs += cost;} %>
             
-            Total Miscs Cost : <%= totMiscs%><br><br>
-            
+            Total Miscs Cost : $<%= totMiscs%><br><br><br>
 
-<%
-    
-    var total_unit_cost =flooringEstimates.query[i].costPerSquareFoot;
-    var sqft=flooringEstimates.query[i].estimateSquareFootage.sqft;
-    
-    var total_cost = totalLabor + transport + totMiscs;
-    var total_unit_cost_1=(total_cost/sqft).toFixed(2);
-%>
-<table class="table">
-<tr>
-    <th colspan="2">Flooring Estimates</th>
-</tr>
-<tr>
-    <td>Total area in sqft</td>
-    <td><%= flooringEstimates.query[i].estimateSquareFootage.sqft %></td>
-</tr>
-<tr>
-    <td>Total cost in $USD</td>
-    <td>$<%= total_cost %></td>
-</tr>
-<tr>
-    <td>unit cost in $/sqft</td>
-    <td>$<%= total_unit_cost_1 %></td>
-</tr>
-</table>
-
-<table class="table">
-
-<tr>
-    <th>Profit</th>
-    <th>Total cost in $USD</th>
-    <th>Bid Price in $/sqft</th>
-</tr>
-<% for(var j=0; j<6; j++){
-    var percentage = 50+(j*10);
-     %>
-    <tr>
-        <td><%= percentage%>%</td>
-        <td>$<%= (total_cost+total_cost*percentage/100).toFixed(1) %></td>
-        <td>$<%= (((total_cost*percentage/100)+total_cost)/sqft).toFixed(1) %></td>
-    </tr> 
-<% } %>
-</table>
+            CostPerSqrFoot : $<%= flooringEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot : $<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
 
 
             <a class="btn btn-danger" href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-trash"></span> Delete</a>

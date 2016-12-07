@@ -6,11 +6,6 @@ var findIndex = require('lodash.findindex');
 var Model = require('../models/waterproofingPrimer.js');
 const notfoundstring = 'No such waterproofing primer';
 
-// var express = require('express');
-// var api = express.Router();
-// const notfoundstring = 'No such estimatePartWaterproofing';
-
-
 // see app.js for the root request this controller handles
 
 // See app.js to find default view folder (e.g.,"views")
@@ -21,15 +16,17 @@ const notfoundstring = 'No such waterproofing primer';
 
 // HANDLE JSON REQUESTS --------------------------------------------
 
+// GET to this controller root URI
+api.get("/", function (req, res) {
+ res.render("waterproofing_cost/index.ejs");
+});
+
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.waterproofingPrimers.query;
+    var data = req.app.locals.estimatePartAbouts.query;
     res.send(JSON.stringify(data));
 });
-// GET to this controller root URI
-api.get("/", function (request, response) {
- response.render("waterproofing_cost/index.ejs");
-});
+
 
 // GET create
 api.get("/create", function(req, res) {
