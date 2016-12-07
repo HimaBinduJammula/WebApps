@@ -1,6 +1,28 @@
+
+<br/>
+<h2>Details for roofing estimate</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  roofingEstimate._id %><br>
+	<%=  roofingEstimate._type %>
+</p>
+<p>Client : <%=roofingEstimate.estimatePartAbout.client%></P>
+<p>Created : <%=roofingEstimate.estimatePartAbout.created%></P>
+<p>Address : <%=roofingEstimate.estimatePartAbout.address%></P>
+<p>City : <%=roofingEstimate.estimatePartAbout.city%></P>
+<p>Ztate : <%=roofingEstimate.estimatePartAbout.state%></P>
+<p>zipcode : <%=roofingEstimate.estimatePartAbout.zipcode%></P>
 <br>
+<p>Squre Footage : <%=roofingEstimate.estimateSquareFootage.sqft%></P>
 <br>
-<h2> Under Construction...</h2>
+<p>CostPerSquareFoot : $<%=roofingEstimate.costPerSquareFoot%></P>
+<p>BidPerSquareFoot : $<%=roofingEstimate.bidPerSquareFoot%></P>
+
+<form method="get" action="/roofingEstimate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+
 <!-- This model is managed by Team 5-02 -->
 <!-- Mekonda, Sai Prakash -->
 <!-- Kovuri, Revanth -->

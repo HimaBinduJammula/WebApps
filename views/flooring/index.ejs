@@ -8,18 +8,102 @@
     <div class="panel-heading">ID : <%=  flooringEstimates.query[i]._id %></div>
     <div class="text-muted pull-left"> </div> 
         <div class="panel-body">
-            
-            Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
-            City :<%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
-            Year : <%= flooringEstimates.query[i].estimatePartAbout.year %><br>
-            Month :<%= flooringEstimates.query[i].estimatePartAbout.month %><br>
-            Sqft : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br>
-            CostPerSqrFoot : <%= flooringEstimates.query[i].costPerSquareFoot %><br>
-            BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
+            Client :   <%=  flooringEstimates.query[i].estimatePartAbout.client %><br>
+            Created :  <%=  flooringEstimates.query[i].estimatePartAbout.created %><br>
+            Address :  <%=  flooringEstimates.query[i].estimatePartAbout.address %><br>
+            City :     <%=  flooringEstimates.query[i].estimatePartAbout.city %><br>
+            State :    <%=  flooringEstimates.query[i].estimatePartAbout.state %><br>
+            Zip Code : <%=  flooringEstimates.query[i].estimatePartAbout.zipcode %><br>
+            Latitude : <%=  flooringEstimates.query[i].estimatePartAbout.latitude %><br>
+            Longitude :<%=  flooringEstimates.query[i].estimatePartAbout.longitude %><br><br>
 
-            <a class="btn btn-danger btn-sm" href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>">Delete</a>
-            <a class="btn btn-info btn-sm" href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>"> Details </a> 
-            <a class="btn btn-warning btn-sm" href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>">Edit</a><br>
+            Total Squar Footage : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br><br>
+            
+            Floor System Type: <%= flooringEstimates.query[i].estimatePartFooring.floorSystemType%><br>
+            Uses Urethane: <%= flooringEstimates.query[i].estimatePartFooring.usesUrethane%><br>
+            Urethane Product Selection: <%= flooringEstimates.query[i].estimatePartFooring.urethaneProductSelection%><br><br>
+
+            Uses Epoxy: <%= flooringEstimates.query[i].estimatePartFooring.usesEpoxy%><br>
+            Expoxy Product Selection: <%= flooringEstimates.query[i].estimatePartFooring.expoxyProductSelection%><br><br>
+            Aggregate Selection: <%= flooringEstimates.query[i].estimatePartAggregate.aggregateTypeSelection%><br><br>
+
+
+            Labor Cost(Total): 
+            <% var cnt, hrsPerPerson, rate, pernight, nights; var totalLabor = 0;
+            for(var a = 0; a <flooringEstimates.query[i].estimatePartLabor.entries.length; a++){
+            cnt = flooringEstimates.query[i].estimatePartLabor.entries[a].count;
+            hrsPerPerson = flooringEstimates.query[i].estimatePartLabor.entries[a].hoursPerPerson;
+            rate = flooringEstimates.query[i].estimatePartLabor.entries[a].dollarsPerHour;
+            pernight = flooringEstimates.query[i].estimatePartLabor.entries[a].costPerNight;
+            nights = flooringEstimates.query[i].estimatePartLabor.entries[a].nightsPerPerson;
+            totalLabor += ((cnt*hrsPerPerson*rate)+(pernight*nights*cnt));}%> <%= totalLabor%><br><br>
+
+            Total Number of Vehicles : <% var numOfVehi=0; var transport; for (var k = 0; k <flooringEstimates.query[i].estimatePartMileage.entries.length; k++) { 
+                     numOfVehi += parseInt(flooringEstimates.query[i].estimatePartMileage.entries[k].numberOfVehicles);%>
+                     
+                   <% } %><%= numOfVehi%>
+                <br>
+                <% transport =flooringEstimates.query[i].estimatePartMileage.subtotal;%>
+            Mileage Cost (Total): <%= transport%><br><br>
+
+           <% var cost; var totMiscs = 0; for(var j =0; j < flooringEstimates.query[i].estimatePartMiscs.entries.length; j++){ %>
+                    Miscs Cost <%= j+1 %> :  <%= flooringEstimates.query[i].estimatePartMiscs.entries[j].description%>
+                    <% cost = flooringEstimates.query[i].estimatePartMiscs.entries[j].cost; %>
+                    : $<%= cost%><br>
+
+                    <%  totMiscs += cost;} %>
+            
+            Total Miscs Cost : <%= totMiscs%><br><br>
+            
+
+<%
+    
+    var total_unit_cost =flooringEstimates.query[i].costPerSquareFoot;
+    var sqft=flooringEstimates.query[i].estimateSquareFootage.sqft;
+    
+    var total_cost = totalLabor + transport + totMiscs;
+    var total_unit_cost_1=(total_cost/sqft).toFixed(2);
+%>
+<table class="table">
+<tr>
+    <th colspan="2">Flooring Estimates</th>
+</tr>
+<tr>
+    <td>Total area in sqft</td>
+    <td><%= flooringEstimates.query[i].estimateSquareFootage.sqft %></td>
+</tr>
+<tr>
+    <td>Total cost in $USD</td>
+    <td>$<%= total_cost %></td>
+</tr>
+<tr>
+    <td>unit cost in $/sqft</td>
+    <td>$<%= total_unit_cost_1 %></td>
+</tr>
+</table>
+
+<table class="table">
+
+<tr>
+    <th>Profit</th>
+    <th>Total cost in $USD</th>
+    <th>Bid Price in $/sqft</th>
+</tr>
+<% for(var j=0; j<6; j++){
+    var percentage = 50+(j*10);
+     %>
+    <tr>
+        <td><%= percentage%>%</td>
+        <td>$<%= (total_cost+total_cost*percentage/100).toFixed(1) %></td>
+        <td>$<%= (((total_cost*percentage/100)+total_cost)/sqft).toFixed(1) %></td>
+    </tr> 
+<% } %>
+</table>
+
+
+            <a class="btn btn-danger" href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+            <a class="btn btn-info" href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-list-alt"></span> Details </a> 
+            <a class="btn btn-warning" href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a><br>
         </div>
     </div>
  <% } %>

@@ -1,3 +1,7 @@
+// This view is managed by Team 5-08
+// Konkepudi Naga Rahul Tejas
+// Kona Arun Kumar
+
 <% console.log(estimatePartAbouts.query); %>
 <div class="container">
  <h2>All entries</h2>
@@ -8,17 +12,31 @@
 <table class="table" border="1">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Client</th>
         <th>City</th>
+        <th>Address</th>
+        <th>State</th>
+        <th>ZipCode</th>
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
 <% for (var i = 0; i < estimatePartAbouts.query.length; i++) { %>
          <tr>
+            <td><%=  estimatePartAbouts.query[i]._id %></td>
             <td><%=  estimatePartAbouts.query[i].client %></td>
             <td><%=  estimatePartAbouts.query[i].city %></td>
-            <td>Delete  Details  Edit</td>
+            <td><%=  estimatePartAbouts.query[i].address %></td>
+            <td><%=  estimatePartAbouts.query[i].state %></td>
+            <td><%=  estimatePartAbouts.query[i].zipcode %></td>
+            
+            
+            
+            <td><a href="estimatePartAbout/delete/<%= i+1 %>"> Delete</a> 
+            <a href="estimatePartAbout/details/<%= i+1 %>"> Details</a>
+            <a href="estimatePartAbout/edit/<%= i+1 %>"> Edit</a>
+          </td>
          </tr>
          <% } %>
 </tbody>

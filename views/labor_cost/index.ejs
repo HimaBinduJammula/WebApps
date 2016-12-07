@@ -4,7 +4,7 @@
 
 <p>There are  <%= estimatePartLabors.query[0].entries.length %> entries. <br/>
 
-				<a href="estimatePartLabor/create">Add a new one.</a></p>
+				<a class="btn btn-info" href="estimatePartLabor/create"><i class="glyphicon glyphicon-pencil"></i> New Entry</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -16,14 +16,16 @@
        <th>dollarsPerHour</th>
        <th>nightsPerPerson</th>
        <th>costPerNight</th>
-
+       <th> cost </th>
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { 
+    var tot=0;
      for(var j=0; j<estimatePartLabors.query[i].entries.length;j++){
         var entry = estimatePartLabors.query[i].entries[j];
+        var doll= entry.count*entry.hoursPerPerson*entry.dollarsPerHour + entry.nightsPerPerson*entry.costPerNight;
            
       %>
         <tr>
@@ -34,7 +36,9 @@
             <td> <%= entry.dollarsPerHour %></td>
             <td> <%= entry.nightsPerPerson %></td>
             <td> <%= entry.costPerNight %></td></td>
-             
+            <td bgcolor = "#CACACA"> <%= doll %></td>
+            <%tot+= doll %>
+
              
             <td>
             <a href="estimatePartLabor/delete/<%=  entry._id %>" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete </a> 
@@ -45,7 +49,12 @@
          <% } %>
          <% } %>
         
-         
+         <tr> 
+            <td colspan="4" bgcolor = "#ddd"> <strong> Calculated Labor:  <%=  tot+"$" %> </strong></span> </td>
+            
+         </tr>
+
+
 </tbody>
 </table>
 </div>

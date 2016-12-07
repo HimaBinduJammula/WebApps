@@ -3,7 +3,7 @@
  <h2>Material roofing basecoat costs</h2>
 
 <p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>
-<a href="roofingBasecoat/create">Add a new one.</a></p>
+<a href="roofingBasecoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -28,9 +28,9 @@
             <td><%=  roofingBasecoats.query[i].price %></td>
             <td><%=  roofingBasecoats.query[i].unit %></td>
             <td>
-							<a href="roofingBasecoat/delete/<%=  count%>"> Delete </a> |
-							<a href="roofingBasecoat/details/<%= count%>"> Details </a> |
-							<a href="roofingBasecoat/edit/<%= count %>"> Edit </a>
+							<a href="roofingBasecoat/delete/<%=  roofingBasecoats.query[i]._id %>" class="btn btn-danger" >	<span class="glyphicon glyphicon-trash"></span> Delete </a>
+							<a href="roofingBasecoat/details/<%= roofingBasecoats.query[i]._id %>" class="btn btn-info">	  <span class="glyphicon glyphicon-list-alt"></span> Details </a>
+							<a href="roofingBasecoat/edit/<%= roofingBasecoats.query[i]._id %>" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </a>
 						</td>
          </tr>
          <% } %>
@@ -40,4 +40,4 @@
 <!-- This view is managed by team 5-13 -->
 <!--  Chilmakuri, Venkat Sandeep -->
 <!-- Siddamsetty, Sashidhar  -->
-<!-- Chandupatla, Rahul Reddy -->
+<!-- Rahul Reddy, Chandupatla -->

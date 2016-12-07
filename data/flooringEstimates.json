@@ -8,27 +8,384 @@
       "address": "800 University Drive",
       "city": "Maryville",
       "state": "MO",
-      "zipcode": 64468
+      "zipcode": 64468,
+      "latitude": 40.3441025,
+      "longitude": -94.870757
     },
     "estimateSquareFootage": {
-      "sqft": 2000
+      "entries": [
+                {
+                "_id":1,
+                    "description": "Entry 1",
+                    "length": 30,
+                    "width":20
+              },
+              {
+                "_id":2,
+                    "description": "Entry 2",
+                  "length": 10,
+                    "width":20
+              },
+              {
+                "_id":3,
+                    "description": "Entry 3",
+                  "length": 20,
+                    "width":10
+              },
+              {
+                "_id":4,
+                    "description": "Entry 4",
+                  "length": 50,
+                    "width":40
+              }
+              ],
+      "sqft": 3000
     },
+    "estimatePartFooring":{
+        "_id":1,
+        "floorSystemType": "Urethane",
+        "usesUrethane": "Yes",
+        "urethaneProductSelection": "U1",
+        "urethaneCoverageSqFt": 100,
+        "usesEpoxy": "Yes",
+        "expoxyProductSelection": "E1",
+        "expoxyCoverageSqFt": 150,
+        "subtotal": 250
+    },
+
+    "estimatePartAggregate": {
+	  "_id": 1,
+    "isUsed": true,
+    "aggregateTypeSelection": "Sand",
+    "aggregateMaterialSelection": 1,
+    "coverageSqFt": 100,
+    "subtotal": 100
+  },
+
+  "estimatePartLabor":{
+      "entries": [{
+        
+          "_id":1,
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    },
+    {  
+        
+          "_id":2,
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
+          "costPerNight":80
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
+    ],
+   "subtotal": 1880
+  },
+
+  "estimatePartMileage":{
+    "dollarsPerMile": 1,
+    "entries": [
+        {
+          "_id":1,
+          "description": "Commercial truck",
+          "numberOfVehicles": 3,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+          
+        },
+        {
+          "_id":2,
+          "description": "personal vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      }
+    ],
+    "subtotal": 500
+  },
+
+    "estimatePartMiscs":{
+            "entries": [
+          {
+            "_id":1,
+              "description": "misc cost 1",
+              "cost": 100
+          },
+
+          {
+            "_id":2,
+              "description": "misc cost 2",
+              "cost": 200
+          },
+          {
+            "_id":3,
+              "description": "misc cost 3",
+              "cost": 300
+          },
+          {
+            "_id":4,
+              "description": "misc cost 4",
+              "cost": 400
+          },
+          {
+            "_id":5,
+              "description": "misc cost 5",
+              "cost": 500
+          }
+        ],
+        "subtotal" : 1200
+      
+    },
+  
+
     "costPerSquareFoot": 3.50,
     "bidPerSquareFoot": 6.00
   },
+  
     {
     "_type": "flooringEstimate",
     "_id": 2,
     "estimatePartAbout": {
-      "client": "NW Missouri State",
-      "created": "2016-10-23",
-      "address": "800 University Drive",
-      "city": "Maryville",
-      "state": "MO",
-      "zipcode": 64468
-    },
+                  "client": "NW Missouri State",
+                  "created": "2016-10-23",
+                  "address": "800 University Drive",
+                  "city": "Maryville",
+                  "state": "MO",
+                  "zipcode": 64468,
+                  "latitude": 40.3441025,
+                  "longitude": -94.870757
+                },
+ 
     "estimateSquareFootage": {
-      "sqft": 2000
+      "entries": [
+                {
+                "_id":1,
+                    "description": "Entry 1",
+                    "length": 30,
+                    "width":20
+              },
+              {
+                "_id":2,
+                    "description": "Entry 2",
+                  "length": 10,
+                    "width":20
+              },
+              {
+                "_id":3,
+                    "description": "Entry 3",
+                  "length": 20,
+                    "width":10
+              },
+              {
+                "_id":4,
+                    "description": "Entry 4",
+                  "length": 50,
+                    "width":40
+              }
+              ],
+      "sqft": 3000
+    },
+     "estimatePartFooring":{
+        "_id":1,
+        "floorSystemType": "Urethane",
+        "usesUrethane": "Yes",
+        "urethaneProductSelection": "U1",
+        "urethaneCoverageSqFt": 100,
+        "usesEpoxy": "Yes",
+        "expoxyProductSelection": "E1",
+        "expoxyCoverageSqFt": 150,
+        "subtotal": 250
+    },
+
+    "estimatePartAggregate": {
+	  "_id": 1,
+    "isUsed": true,
+    "aggregateTypeSelection": "Sand",
+    "aggregateMaterialSelection": 1,
+    "coverageSqFt": 100,
+    "subtotal": 100
+  },
+  "estimatePartLabor":{
+      "entries": [{
+        
+          "_id":1,
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    },
+    {  
+        
+          "_id":2,
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
+          "costPerNight":80
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
+    ],
+   "subtotal": 1880
+  },
+
+   "estimatePartMileage":{
+    "dollarsPerMile": 1,
+    "entries": [
+        {
+          "_id":1,
+          "description": "Commercial truck",
+          "numberOfVehicles": 3,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+          
+        },
+        {
+          "_id":2,
+          "description": "personal vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      }
+    ],
+    "subtotal": 500
+  },
+
+        "estimatePartMiscs":{
+            "entries": [
+          {
+            "_id":1,
+              "description": "misc cost 1",
+              "cost": 100
+          },
+
+          {
+            "_id":2,
+              "description": "misc cost 2",
+              "cost": 200
+          },
+          {
+            "_id":3,
+              "description": "misc cost 3",
+              "cost": 300
+          },
+          {
+            "_id":4,
+              "description": "misc cost 4",
+              "cost": 400
+          },
+          {
+            "_id":5,
+              "description": "misc cost 5",
+              "cost": 500
+          }
+        ],
+        "subtotal" : 1200
+      
     },
     "costPerSquareFoot": 3.50,
     "bidPerSquareFoot": 6.00
@@ -42,10 +399,186 @@
       "address": "800 University Drive",
       "city": "Maryville",
       "state": "MO",
-      "zipcode": 64468
+      "zipcode": 64468,
+      "latitude": 40.3441025,
+      "longitude": -94.870757
     },
     "estimateSquareFootage": {
-      "sqft": 2000
+      "entries": [
+                {
+                "_id":1,
+                    "description": "Entry 1",
+                    "length": 30,
+                    "width":20
+              },
+              {
+                "_id":2,
+                    "description": "Entry 2",
+                  "length": 10,
+                    "width":20
+              },
+              {
+                "_id":3,
+                    "description": "Entry 3",
+                  "length": 20,
+                    "width":10
+              },
+              {
+                "_id":4,
+                    "description": "Entry 4",
+                  "length": 50,
+                    "width":40
+              }
+              ],
+      "sqft": 3000
+    },
+     "estimatePartFooring":{
+        "_id":1,
+        "floorSystemType": "Urethane",
+        "usesUrethane": "Yes",
+        "urethaneProductSelection": "U1",
+        "urethaneCoverageSqFt": 100,
+        "usesEpoxy": "Yes",
+        "expoxyProductSelection": "E1",
+        "expoxyCoverageSqFt": 150,
+        "subtotal": 250
+    },
+
+    "estimatePartAggregate": {
+	  "_id": 1,
+    "isUsed": true,
+    "aggregateTypeSelection": "Sand",
+    "aggregateMaterialSelection": 1,
+    "coverageSqFt": 100,
+    "subtotal": 100
+  },
+  "estimatePartLabor":{
+      "entries": [{
+        
+          "_id":1,
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    },
+    {  
+        
+          "_id":2,
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
+          "costPerNight":80
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
+    ],
+   "subtotal": 1880
+  },
+
+   "estimatePartMileage":{
+    "dollarsPerMile": 1,
+    "entries": [
+        {
+          "_id":1,
+          "description": "Commercial truck",
+          "numberOfVehicles": 3,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+          
+        },
+        {
+          "_id":2,
+          "description": "personal vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      }
+    ],
+    "subtotal": 500
+  },
+
+  "estimatePartMiscs":{
+            "entries": [
+          {
+            "_id":1,
+              "description": "misc cost 1",
+              "cost": 100
+          },
+
+          {
+            "_id":2,
+              "description": "misc cost 2",
+              "cost": 200
+          },
+          {
+            "_id":3,
+              "description": "misc cost 3",
+              "cost": 300
+          },
+          {
+            "_id":4,
+              "description": "misc cost 4",
+              "cost": 400
+          },
+          {
+            "_id":5,
+              "description": "misc cost 5",
+              "cost": 500
+          }
+        ],
+        "subtotal" : 1200
+      
     },
     "costPerSquareFoot": 3.50,
     "bidPerSquareFoot": 6.00
@@ -59,10 +592,186 @@
       "address": "103 Main Street",
       "city": "Maryville",
       "state": "MO",
-      "zipcode": 64468
+      "zipcode": 64468,
+      "latitude": 40.3441025,
+      "longitude": -94.870757
     },
     "estimateSquareFootage": {
-      "sqft": 1800
+      "entries": [
+                {
+                "_id":1,
+                    "description": "Entry 1",
+                    "length": 30,
+                    "width":20
+              },
+              {
+                "_id":2,
+                    "description": "Entry 2",
+                  "length": 10,
+                    "width":20
+              },
+              {
+                "_id":3,
+                    "description": "Entry 3",
+                  "length": 20,
+                    "width":10
+              },
+              {
+                "_id":4,
+                    "description": "Entry 4",
+                  "length": 50,
+                    "width":40
+              }
+              ],
+      "sqft": 3000
+    },
+     "estimatePartFooring":{
+        "_id":1,
+        "floorSystemType": "Urethane",
+        "usesUrethane": "Yes",
+        "urethaneProductSelection": "U1",
+        "urethaneCoverageSqFt": 100,
+        "usesEpoxy": "Yes",
+        "expoxyProductSelection": "E1",
+        "expoxyCoverageSqFt": 150,
+        "subtotal": 250
+    },
+
+    "estimatePartAggregate": {
+	  "_id": 1,
+    "isUsed": true,
+    "aggregateTypeSelection": "Sand",
+    "aggregateMaterialSelection": 1,
+    "coverageSqFt": 100,
+    "subtotal": 100
+  },
+  "estimatePartLabor":{
+      "entries": [{
+        
+          "_id":1,
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    },
+    {  
+        
+          "_id":2,
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
+          "costPerNight":80
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
+    ],
+   "subtotal": 1880
+  },
+
+   "estimatePartMileage":{
+    "dollarsPerMile": 1,
+    "entries": [
+        {
+          "_id":1,
+          "description": "Commercial truck",
+          "numberOfVehicles": 3,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+          
+        },
+        {
+          "_id":2,
+          "description": "personal vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      }
+    ],
+    "subtotal": 500
+  },
+
+  "estimatePartMiscs":{
+            "entries": [
+          {
+            "_id":1,
+              "description": "misc cost 1",
+              "cost": 100
+          },
+
+          {
+            "_id":2,
+              "description": "misc cost 2",
+              "cost": 200
+          },
+          {
+            "_id":3,
+              "description": "misc cost 3",
+              "cost": 300
+          },
+          {
+            "_id":4,
+              "description": "misc cost 4",
+              "cost": 400
+          },
+          {
+            "_id":5,
+              "description": "misc cost 5",
+              "cost": 500
+          }
+        ],
+        "subtotal" : 1200
+      
     },
     "costPerSquareFoot": 4.50,
     "bidPerSquareFoot": 8
@@ -76,10 +785,187 @@
       "address": "800 University Drive",
       "city": "Maryville",
       "state": "MO",
-      "zipcode": 64468
+      "zipcode": 64468,
+      "latitude": 40.3441025,
+      "longitude": -94.870757
     },
     "estimateSquareFootage": {
-      "sqft": 2000
+      "entries": [
+                {
+                "_id":1,
+                    "description": "Entry 1",
+                    "length": 30,
+                    "width":20
+              },
+              {
+                "_id":2,
+                    "description": "Entry 2",
+                  "length": 10,
+                    "width":20
+              },
+              {
+                "_id":3,
+                    "description": "Entry 3",
+                  "length": 20,
+                    "width":10
+              },
+              {
+                "_id":4,
+                    "description": "Entry 4",
+                  "length": 50,
+                    "width":40
+              }
+              ],
+      "sqft": 3000
+    },
+     "estimatePartFooring":{
+        "_id":1,
+        "floorSystemType": "Urethane",
+        "usesUrethane": "Yes",
+        "urethaneProductSelection": "U1",
+        "urethaneCoverageSqFt": 100,
+        "usesEpoxy": "Yes",
+        "expoxyProductSelection": "E1",
+        "expoxyCoverageSqFt": 150,
+        "subtotal": 250
+    },
+
+     "estimatePartAggregate": {
+	  "_id": 1,
+    "isUsed": true,
+    "aggregateTypeSelection": "Sand",
+    "aggregateMaterialSelection": 1,
+    "coverageSqFt": 100,
+    "subtotal": 100
+  },
+  
+  "estimatePartLabor":{
+      "entries": [{
+        
+          "_id":1,
+          "type": "apprentice",
+          "count": 3,
+          "hoursPerPerson":24,
+          "dollarsPerHour":15,
+          "nightsPerPerson":2,
+          "costPerNight":80
+    },
+    {  
+        
+          "_id":2,
+          "type": "assistant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
+          "costPerNight":80
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":70
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "apprentice",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":65
+    }
+    
+    ],
+   "subtotal": 1880
+  },
+
+   "estimatePartMileage":{
+    "dollarsPerMile": 1,
+    "entries": [
+        {
+          "_id":1,
+          "description": "Commercial truck",
+          "numberOfVehicles": 3,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+          
+        },
+        {
+          "_id":2,
+          "description": "personal vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":3,
+          "description": "Goods vehicle",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":4,
+          "description": "bike vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      },
+      {
+          "_id":5,
+          "description": "car vehicles",
+          "numberOfVehicles": 2,
+          "startLocation": "OPKS",
+          "endLocation": "Maryville, MO",
+          "milesPerDrive": 100
+      }
+    ],
+    "subtotal": 500
+  },
+
+  "estimatePartMiscs":{
+            "entries": [
+          {
+            "_id":1,
+              "description": "misc cost 1",
+              "cost": 400
+          },
+
+          {
+            "_id":2,
+              "description": "misc cost 2",
+              "cost": 500
+          },
+          {
+            "_id":3,
+              "description": "misc cost 3",
+              "cost": 600
+          },
+          {
+            "_id":4,
+              "description": "misc cost 4",
+              "cost": 700
+          },
+          {
+            "_id":5,
+              "description": "misc cost 5",
+              "cost": 800
+          }
+        ],
+        "subtotal" : 1200
+      
     },
     "costPerSquareFoot": 2.00,
     "bidPerSquareFoot": 4.00

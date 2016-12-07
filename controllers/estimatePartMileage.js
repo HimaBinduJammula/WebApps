@@ -21,12 +21,12 @@ api.get('/findall', function(req, res){
     res.send(JSON.stringify(data));
 });
 
-// HANDLE JSON REQUESTS --------------------------------------------
-api.get('/findall', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.estimatePartMileages.query[0].entries;
-    res.send(JSON.stringify(data));
-});
+// // HANDLE JSON REQUESTS --------------------------------------------
+// api.get('/findall', function(req, res){
+//     res.setHeader('Content-Type', 'application/json');
+//     var data = req.app.locals.estimatePartMileages.query[0].entries;
+//     res.send(JSON.stringify(data));
+// });
 
 api.get('/delete/:id', function(req, res){
     // res.setHeader('Content-Type', 'application/html');
@@ -186,8 +186,26 @@ function getLatestMileageRate(rates){
     }
     return curMilRate;
 }
+function calSubTotal(){
+    totalCost = 0;
+    for(var i=0; i<global.estimatePartMileages.query[0].entries.length;i++){
+        var entry = estimatePartMileages.query[0].entries[i];
+        totalCost += entry.numberOfVehicles*entry.milesPerDrive*getLatestMileageRate(allMileageRates.query).dollarsPerMile;
+    }
+    return totalCost;
+}
+// module.exports = mileageRateNow = function(){
+//     return getLatestMileageRate(allMileageRates.query);
+// };
+// module.exports = api;
 
+module.exports = { 
+        mileageRateNow : function(){
+                return getLatestMileageRate(allMileageRates.query);
+            },
+        subTotal : function(){
+                return calSubTotal();
+        },
+        api : api
+}
 
-
-
-module.exports = api;

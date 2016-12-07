@@ -1,11 +1,22 @@
 
 <% console.log(estimatePartAggregates.query); %>
+<% 
+function find(data,id){
+  for(var i=0; i<data.length; i++){
+      if(data[i]._id==id)
+        return data[i];
+  }
+  return false;
+} 
+
+%>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
-				<a href="estimatePartAggregate/create">Add a new one.</a></p>
+<a class="btn btn-info" href="estimatePartAggregate/create"><i class="glyphicon glyphicon-pencil"></i> Add a New One.</a></p>
+
 
 <table class="table" border="1">
     <thead>
@@ -16,13 +27,12 @@
         <th>Material</th>
         <th>coverageSqFt</th>
         <th>Subtotal</th>
-       <th>Actions</th>
-      
+       <th>Actions</th>  
     </tr>
     </thead>
     <tbody>
 
-<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
+<% for (var i = estimatePartAggregates.query.length-1; i>=0; i--) { 
 
         var entry = estimatePartAggregates.query[i];
         
@@ -31,9 +41,9 @@
             <td> <%= entry._id %></td>
             <td> <%= entry.isUsed %></td>
             <td> <%= entry.aggregateTypeSelection %></td>
-            <td> <%= entry.aggregateMaterialSelection %></td>
+            <td> <%= find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).name %></td>
             <td> <%= entry.coverageSqFt %></td>
-            <td> <%= entry.subtotal %></td>
+            <td> $<%= ((sqrFootage/find(aggregateMaterials.query,  entry.aggregateMaterialSelection ).price)*entry.coverageSqFt).toFixed(2) %></td>
 
             <td>
             <a href="estimatePartAggregate/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete </a> 
