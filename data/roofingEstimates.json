@@ -3,6 +3,7 @@
     "_type": "roofingEstimate",
     "_id": 1,
     "estimatePartAbout": {
+      "_id": 1,
       "client": "Amanda Bank",
       "created": "2016-10-04",
       "address": "800 University Drive",
@@ -20,17 +21,54 @@
     "_type": "roofingEstimate",
     "_id": 2,
    "estimatePartAbout": {
-      "client": "Meghan Movies",
-      "created": "2016-10-04",
-      "address": "800 University Drive",
-      "city": "Maryville",
-      "state": "MO",
-      "zipcode": 64468
+     "_id":  2,
+    "client": "US Bank",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468
     },
     "estimateSquareFootage": {
       "sqft": 2000
     },
     "costPerSquareFoot": 2.00,
     "bidPerSquareFoot": 4.00
+  },
+  {
+    "_type": "roofingEstimate",
+    "_id": 3,
+   "estimatePartAbout": {
+     "_id":  3,
+    "client": "xyz",
+    "created": "2016-22-04",
+    "address": " University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 24
+    },
+    "costPerSquareFoot": 1.00,
+    "bidPerSquareFoot": 2.00
+  },
+   {
+    "_type": "roofingEstimate",
+    "_id": 4,
+   "estimatePartAbout": {
+     "_id":  3,
+    "client": "Bank",
+    "created": "2016-22-05",
+    "address": " 800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 25
+    },
+    "costPerSquareFoot": 5.00,
+    "bidPerSquareFoot": 7.00
   }
 ]

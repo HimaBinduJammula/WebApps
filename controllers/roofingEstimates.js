@@ -45,12 +45,21 @@ api.post('/save', function(req, res) {
      var item = new Model;
      console.log("NEW ID " + req.body._id);
      item._id = parseInt(req.body._id);
-    // item.estimatePartAbout.client = req.body.Client;
+
+     item.estimatePartAbout.client = req.body.client;
+     item.estimatePartAbout.city = req.body.City;
+     item.estimateSquareFootage.sqft = req.body.sqft;
+     item.costPerSquareFoot = req.body.costPerSquareFoot;
+
+    // item.bidPerSquareFoot = req.body.BidPerSquareFoot;
+    //  item.estimatePartAbout.client = req.body.Client;
     // item.estimatePartAbout.created = req.body.Created;
     // item.estimatePartAbout.address = req.body.Address;
     // item.estimatePartAbout.city = req.body.City;
     // item.estimatePartAbout.state = req.body.State;
     // item.estimatePartAbout.zipcode = req.body.zipcode;
+    // item.estimatePartAbout.latitude = req.body.latitude;
+    // item.estimatePartAbout.longitude = req.body.longitude;
     // item.estimateSquareFootage.sqft = req.body.Squre_Footage;
     // item.costPerSquareFoot = req.body.CostPerSquareFoot;
     // item.bidPerSquareFoot = req.body.BidPerSquareFoot;
