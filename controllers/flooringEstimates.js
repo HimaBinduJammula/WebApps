@@ -42,15 +42,17 @@ api.post('/save', function(req, res) {
      var item = new Model;
      console.log("NEW ID " + req.body._id);
      item._id = parseInt(req.body._id);
+
     // item.estimatePartAbout.client = req.body.Client;
     // item.estimatePartAbout.created = req.body.Created;
     // item.estimatePartAbout.address = req.body.Address;
     // item.estimatePartAbout.city = req.body.City;
     // item.estimatePartAbout.state = req.body.State;
     // item.estimatePartAbout.zipcode = req.body.zipcode;
-    // item.estimateSquareFootage.sqft = req.body.Squre_Footage;
+    // item.estimateSquareFootage.subtotal = req.body.footage;
     // item.costPerSquareFoot = req.body.CostPerSquareFoot;
     // item.bidPerSquareFoot = req.body.BidPerSquareFoot;
+    // data.push(item);
      return res.redirect('/flooringEstimate');
 });
 
