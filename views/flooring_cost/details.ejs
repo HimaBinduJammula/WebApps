@@ -3,19 +3,31 @@
 <h2>Details for Estimate Part Flooring</h2>
 <br/>
 <br/>
-<strong>ID: </strong> 	<%=  estimatePartFlooring._id %>  </br>
-<strong>Type: </strong><%=  estimatePartFlooring.floorSystemType %> </br>
-<strong>UsesErethane? </strong> 	<%=  estimatePartFlooring.usesUrethane %> </br>
-<strong>Urethane Product Selection:	</strong><%=  estimatePartFlooring.urethaneProductSelection %> </br>
-<strong>Urethane Coverage: </strong>   <%=  estimatePartFlooring.urethaneCoverageSqFt %> </br>
-<strong>usesEpoxy? </strong> 	<%=  estimatePartFlooring.usesEpoxy %> </br>
-<strong>Epoxy Product Selection:	</strong><%=  estimatePartFlooring.expoxyProductSelection %> </br>
-<strong>Epoxy Coverage : </strong>   <%=  estimatePartFlooring.expoxyCoverageSqFt %> </br>
-<strong>Subtotal: </strong>	<%=  estimatePartFlooring.subtotal %> </br>
+<strong>ID: </strong> <%= estimatePartFlooring._id %>  </br>
+<strong>Type: </strong> <%= estimatePartFlooring.floorSystemType %> </br>
+<strong>Uses Erethane? </strong> <%= estimatePartFlooring.usesUrethane %> </br>
+<strong>Urethane Product Selection:	</strong> <%=  estimatePartFlooring.urethaneProductSelection.name %> </br>
+<strong>Urethane Coverage SqFt: </strong> <%=  estimatePartFlooring.urethaneCoverageSqFt %> </br>
+<strong>Uses Epoxy? </strong> <%= estimatePartFlooring.usesEpoxy %> </br>
+<strong>Epoxy Product Selection: </strong> <%= estimatePartFlooring.expoxyProductSelection.name %> </br>
+<strong>Epoxy Coverage SqFt: </strong> <%= estimatePartFlooring.expoxyCoverageSqFt %> </br>
+<!--<strong>Subtotal: </strong>	
+
+<%=  estimatePartFlooring.subtotal %> 
+<% 
+    var sqft = 2000;
+    var urethaneCost = 0;
+    var epoxyCost = 0;
+    var subTotal = urethaneCost  + epoxyCost;
+%>
+<%=  subTotal %> -->
+				
+</br>
 <br/>
 <form method="get" action="/estimatePartFlooring">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
+
 
 <!-- This part is managed by 05-05 --!>
 <!-- Supriya Nakerikanti --!>

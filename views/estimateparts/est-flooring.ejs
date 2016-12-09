@@ -1,1 +1,66 @@
-Flooring = $500<br/>
+                <div class="form-group">
+					<label for="floorSystemType">Floor System Type</label>
+					<select id="floorSystemType" name="floorSystemType" value="Epoxy" class="form-control selcls">
+						
+						<option> Epoxy</option>
+						<option> Decorative Expoxy</option>
+						<option> Urethane</option>
+					</select>
+					<!--<input type="text" class="form-control" id="floorSystemType" name="floorSystemType" value="Epoxy" required>-->
+				</div>
+
+				<div class="form-group">
+					<label for="usesUrethane">Uses Erethane ?</label>
+					<input type="checkbox" class="form-control" id="usesUrethane" name="usesUrethane">
+				</div>
+
+				<!-- <div class="form-group">
+					<label for="urethaneProductSelection">Urethane Product Selection:</label>
+					<input type="text" class="form-control" id="urethaneProductSelection" name="urethaneProductSelection" required>
+				</div> -->
+				<div id="flooringOptions">
+				<div class="form-group">
+					<label for="urethaneProductSelection">Urethane Product Selection (<%= flooringCoatings.query.length %>):</label>
+					<select name="urethaneProductSelection" class="form-control selcls">
+	 					<%  for (var i = 0; i < flooringCoatings.query.length ; i++){  %>
+	 						<option value="<%= flooringCoatings.query[i].name %>"><%= flooringCoatings.query[i].name %></option>
+						<%    }  %>
+					</select>
+				</div>
+				</div>
+
+				<div class="form-group">
+					<label for="urethaneCoverageSqFt">Urethane Coverage SqFt:</label>
+					<input type="number" class="form-control" id="urethaneCoverageSqFt" name="urethaneCoverageSqFt" value="100" min="80" max="200" required>
+				</div>
+
+			   <div class="form-group">
+					<label for="usesEpoxy">Uses Epoxy ?</label>
+					<input type="checkbox" class="form-control" id="usesEpoxy" name="usesEpoxy">
+				</div>
+
+				<!-- <div class="form-group">
+					<label for="expoxyProductSelection">Epoxy Product Selection:</label>
+					<input type="text" class="form-control" id="expoxyProductSelection" name="expoxyProductSelection" required>
+				</div> -->
+
+				<div id="flooringOptions2">
+				<div class="form-group">
+					<label for="expoxyProductSelection">Epoxy Product Selection (<%= flooringCoatings.query.length %>):</label>
+					<select name="expoxyProductSelection" class="form-control selcls">
+	 					<%  for (var i = 0; i < flooringCoatings.query.length ; i++){  %>
+	 						<option value="<%= flooringCoatings.query[i].name %>"><%= flooringCoatings.query[i].name %></option>
+						<%    }  %>
+					</select>
+				</div>
+				</div>
+
+				<div class="form-group">
+					<label for="expoxyCoverageSqFt">Epoxy Coverage SqFt:</label>
+					<input type="number" class="form-control" id="expoxyCoverageSqFt" name="expoxyCoverageSqFt" value="150" min="100" max="400" required>
+				</div>
+
+<!--// This model is managed by Team 4-5
+// Chaitanya Kiran Moturu
+// Manikanteswara Rao Earla
+// Sainath Gulla -->

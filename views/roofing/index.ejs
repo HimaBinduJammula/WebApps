@@ -1,43 +1,77 @@
-<div class="container">
-   <h2>Recent roofing estimates</h2>
-   <% console.log(roofingEstimates.query); %>
-
+<h2>Recent roofing estimates</h2>
 <p>There are  <%= roofingEstimates.query.length %> roofing estimates. <br/>
-<a href="/roofingEstimate/create">Add a new one.</a></p>
-   <table class="table" border="1">
-      <thead>
-         <tr>
-            <th>Client</th>
-            <th>City</th>
-            <th>Year</th>
-            <th>Month</th>
-            <th>SqFt</th>
-            <th>Cost ($/sqft)</th>
-            <th>Bid ($/sqft)</th>
-            <th>Actions</th>
-         </tr>
-      </thead>
-      <tbody>
-     
-<% for (var i = 0; i < roofingEstimates.query.length; i++) { %>      
-   <tr>
-            <td><%=  roofingEstimates.query[i].estimatePartAbout.client %></td>
-            <td><%=  roofingEstimates.query[i].estimatePartAbout.city %></td>
-            <td><%= roofingEstimates.query[i].estimatePartAbout.year %></td>
-            <td><%= roofingEstimates.query[i].estimatePartAbout.month %></td>
-            <td><%= roofingEstimates.query[i].estimateSquareFootage.sqft %></td>
-            <td><%= roofingEstimates.query[i].costPerSquareFoot %></td>
-            <td><%= roofingEstimates.query[i].bidPerSquareFoot %></td>
-            <td>
-                   <a class="btn btn-danger btn-sm" href="/roofingEstimate/delete/<%= roofingEstimates.query[i]._id %>">Delete</a>
-            <a class="btn btn-info btn-sm" href="/roofingEstimate/details/<%= roofingEstimates.query[i]._id %>"> Details </a> 
-            <a class="btn btn-warning btn-sm" href="/roofingEstimate/edit/<%= roofingEstimates.query[i]._id %>">Edit</a><br>
-         </td>
-         </tr>
-         <% } %>
-      </tbody>
-   </table>
+<a href="/roofingEstimate/create" class="btn btn-success">Add a new one.</a></p>
+<% for (var i = 0; i < roofingEstimates.query.length; i++) { %>
+<div class="panel panel-default">
+<div class="panel-heading"></div>
+<div class="text-muted pull-right"></div>
+<div class="panel-body">
+ id :<%=  roofingEstimates.query[i]._id %> <br>
+ Client :<%=  roofingEstimates.query[i].estimatePartAbout.client %> <br>
+            Created :<%=  roofingEstimates.query[i].estimatePartAbout.created %><br>
+            Address : <%= roofingEstimates.query[i].estimatePartAbout.address %><br>
+            City :<%= roofingEstimates.query[i].estimatePartAbout.city %><br>
+            State : <%= roofingEstimates.query[i].estimatePartAbout.state %><br>
+            Zipcode : <%= roofingEstimates.query[i].estimatePartAbout.zipcode %><br>
+            Sqft : <%= roofingEstimates.query[i].estimateSquareFootage.sqft %><br>
+             costPerSquareFoot: <%= roofingEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot :<%= roofingEstimates.query[i].bidPerSquareFoot %><br>
+<%
+    var total_cost = 8526;
+    var total_unit_cost = 2.13;
+%>
+<table class="table">
+<tr>
+    <th colspan="2">Roofing Estimates</th>
+</tr>
+<tr>
+    <td>Total area in sqft</td>
+    <td>2000</td>
+</tr>
+<tr>
+    <td>Total cost in $USD</td>
+    <td>$<%= total_cost %></td>
+</tr>
+<tr>
+    <td>unit cost in $/sqft</td>
+    <td>$<%= total_unit_cost %></td>
+</tr>
+</table>
+
+<table class="table">
+
+<tr>
+    <th colspan="4">Bid Price</th>
+</tr>
+<tr>
+    <th>Profit</th>
+    <th>Total cost in $USD</th>
+    <th>Bid Price in $/sqft</th>
+    <th>Select</th>
+</tr>
+<% for(var j=0; j<7; j++){
+    var percentage = 40+(j*10);
+     %>
+    <tr>
+        <td><%= percentage%>%</td>
+        <td>$<%= (total_cost+total_cost*percentage/100).toFixed(1) %></td>
+        <td  id="bid_id_<%= ((i+1)+""+j+1) %>">$<%= (total_unit_cost*+total_unit_cost*percentage/100).toFixed(1) %></td>
+        <td>		
+            <input type="radio" name="bid" id="<%= ((i+1)+""+j+1) %>" />		
+        </td>
+    </tr> 
+<% } %>
+
+</table>
+
+           
+
+<a href="/roofingEstimate/delete/<%= roofingEstimates.query[i]._id  %>" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete </a> 
+<a href="/roofingEstimate/details/<%= roofingEstimates.query[i]._id %>" class="btn btn-info"><span class="glyphicon glyphicon-list-alt"></span> Details </a> 
+<a href="/roofingEstimate/edit/<%= roofingEstimates.query[i]._id %>" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit  </a>
 </div>
+</div>
+<% } %>
 <!-- This model is managed by Team 5-02 -->
 <!-- Mekonda, Sai Prakash -->
 <!-- Kovuri, Revanth -->
