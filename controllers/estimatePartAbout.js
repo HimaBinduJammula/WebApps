@@ -34,8 +34,8 @@ api.get('/findone/:id', function(req, res){
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
-    res.render("about/create",
-        { title: "WP Primers", layout: "layout.ejs" });
+    return res.render("about/create",
+        { title: "estimatePartAbout", layout: "layout.ejs" });
 });
 
 // GET /delete/:id
@@ -101,6 +101,8 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;  
+    item.longitude = req.body.longitude;          
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartAbout');
@@ -121,6 +123,8 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;
+    item.longitude = req.body.longitude;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartAbout');
 });
@@ -140,3 +144,10 @@ api.post('/delete/:id', function(req, res, next) {
 
 
 module.exports = api;
+
+/*
+Team set - R08
+Team members:
+Naga Rahul Tejas Konkepudi
+Kona Arun Kumar
+*/
