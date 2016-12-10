@@ -98,7 +98,8 @@ api.post('/save', function(req, res) {
     item.roofType = req.body.roofType;
     item.processType = req.body.processType;
     
-    item.displayorder = parseInt(req.body.displayorder);
+    item.subtotal = parseInt(req.body.subtotal);
+    console.log(item.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartRoofing');
