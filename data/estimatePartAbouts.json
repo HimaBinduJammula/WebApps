@@ -6,7 +6,9 @@
     "address": "800 University Drive",
     "city": "Maryville",
     "state": "MO",
-    "zipcode": 64468
+    "zipcode": 64468,
+    "latitude": 40.346104,
+    "longitude": 	-94.872475
   },
   {
     "_id":  2,
@@ -15,7 +17,9 @@
     "address": "800 University Drive",
     "city": "Maryville",
     "state": "MO",
-    "zipcode": 64468
+    "zipcode": 64468,
+    "latitude": 40.346104,
+    "longitude": 	-94.872475
   },
   {
     "_id":  3,
@@ -24,6 +28,10 @@
     "address": "800 University Drive",
     "city": "Maryville",
     "state": "MO",
-    "zipcode": 64468
+    "zipcode": 64468,
+    "latitude": 40.346104, 
+    "longitude": -94.872475 
+    
   }
 ]
+

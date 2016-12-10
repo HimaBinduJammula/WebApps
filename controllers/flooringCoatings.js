@@ -163,6 +163,9 @@ http://127.0.0.1:8081/flooringCoating/save/1 [WORKING]
 http://127.0.0.1:8081/flooringCoating/delete/1 [WORKING]
 */
 
-// This model is managed by Team 5-12
-// Harsha Vardhan Reddy Alla
-// Saiteja Guduri
+/*
+Team set - R12
+Team members:
+Harsha Vardhan Reddy Alla
+Saiteja Guduri
+*/

@@ -15,6 +15,9 @@ var EstimatePartAboutSchema = new Schema({
 var estimatePartAbout = mongoose.model('EstimatePartAbout', EstimatePartAboutSchema)
 module.exports = estimatePartAbout
 
-// This model is managed by Team 5-08
-// Konkepudi Naga Rahul Tejas
-// Kona Arun
+/*
+Team set - R08
+Team members:
+Naga Rahul Tejas Konkepudi
+Kona Arun Kumar
+*/
