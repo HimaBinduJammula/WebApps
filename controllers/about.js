@@ -83,7 +83,7 @@ api.get('/t4', function(req, res) {
 api.get('/t4/a', function(req, res) {
     console.log("Handling GET " + req);
     res.render('t4/a/index.ejs',
-        { title: "TeamMember1PutYourNameHere", layout: "layout.ejs" });
+        { title: "Akunuri Hari Kiran", layout: "layout.ejs" });
 });
 api.get('/t4/b', function(req, res) {
     console.log("Handling GET " + req);

@@ -12,6 +12,24 @@
       <th>ID</th>
       <th>Product Type</th>
       <th>usesUrethane</th>
+      <th>urethaneSelection</th>
+      <th>urethaneCoverageSqFt</th>
+     <th>usesExpoxy</th>
+     <th>expoxySelection</th>
+     s
+     <th>epoxyCoverageSqFt</th>
+     <th>usesUrethanePrimer</th>
+     <th>urethanePrimerSelection</th>
+     <th>urethanePrimerCoverageSqFt</th>
+     <th>usesBasecoat</th>
+     <th>basecoatSelection</th>
+     <th>basecoatCoverageSqFt</th>
+     <th>usesPrimer</th>
+     <th>primerSelection</th>
+     <th>primerCoverageSqFt</th>
+     <th>usesTopcoat</th>
+     <th>topcoatSelection</th>
+     <th>topcoatCoverageSqFt</th>
       <th>Subtotal</th>
       <th>Actions</th>
     </tr>
@@ -26,7 +44,24 @@ var total_cost =0;
             <td><%=  estimatePartWaterproofings.query[i]._id %></td>
             <td><%=  estimatePartWaterproofings.query[i].productType %></td>
             <td><%=  estimatePartWaterproofings.query[i].usesUrethane %></td>
-            <td><%=  estimatePartWaterproofings.query[i].subtotal %></td>
+            <td><%=  estimatePartWaterproofings.query[i].urethaneSelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].urethaneCoverageSqFt %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesExpoxy %></td>
+            <td><%=  estimatePartWaterproofings.query[i].expoxySelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].epoxyCoverageSqFt %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesUrethanePrimer %></td>
+            <td><%=  estimatePartWaterproofings.query[i].urethanePrimerSelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].urethanePrimerCoverageSqFt %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesBasecoat %></td>
+            <td><%=  estimatePartWaterproofings.query[i].basecoatSelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].basecoatCoverageSqFt %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesPrimer %></td>
+            <td><%=  estimatePartWaterproofings.query[i].primerSelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].primerCoverageSqFt %></td>
+            <td><%=  estimatePartWaterproofings.query[i].usesTopcoat %></td>
+            <td><%=  estimatePartWaterproofings.query[i].topcoatSelection %></td>
+            <td><%=  estimatePartWaterproofings.query[i].topcoatCoverageSqFt %></td>
+            <td><%=total_cost %></td>
             <td><a href="estimatePartWaterproofing/delete/<%= estimatePartWaterproofings.query[i]._id %>">Delete</a>
             <a href="estimatePartWaterproofing/details/<%= estimatePartWaterproofings.query[i]._id %>">Details</a>
             <a href="estimatePartWaterproofing/edit/<%= estimatePartWaterproofings.query[i]._id %>">Edit</a>
@@ -36,7 +71,7 @@ var total_cost =0;
 total_cost += estimatePartWaterproofings.query[i].subtotal;
 } %>
 <tr>
-  <td colspan=5>
+  <td colspan=21>
     Total estiamted water proofing cost <strong><%= total_cost %></strong>
     </td>
 </tr>

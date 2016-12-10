@@ -57,24 +57,26 @@
 			</div>
 
 			<p><b>Floor Area </b></p>
-			<% var d,l,w; var t = 0; for(var k = 0; k < flooringEstimate.estimateSquareFootage.entries.length; k++){ %> 
-			<% l = flooringEstimate.estimateSquareFootage.entries[k].length %>
-			<% w = flooringEstimate.estimateSquareFootage.entries[k].width %>
-			<% d = flooringEstimate.estimateSquareFootage.entries[k].description %>
-			<% t += (l*w); %>
-			<b><%= d %></b>
+			<% var sqfid, d=[], l=[], w=[]; var t = 0; for(var k = 0; k < flooringEstimate.estimateSquareFootage.entries.length; k++){ %>
+			<% sqfid =  k %>
+			<% l[k] = flooringEstimate.estimateSquareFootage.entries[k].length %>
+			<% w[k] = flooringEstimate.estimateSquareFootage.entries[k].width %>
+			<% d[k] = flooringEstimate.estimateSquareFootage.entries[k].description %>
+			<% t += (l[k]*w[k]); %>
+			<b><%= d[k] %></b>
 			<div class = "form-group">
 				<lable for= length >Length :</lable>
-				<input type="number" class="form-control" name = "length" value = "<%= l %>">
+				<input type="number" class="form-control" name = "length" onblur="calTotal(<%= t %>)" value = "<%= l[k] %>">
 			</div>
 			<div class = "form-group">
 				<lable for= width>Width : </lable>
-				<input type="number" class="form-control" name = "width" value = "<%= w %>">
+				<input type="number" class="form-control" name = "width" value = "<%= w[k] %>">
 			</div>
 			<% } %></p>
+			
 			<div class = "form-group">
 				<lable for= sqft><b>Total Squre_Footage : </b></lable>
-				<input type="number" class="form-control" name = "sqft" value = "<%= t %>" readonly>
+				<input type="number" class="form-control" name = "sqft" id="sqft" value = "<%= t %>" readonly>
 			</div>
 
 			<p><b>Miscellaneous Costs </b></p>
