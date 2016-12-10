@@ -222,12 +222,7 @@ api.get('/t10/b', function(req, res) {
     return res.render('t10/b/index.ejs',
         { title: "TeamMember2PutYourNameHere", layout: "layout.ejs" });
 });
-api.get('/t10/c', function(req, res) {
-    console.log("Handling GET " + req);
-    return res.render('t10/c/index.ejs',
-        { title: "TeamMember3PutYourNameHere", layout: "layout.ejs" });
-});
-
+ 
 // GET t11
 api.get('/t11', function(req, res) {
     console.log("Handling GET " + req);
