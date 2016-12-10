@@ -1,13 +1,9 @@
-// This view is managed by Team 5-08
-// Konkepudi Naga Rahul Tejas
-// Kona Arun Kumar
-
 <% console.log(estimatePartAbouts.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAbouts.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="estimatePartAbout/create" class="btn btn-success">Add a new one. </a></p> 
 
 <table class="table" border="1">
     <thead>
@@ -18,6 +14,8 @@
         <th>Address</th>
         <th>State</th>
         <th>ZipCode</th>
+        <th>latitude</th>
+        <th>longitude</th>
        <th>Actions</th>
     </tr>
     </thead>
@@ -30,15 +28,25 @@
             <td><%=  estimatePartAbouts.query[i].address %></td>
             <td><%=  estimatePartAbouts.query[i].state %></td>
             <td><%=  estimatePartAbouts.query[i].zipcode %></td>
+            <td><%=  estimatePartAbouts.query[i].latitude %></td>
+            <td><%=  estimatePartAbouts.query[i].longitude %></td>
             
             
+            <td><a href="estimatePartAbout/delete/<%= i+1 %>" class="btn btn-danger"> Delete </a> 
+            <a href="estimatePartAbout/details/<%= i+1 %>" class="btn btn-info"> Details </a>
+            <a href="estimatePartAbout/edit/<%= i+1 %>"class="btn btn-primary"> Edit </a>
             
-            <td><a href="estimatePartAbout/delete/<%= i+1 %>"> Delete</a> 
-            <a href="estimatePartAbout/details/<%= i+1 %>"> Details</a>
-            <a href="estimatePartAbout/edit/<%= i+1 %>"> Edit</a>
           </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+
+<!--  This model is managed by Team R08
+Naga Rahul Tejas Konkepudi
+Kona Arun Kumar
+-->
+
+
+

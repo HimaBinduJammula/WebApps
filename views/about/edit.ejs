@@ -1,3 +1,28 @@
+<br/>
+<br/>
+<h2>Edit estimatePartAbout product</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartAbout/save/<%= estimatePartAbout._id %>">
+
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAbout._id %>" required disabled>
+			</div>
+
+			<div class="form-group">
+				<label for="client">Client</label>
+				<input type="text" class="form-control" id="client" name="client" value="<%= estimatePartAbout.client %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="address">Address</label>
+				<input type="text" class="form-control" id="address" name="address" value="<%= estimatePartAbout.address %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" class="form-control" id="city" name="city" value="<%= estimatePartAbout.city %>" required>
 			</div>
 
 			<div class="form-group">
@@ -12,7 +37,19 @@
 					required>
 			</div>
 
-			<input type="submit" value="Save" class="btn btn-primary" />
+			<div class="form-group">
+				<label for="latitude">latitude</label>
+				<input type="number" class="form-control" id="latitude" name="latitude" value="<%= estimatePartAbout.latitude %>"
+					required>
+			</div>
+
+			<div class="form-group">
+				<label for="longitude">longitude</label>
+				<input type="number" class="form-control" id="longitude" name="longitude" value="<%= estimatePartAbout.longitude %>"
+					required>
+			</div>
+
+        <input type="submit" value="Save" class="btn btn-primary" />
 		</form>
 		<br/>
 		<form method="get" action="/estimatePartAbout">
@@ -21,7 +58,7 @@
 	</div>
 </div>
 
-<!--  This model is managed by Team 5-08
-Arun Kumar Kona
+<!--  This model is managed by Team 4-08
 Naga Rahul Tejas Konkepudi
+Kona Arun Kumar
 -->
