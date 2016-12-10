@@ -1,20 +1,65 @@
-<br/>
 
-<br/>
+<br>
 <h2>Create a new roofing estimate</h2>
-<form method="post" role="form">
-<% include ..\estimateparts\fg-about %>
-<% include ..\estimateparts\fg-footage %>
-<% include ..\estimateparts\fg-roofing %>
-<% include ..\estimateparts\fg-aggregate %>
-<% include ..\estimateparts\fg-labor %>
-<% include ..\estimateparts\fg-mileage %>
-<% include ..\estimateparts\fg-misc %>
-<% include ..\estimateparts\fg-comment %>
+<p>There are currently
+	<%= roofingEstimates.query.length %> </p>
+<br/>
+<% 
+maxID=0; 
+for (var i=0; i<roofingEstimates.query.length; i++) {
+    if(roofingEstimates.query[i]._id > maxID) {
+        maxID=roofingEstimates.query[i]._id;
+        }
+}
+
+%>
+	
+
 <div class="form-group">
-<input type="submit" value="Post entry" class="btn btn-danger">
+<div class="content">
+		<div>
+			<form name="roofingEstimate" method="POST" action="/roofingEstimate/save" + _id.value>
+
+				<div class="form-group" id=frm>
+					<label for="_id">ID</label>
+					<input  type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+				</div>
+                <div class="form-group">
+					<label for="client">Client</label>
+					<input value ="client" type="text" class="form-control" id="client" name="client" required>
+				</div>
+                <div class="form-group">
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" name="city" required>
+				</div>
+
+				<div class="form-group">
+					<label for="sqft">Sqft</label>
+					<input type="number" class="form-control" id="sqft" name="sqft" value="" required>
+				</div>
+
+				<div class="form-group">
+					<label for="costPerSquareFoot">costPerSquareFoot</label>
+					<input type="number" class="form-control" id="costPerSquareFoot" name="costPerSquareFoot" value="" required>
+				</div>
+
+				<div class="form-group">
+					<label for="bidPerSquareFoot">bidPerSquareFoot</label>
+					<input type="number" class="form-control" id="bidPerSquareFoot" name="bidPerSquareFoot"  required>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Post new entry" class="btn btn-primary" />
+				</div>
+			</form>
+			<br/>
+			<form method="get" action="/roofingEstimate">
+				<input type="submit" value="Return to list" class="btn btn-caution" />
+			</form>
+		</div>
+	</div>
 </div>
-</form>
+
 <!-- This model is managed by Team 5-02 -->
 <!-- Mekonda, Sai Prakash -->
 <!-- Kovuri, Revanth -->

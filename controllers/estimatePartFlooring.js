@@ -74,6 +74,17 @@ api.get('/delete/:id', function(req, res) {
         });
 });
 
+api.post('/delete/:id', function(req, res) {
+    console.log("Handling DELETE request" + req);
+    var id = parseInt(req.params.id);
+    console.log("Handling REMOVING ID=" + id);
+    var data = req.app.locals.estimatePartFloorings.query;
+    var item = remove(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("Deleted item " + JSON.stringify(item));
+    return res.redirect('/estimatePartFlooring');
+});
+
 // GET /details/:id
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
@@ -108,23 +119,59 @@ api.get('/edit/:id', function(req, res) {
 
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
-// POST new
+// adding a new one
 api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
     var data = req.app.locals.estimatePartFloorings.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
-    item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item._id = req.body._id;
+    //var temp = "true";
+    // if(!req.body.isUsed || req.body.isUsed == null || req.body.isUsed == undefined){
+    //     temp = false;
+    // }
+    // item.isUsed = temp;
+    
+    item.floorSystemType = req.body.floorSystemType;
+    item.usesUrethane = req.body.usesUrethane ? true: false;   
+    item.urethaneProductSelection.name = req.body.urethaneProductSelection;
+
+    var products = req.app.locals.flooringCoatings.query;
+    var uSelection = find(products, { 'name': req.body.urethaneProductSelection });
+    if (!uSelection) { return res.end("No matching urethane product found ("+req.body.urethaneProductSelection+")."); }
+    // then save each sub field individually...
+    item.urethaneProductSelection._id = uSelection._id;
+    item.urethaneProductSelection.name = uSelection.name;
+    item.urethaneProductSelection.price = uSelection.price;
+    item.urethaneProductSelection.unit = uSelection.unit;
+    item.urethaneProductSelection.displayorder = parseInt(uSelection.displayorder);
+    // console.log("----------------");
+    // console.log("urethaneProductSelection was: " + req.body.urethaneProductSelection);
+    item.urethaneCoverageSqFt = req.body.urethaneCoverageSqFt;
+    item.usesEpoxy = req.body.usesEpoxy ? true: false; 
+    item.expoxyProductSelection.name = req.body.expoxyProductSelection;
+
+    var products1 = req.app.locals.flooringCoatings.query;
+    var eSelection = find(products1, { 'name': req.body.expoxyProductSelection });
+    if (!eSelection) { return res.end("No matching epoxy product found ("+req.body.expoxyProductSelection+")."); }
+    // then save each sub field individually...
+    item.expoxyProductSelection._id = eSelection._id;
+    item.expoxyProductSelection.name = eSelection.name;
+    item.expoxyProductSelection.price = eSelection.price;
+    item.expoxyProductSelection.unit = eSelection.unit;
+    item.expoxyProductSelection.displayorder = parseInt(eSelection.displayorder);
+
+    item.expoxyCoverageSqFt = req.body.expoxyCoverageSqFt;
+    item.subtotal = req.body.subtotal;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartFlooring');
 });
 
 // POST update
+/**
+ * When we edit and save
+ */
 api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
@@ -135,17 +182,21 @@ api.post('/save/:id', function(req, res) {
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
     item.floorSystemType = req.body.floorSystemType;
-    
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.usesUrethane = req.body.usesUrethane ? true: false;   
+    item.urethaneProductSelection.name = req.body.urethaneProductSelection;
+
+    item.urethaneCoverageSqFt = req.body.urethaneCoverageSqFt;
+    item.usesEpoxy = req.body.usesEpoxy ? true: false; 
+    item.expoxyProductSelection.name = req.body.expoxyProductSelection;
+
+ 
+    item.expoxyCoverageSqFt = req.body.expoxyCoverageSqFt;
+    item.subtotal = req.body.subtotal;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartFlooring');
 });
 
 module.exports = api;
-
 // This data is managed by Team 5-05
 // Lakshmi Supriya Nakerikanti
 // Saravana Kumar Palaniyappan
